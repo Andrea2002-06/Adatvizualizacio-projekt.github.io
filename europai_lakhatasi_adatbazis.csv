@@ -1,0 +1,1001 @@
+﻿Város,Ország,Év,Bérleti díj (€/hó),Eladási ár (€/m²),Lakásméret (m²),Jövedelem (€/hó),Rezsi (€/hó),Lakhatási arány (%),Korosztály,Ingatlantípus
+Prága,Csehország,2020,1024,4334,65,2762,138,42.1,26-29,tégla
+Koppenhága,Dánia,2021,841,6395,67,1765,177,57.7,18-21,új építésű
+Prága,Csehország,2024,784,3941,59,1043,64,81.3,18-21,új építésű
+Zágráb,Horvátország,2020,759,3285,60,1546,79,54.2,18-21,panel
+Madrid,Spanyolország,2021,1266,4229,56,1288,123,107.8,26-29,új építésű
+Budapest,Magyarország,2024,928,3119,61,1700,135,62.5,18-21,új építésű
+Bukarest,Románia,2023,750,6723,55,1471,191,64,18-21,tégla
+Athén,Görögország,2022,595,4751,26,1336,160,56.5,18-21,panel
+Zágráb,Horvátország,2022,1085,4706,53,1849,76,62.8,22-25,panel
+Madrid,Spanyolország,2022,720,3947,71,2172,62,36,18-21,panel
+Varsó,Lengyelország,2020,981,4038,45,2306,202,51.3,22-25,tégla
+Tallinn,Észtország,2022,1133,3493,50,2166,199,61.5,18-21,új építésű
+Ljubljana,Szlovénia,2024,780,4277,38,1402,191,69.3,18-21,tégla
+Berlin,Németország,2024,1239,4414,70,2181,118,62.2,22-25,új építésű
+Tallinn,Észtország,2022,990,6346,54,2782,50,37.4,26-29,panel
+Berlin,Németország,2020,1105,4604,51,2046,51,56.5,26-29,panel
+Brüsszel,Belgium,2020,845,4929,77,1741,110,54.9,18-21,panel
+Varsó,Lengyelország,2022,775,5598,60,1735,176,54.8,22-25,új építésű
+Oslo,Norvégia,2021,924,5662,44,1836,130,57.4,22-25,tégla
+Madrid,Spanyolország,2022,534,4855,59,2003,138,33.5,26-29,új építésű
+Berlin,Németország,2024,546,3995,50,1599,142,43,26-29,panel
+Bukarest,Románia,2021,1001,6763,58,2129,146,53.9,18-21,tégla
+Varsó,Lengyelország,2022,420,4468,56,3232,140,17.3,26-29,új építésű
+Bukarest,Románia,2021,975,4458,37,2571,188,45.2,26-29,tégla
+Bécs,Ausztria,2021,1098,3409,76,1299,179,98.3,18-21,tégla
+Varsó,Lengyelország,2022,1448,3311,47,2050,125,76.7,18-21,panel
+Athén,Görögország,2022,512,4582,39,2237,104,27.5,18-21,új építésű
+Helsinki,Finnország,2023,1287,3560,50,2407,88,57.1,26-29,tégla
+Párizs,Franciaország,2022,957,6069,31,2092,163,53.5,18-21,panel
+Bukarest,Románia,2024,1095,3016,35,2261,165,55.7,22-25,új építésű
+Athén,Görögország,2023,963,4916,45,2116,165,53.3,26-29,tégla
+Oslo,Norvégia,2021,721,6739,62,1404,183,64.4,18-21,új építésű
+Helsinki,Finnország,2020,656,5445,72,1590,198,53.7,18-21,panel
+Párizs,Franciaország,2021,1003,5486,83,1877,112,59.4,26-29,tégla
+Tallinn,Észtország,2020,678,3521,54,2171,164,38.8,22-25,tégla
+Tallinn,Észtország,2023,1107,4516,77,1868,286,74.6,26-29,tégla
+Bukarest,Románia,2020,1056,3471,39,2241,139,53.3,26-29,új építésű
+Prága,Csehország,2024,1079,5068,54,1577,74,73.1,22-25,új építésű
+Stockholm,Svédország,2020,788,5528,58,1377,159,68.8,22-25,tégla
+Róma,Olaszország,2023,996,3439,57,2029,93,53.7,18-21,új építésű
+Amszterdam,Hollandia,2024,989,5173,71,2527,81,42.3,18-21,új építésű
+Prága,Csehország,2022,666,5118,63,2258,343,44.7,26-29,új építésű
+Tallinn,Észtország,2021,1043,5863,69,2326,134,50.6,18-21,tégla
+Róma,Olaszország,2024,1090,3573,51,1757,154,70.8,26-29,panel
+Tallinn,Észtország,2022,1479,2259,65,1194,126,134.4,22-25,panel
+Prága,Csehország,2022,1172,4577,39,1642,184,82.6,22-25,panel
+Bécs,Ausztria,2021,717,4760,56,1674,257,58.2,26-29,panel
+Berlin,Németország,2023,1058,2070,58,1669,193,75,18-21,új építésű
+Párizs,Franciaország,2021,702,4362,63,2433,90,32.6,26-29,tégla
+Bukarest,Románia,2021,816,3930,45,2883,170,34.2,22-25,új építésű
+Tallinn,Észtország,2023,585,5601,87,2516,74,26.2,18-21,új építésű
+Madrid,Spanyolország,2022,779,6020,44,2222,189,43.6,22-25,új építésű
+Oslo,Norvégia,2023,668,4429,25,1488,137,54.1,26-29,tégla
+Prága,Csehország,2021,588,6459,34,1780,157,41.9,18-21,panel
+Stockholm,Svédország,2020,1260,2777,72,2005,101,67.9,26-29,új építésű
+Koppenhága,Dánia,2024,1016,4739,46,2035,131,56.4,18-21,panel
+Berlin,Németország,2020,928,5295,79,1381,257,85.8,18-21,panel
+Bécs,Ausztria,2022,412,4318,64,2140,119,24.8,18-21,új építésű
+Koppenhága,Dánia,2022,848,3908,46,2425,168,41.9,26-29,tégla
+Madrid,Spanyolország,2024,727,5580,60,2406,181,37.7,18-21,új építésű
+Athén,Görögország,2024,693,3828,66,2305,149,36.5,22-25,panel
+Helsinki,Finnország,2023,929,6033,46,2274,140,47,18-21,panel
+Prága,Csehország,2023,846,5819,67,2407,215,44.1,22-25,tégla
+Zágráb,Horvátország,2023,905,5318,50,2162,143,48.5,26-29,panel
+Prága,Csehország,2020,924,5214,43,3046,100,33.6,22-25,új építésű
+Stockholm,Svédország,2020,596,5890,67,2312,181,33.6,18-21,panel
+Madrid,Spanyolország,2024,897,3423,56,1661,199,66,22-25,panel
+Zágráb,Horvátország,2021,863,3509,50,2206,122,44.7,22-25,tégla
+Koppenhága,Dánia,2020,694,4792,59,1747,126,46.9,22-25,új építésű
+Prága,Csehország,2020,958,2762,34,1641,139,66.8,26-29,új építésű
+Budapest,Magyarország,2020,978,6270,68,1920,149,58.7,18-21,panel
+Zágráb,Horvátország,2023,649,4478,51,2161,109,35.1,22-25,panel
+Varsó,Lengyelország,2020,1030,6339,53,2201,185,55.2,18-21,tégla
+Budapest,Magyarország,2023,800,4769,55,2049,111,44.5,22-25,tégla
+Brüsszel,Belgium,2023,906,5098,77,2480,258,46.9,26-29,új építésű
+Bukarest,Románia,2023,708,5547,58,3095,110,26.4,18-21,panel
+Brüsszel,Belgium,2021,690,3781,25,1737,112,46.2,18-21,új építésű
+Bukarest,Románia,2020,938,4910,83,2475,121,42.8,26-29,tégla
+Bécs,Ausztria,2020,675,5090,35,2916,209,30.3,26-29,tégla
+Sofia,Bulgária,2024,783,2444,75,1943,212,51.2,18-21,panel
+Sofia,Bulgária,2020,501,3781,55,2023,127,31,18-21,panel
+Tallinn,Észtország,2020,1056,3219,53,2060,176,59.8,26-29,panel
+Varsó,Lengyelország,2020,1078,3150,32,2639,167,47.2,26-29,panel
+Athén,Görögország,2024,713,6361,57,2590,153,33.4,18-21,új építésű
+Berlin,Németország,2023,1415,6606,51,2486,182,64.2,26-29,új építésű
+Athén,Görögország,2024,1242,3342,65,2529,62,51.6,22-25,tégla
+Madrid,Spanyolország,2022,604,2053,51,2359,225,35.1,18-21,tégla
+Varsó,Lengyelország,2021,919,6454,34,1148,147,92.9,26-29,új építésű
+Brüsszel,Belgium,2023,996,4461,25,1955,85,55.3,22-25,panel
+Budapest,Magyarország,2023,1067,4940,41,1743,97,66.8,26-29,új építésű
+Prága,Csehország,2020,884,5646,40,2252,123,44.7,26-29,panel
+Sofia,Bulgária,2022,702,4372,39,1723,90,46,18-21,tégla
+Berlin,Németország,2021,1391,4542,45,2107,144,72.9,22-25,tégla
+Róma,Olaszország,2023,845,5237,66,1735,121,55.7,26-29,új építésű
+Brüsszel,Belgium,2024,831,1738,32,2683,232,39.6,26-29,új építésű
+Budapest,Magyarország,2024,838,5192,60,3539,206,29.5,22-25,új építésű
+Prága,Csehország,2021,868,3353,31,2102,112,46.6,22-25,panel
+Prága,Csehország,2024,544,3724,39,2844,194,25.9,18-21,tégla
+Brüsszel,Belgium,2024,898,6276,56,1569,226,71.6,18-21,új építésű
+Stockholm,Svédország,2021,1035,3255,52,1562,81,71.4,26-29,új építésű
+Amszterdam,Hollandia,2024,1132,6791,34,2281,117,54.8,22-25,tégla
+Bécs,Ausztria,2020,778,3789,42,2024,108,43.8,26-29,tégla
+Amszterdam,Hollandia,2020,968,4440,51,1546,121,70.4,18-21,tégla
+Párizs,Franciaország,2022,1089,5101,40,2050,188,62.3,18-21,új építésű
+Ljubljana,Szlovénia,2024,483,5152,45,2285,112,26,26-29,tégla
+Bukarest,Románia,2020,449,2547,56,2130,105,26,18-21,panel
+Párizs,Franciaország,2024,1060,2506,54,1394,117,84.4,18-21,tégla
+Athén,Görögország,2024,912,3468,49,2503,121,41.3,18-21,tégla
+Párizs,Franciaország,2020,1109,3144,63,2721,50,42.6,22-25,tégla
+Bécs,Ausztria,2022,701,5192,52,2186,120,37.6,18-21,új építésű
+Koppenhága,Dánia,2020,922,4313,73,2127,167,51.2,22-25,új építésű
+Zágráb,Horvátország,2024,797,3915,49,2197,129,42.1,26-29,panel
+Koppenhága,Dánia,2021,972,6990,68,1837,210,64.3,18-21,tégla
+Budapest,Magyarország,2021,798,2054,40,1065,132,87.3,26-29,tégla
+Zágráb,Horvátország,2021,905,6512,60,1890,191,58,22-25,panel
+Prága,Csehország,2023,347,4783,67,1261,207,43.9,18-21,tégla
+Koppenhága,Dánia,2021,985,4002,64,3135,159,36.5,22-25,tégla
+Brüsszel,Belgium,2021,962,3949,42,2415,107,44.3,18-21,panel
+Madrid,Spanyolország,2023,918,3927,62,2167,202,51.7,22-25,tégla
+Berlin,Németország,2022,772,4176,40,1778,169,52.9,22-25,új építésű
+Sofia,Bulgária,2023,1089,3393,68,2678,171,47.1,26-29,új építésű
+Stockholm,Svédország,2020,1369,3571,36,1111,225,143.5,18-21,tégla
+Róma,Olaszország,2024,1064,4433,59,1437,272,93,22-25,panel
+Prága,Csehország,2024,932,4631,66,2241,161,48.8,22-25,tégla
+Stockholm,Svédország,2023,702,5066,83,2673,230,34.9,26-29,új építésű
+Prága,Csehország,2023,772,3312,53,2028,205,48.2,26-29,panel
+Amszterdam,Hollandia,2020,477,6335,53,1787,99,32.2,26-29,tégla
+Budapest,Magyarország,2024,486,5488,56,1355,85,42.1,26-29,új építésű
+Madrid,Spanyolország,2022,816,6503,51,1248,138,76.4,22-25,panel
+Stockholm,Svédország,2024,832,1500,54,1885,185,54,22-25,új építésű
+Prága,Csehország,2022,1362,5852,51,1447,279,113.4,26-29,tégla
+Zágráb,Horvátország,2022,915,4517,55,2099,143,50.4,22-25,új építésű
+Brüsszel,Belgium,2024,757,3844,55,1728,114,50.4,18-21,panel
+Zágráb,Horvátország,2023,927,4194,78,800,205,141.5,26-29,új építésű
+Róma,Olaszország,2024,1212,2012,50,1814,80,71.2,26-29,tégla
+Varsó,Lengyelország,2024,706,3167,81,2468,214,37.3,18-21,tégla
+Brüsszel,Belgium,2021,1080,3145,47,2245,89,52.1,22-25,új építésű
+Tallinn,Észtország,2022,1078,4212,49,2355,172,53.1,22-25,tégla
+Ljubljana,Szlovénia,2021,810,5891,39,2308,180,42.9,26-29,tégla
+Róma,Olaszország,2020,823,4891,36,2462,141,39.2,22-25,új építésű
+Tallinn,Észtország,2022,769,5759,44,1296,72,64.9,18-21,panel
+Brüsszel,Belgium,2021,1052,2963,81,959,235,134.2,18-21,panel
+Budapest,Magyarország,2020,953,4384,47,2200,148,50,18-21,tégla
+Tallinn,Észtország,2020,1176,4637,57,1818,147,72.8,22-25,tégla
+Athén,Görögország,2021,977,2448,35,2372,159,47.9,26-29,új építésű
+Varsó,Lengyelország,2023,854,4522,60,1730,111,55.8,22-25,panel
+Párizs,Franciaország,2020,949,3326,61,1149,201,100.1,18-21,tégla
+Koppenhága,Dánia,2021,1018,4807,70,2833,201,43,26-29,új építésű
+Ljubljana,Szlovénia,2020,440,2965,46,2013,176,30.6,26-29,panel
+Prága,Csehország,2023,719,4724,44,1694,80,47.2,18-21,tégla
+Sofia,Bulgária,2024,669,2878,40,2527,103,30.6,26-29,tégla
+Ljubljana,Szlovénia,2024,1558,5092,58,1571,185,110.9,26-29,új építésű
+Zágráb,Horvátország,2024,756,4646,93,1952,207,49.3,22-25,panel
+Helsinki,Finnország,2023,724,4458,82,1687,241,57.2,22-25,panel
+Amszterdam,Hollandia,2024,1077,3825,64,2486,181,50.6,22-25,új építésű
+Koppenhága,Dánia,2022,507,3627,51,1963,181,35,22-25,panel
+Brüsszel,Belgium,2021,944,2898,61,2305,178,48.7,22-25,tégla
+Stockholm,Svédország,2024,1170,5501,62,1965,67,63,18-21,panel
+Párizs,Franciaország,2021,1007,4749,59,1362,96,81,22-25,új építésű
+Párizs,Franciaország,2021,1163,4453,65,2014,151,65.2,18-21,tégla
+Zágráb,Horvátország,2022,1135,3881,56,1769,128,71.4,26-29,tégla
+Zágráb,Horvátország,2020,823,4767,48,2628,105,35.3,18-21,tégla
+Varsó,Lengyelország,2024,853,3972,77,2098,202,50.3,26-29,panel
+Athén,Görögország,2023,529,4820,68,2041,203,35.9,22-25,panel
+Oslo,Norvégia,2022,771,6191,89,1819,128,49.4,22-25,tégla
+Bukarest,Románia,2024,1263,6395,47,1790,136,78.2,26-29,panel
+Helsinki,Finnország,2021,564,3398,40,1616,148,44.1,22-25,tégla
+Helsinki,Finnország,2020,959,6361,40,2492,139,44.1,22-25,tégla
+Varsó,Lengyelország,2021,888,5310,38,2191,158,47.7,22-25,panel
+Tallinn,Észtország,2024,1023,4847,92,1681,123,68.2,18-21,tégla
+Athén,Görögország,2024,744,3833,45,2595,221,37.2,26-29,panel
+Berlin,Németország,2023,757,3501,62,1724,182,54.5,18-21,tégla
+Róma,Olaszország,2020,951,2681,78,2898,119,36.9,22-25,tégla
+Stockholm,Svédország,2021,803,4843,60,2329,251,45.3,22-25,tégla
+Stockholm,Svédország,2023,856,3542,34,1635,148,61.4,22-25,tégla
+Amszterdam,Hollandia,2020,1349,3879,58,1992,209,78.2,22-25,panel
+Bukarest,Románia,2020,1532,3863,48,2522,184,68,22-25,panel
+Berlin,Németország,2020,1362,5201,50,2295,205,68.3,18-21,panel
+Madrid,Spanyolország,2020,1105,5109,71,2585,219,51.2,26-29,panel
+Koppenhága,Dánia,2021,1062,4299,57,2603,109,45,22-25,új építésű
+Prága,Csehország,2024,992,4028,55,2639,160,43.7,18-21,tégla
+Amszterdam,Hollandia,2022,912,2868,66,2323,258,50.4,18-21,új építésű
+Tallinn,Észtország,2020,823,4763,59,2789,145,34.7,18-21,tégla
+Prága,Csehország,2024,970,5229,58,1777,160,63.6,18-21,tégla
+Athén,Görögország,2023,1168,3268,57,1650,210,83.5,22-25,új építésű
+Madrid,Spanyolország,2020,519,3829,61,2783,147,23.9,26-29,új építésű
+Koppenhága,Dánia,2020,761,6757,33,901,172,103.6,26-29,tégla
+Tallinn,Észtország,2020,774,3275,66,2122,122,42.2,26-29,panel
+Oslo,Norvégia,2024,580,5547,65,1950,242,42.2,22-25,új építésű
+Oslo,Norvégia,2020,632,2669,45,1977,162,40.2,26-29,új építésű
+Stockholm,Svédország,2020,840,4922,36,2722,146,36.2,22-25,tégla
+Prága,Csehország,2023,1179,4911,62,2285,172,59.1,22-25,új építésű
+Ljubljana,Szlovénia,2021,1061,6095,58,2355,146,51.3,22-25,panel
+Sofia,Bulgária,2022,1260,3688,82,1980,78,67.6,26-29,új építésű
+Helsinki,Finnország,2023,932,3683,68,1674,128,63.3,22-25,új építésű
+Athén,Görögország,2022,428,3957,25,1208,188,51,22-25,panel
+Berlin,Németország,2022,1096,5011,40,1976,150,63.1,22-25,panel
+Ljubljana,Szlovénia,2024,610,6304,68,1890,151,40.3,26-29,új építésű
+Varsó,Lengyelország,2022,952,2050,51,1659,100,63.4,18-21,tégla
+Stockholm,Svédország,2021,830,6657,65,1714,179,58.9,22-25,panel
+Oslo,Norvégia,2022,1250,5610,56,1677,185,85.6,22-25,tégla
+Tallinn,Észtország,2022,998,5574,65,2525,123,44.4,26-29,panel
+Sofia,Bulgária,2021,1229,4737,86,1655,237,88.6,18-21,panel
+Zágráb,Horvátország,2023,949,3718,48,1840,171,60.9,26-29,panel
+Helsinki,Finnország,2023,1031,3812,55,3071,236,41.3,22-25,panel
+Berlin,Németország,2022,1009,4546,57,2307,99,48,18-21,tégla
+Koppenhága,Dánia,2022,836,2498,61,2324,126,41.4,26-29,új építésű
+Oslo,Norvégia,2023,1293,3029,33,2112,202,70.8,26-29,új építésű
+Oslo,Norvégia,2023,1321,3949,71,1981,141,73.8,26-29,új építésű
+Stockholm,Svédország,2022,1121,5283,31,2738,219,48.9,26-29,tégla
+Amszterdam,Hollandia,2022,744,4975,62,2130,122,40.7,22-25,panel
+Prága,Csehország,2021,732,4469,73,2272,131,38,22-25,panel
+Bukarest,Románia,2021,1093,1500,72,1130,132,108.4,18-21,panel
+Helsinki,Finnország,2022,620,2946,72,1766,167,44.6,26-29,új építésű
+Sofia,Bulgária,2024,888,5072,56,1359,200,80.1,22-25,panel
+Madrid,Spanyolország,2022,777,2632,49,2750,193,35.3,18-21,tégla
+Róma,Olaszország,2022,813,4081,50,3038,169,32.3,18-21,új építésű
+Bukarest,Románia,2021,1008,5736,59,1870,140,61.4,22-25,panel
+Bécs,Ausztria,2024,882,4455,66,2026,187,52.8,22-25,új építésű
+Párizs,Franciaország,2023,880,4594,25,2458,167,42.6,18-21,panel
+Athén,Görögország,2022,1150,1500,86,1930,205,70.2,22-25,tégla
+Ljubljana,Szlovénia,2022,640,5235,39,1688,246,52.5,18-21,panel
+Amszterdam,Hollandia,2023,852,4761,68,2248,158,44.9,18-21,panel
+Varsó,Lengyelország,2023,991,7384,54,2101,203,56.8,18-21,új építésű
+Bécs,Ausztria,2021,1176,5924,65,1428,232,98.6,18-21,új építésű
+Brüsszel,Belgium,2020,613,4863,44,1968,166,39.6,18-21,panel
+Bukarest,Románia,2023,980,5006,79,2227,138,50.2,26-29,új építésű
+Tallinn,Észtország,2021,1141,5927,37,2299,185,57.7,26-29,tégla
+Ljubljana,Szlovénia,2023,826,6151,53,2063,141,46.9,22-25,új építésű
+Zágráb,Horvátország,2022,904,3184,33,2797,108,36.2,26-29,új építésű
+Bécs,Ausztria,2024,652,1916,45,1338,232,66.1,26-29,panel
+Madrid,Spanyolország,2021,1152,3674,89,2491,134,51.6,22-25,új építésű
+Berlin,Németország,2021,300,7249,34,1177,201,42.6,18-21,panel
+Bukarest,Románia,2020,1510,6161,63,2297,193,74.1,18-21,panel
+Zágráb,Horvátország,2023,1090,4837,57,1969,112,61,26-29,új építésű
+Helsinki,Finnország,2022,830,2468,54,1506,95,61.4,18-21,panel
+Brüsszel,Belgium,2022,945,6170,69,1215,101,86.1,26-29,tégla
+Berlin,Németország,2021,1135,3321,52,2275,102,54.4,22-25,új építésű
+Athén,Görögország,2021,926,2899,46,2160,70,46.1,22-25,panel
+Bukarest,Románia,2021,1010,4476,63,2112,218,58.1,26-29,panel
+Amszterdam,Hollandia,2021,931,3985,57,2272,152,47.7,18-21,panel
+Róma,Olaszország,2022,910,3658,45,1299,237,88.3,26-29,új építésű
+Athén,Görögország,2022,589,3669,44,2447,135,29.6,22-25,panel
+Ljubljana,Szlovénia,2022,1212,3692,59,1582,257,92.9,26-29,tégla
+Amszterdam,Hollandia,2024,603,4872,65,2207,141,33.7,26-29,tégla
+Ljubljana,Szlovénia,2020,868,4553,53,2482,261,45.5,26-29,panel
+Zágráb,Horvátország,2022,761,2856,54,3290,110,26.5,26-29,tégla
+Budapest,Magyarország,2020,1310,6513,47,2284,231,67.5,18-21,új építésű
+Athén,Görögország,2024,805,4256,46,1493,118,61.8,18-21,új építésű
+Amszterdam,Hollandia,2024,594,4541,43,2117,72,31.5,18-21,panel
+Helsinki,Finnország,2024,983,5500,25,2187,211,54.6,26-29,tégla
+Amszterdam,Hollandia,2021,598,6507,61,1647,147,45.2,26-29,tégla
+Helsinki,Finnország,2020,1040,4591,63,1540,158,77.8,22-25,tégla
+Zágráb,Horvátország,2022,547,4367,41,1632,212,46.5,22-25,új építésű
+Prága,Csehország,2021,1173,5231,39,1842,211,75.1,22-25,tégla
+Helsinki,Finnország,2022,935,7283,61,2096,135,51,26-29,tégla
+Bukarest,Románia,2020,933,4317,66,2478,111,42.1,22-25,panel
+Stockholm,Svédország,2022,567,2297,63,1448,50,42.6,22-25,panel
+Varsó,Lengyelország,2024,997,7492,55,2419,154,47.6,18-21,új építésű
+Bukarest,Románia,2023,875,5603,51,2134,166,48.8,22-25,panel
+Madrid,Spanyolország,2024,733,5690,52,1622,177,56.1,22-25,új építésű
+Helsinki,Finnország,2023,675,4534,55,2543,174,33.4,18-21,panel
+Amszterdam,Hollandia,2024,894,5481,76,2279,151,45.9,18-21,tégla
+Ljubljana,Szlovénia,2023,572,3222,50,1695,141,42.1,18-21,panel
+Tallinn,Észtország,2021,914,5136,54,2243,153,47.6,26-29,panel
+Brüsszel,Belgium,2024,406,3373,53,1395,180,42,18-21,új építésű
+Zágráb,Horvátország,2020,1283,5963,52,2745,157,52.5,18-21,panel
+Ljubljana,Szlovénia,2020,816,3764,50,1806,159,54,26-29,panel
+Helsinki,Finnország,2022,940,4504,62,2595,197,43.8,26-29,új építésű
+Amszterdam,Hollandia,2023,529,1500,69,1317,139,50.7,22-25,tégla
+Koppenhága,Dánia,2023,607,2338,63,2380,121,30.6,26-29,panel
+Varsó,Lengyelország,2021,300,3845,61,1261,159,36.4,26-29,új építésű
+Párizs,Franciaország,2020,896,5195,57,1513,210,73.1,22-25,tégla
+Stockholm,Svédország,2024,860,4467,41,1778,106,54.3,22-25,panel
+Brüsszel,Belgium,2022,857,6554,34,1193,224,90.6,26-29,új építésű
+Helsinki,Finnország,2021,848,3697,71,1697,241,64.2,22-25,új építésű
+Helsinki,Finnország,2022,1069,3915,87,1697,187,74,22-25,új építésű
+Bukarest,Románia,2023,975,6062,78,2016,112,53.9,22-25,tégla
+Madrid,Spanyolország,2021,1015,3687,85,2068,132,55.5,26-29,tégla
+Koppenhága,Dánia,2023,946,2883,40,2600,117,40.9,18-21,tégla
+Helsinki,Finnország,2023,638,5144,73,2359,200,35.5,22-25,új építésű
+Párizs,Franciaország,2023,711,2794,78,1839,137,46.1,18-21,panel
+Sofia,Bulgária,2024,1232,5167,62,3083,118,43.8,22-25,panel
+Ljubljana,Szlovénia,2020,1132,4568,59,2764,175,47.3,26-29,tégla
+Budapest,Magyarország,2021,1035,5787,50,1580,98,71.7,22-25,új építésű
+Párizs,Franciaország,2020,408,6967,38,1889,136,28.8,22-25,tégla
+Stockholm,Svédország,2024,977,5479,68,1708,142,65.5,26-29,tégla
+Berlin,Németország,2022,971,4202,79,2245,187,51.6,26-29,új építésű
+Varsó,Lengyelország,2022,1066,5908,58,1352,170,91.4,26-29,új építésű
+Helsinki,Finnország,2024,737,3866,64,2619,151,33.9,18-21,új építésű
+Berlin,Németország,2021,977,6543,59,3301,178,35,26-29,új építésű
+Brüsszel,Belgium,2021,460,5404,61,2645,184,24.3,26-29,panel
+Zágráb,Horvátország,2020,865,3031,52,1575,121,62.6,26-29,új építésű
+Prága,Csehország,2023,1047,6504,61,1402,172,86.9,18-21,új építésű
+Brüsszel,Belgium,2020,1199,3768,53,2007,111,65.3,18-21,tégla
+Bécs,Ausztria,2022,1062,4355,61,1556,128,76.5,22-25,tégla
+Zágráb,Horvátország,2021,1081,4053,81,1800,161,69,18-21,új építésű
+Zágráb,Horvátország,2024,1133,2798,29,1237,213,108.8,26-29,panel
+Róma,Olaszország,2021,762,7570,47,2092,227,47.3,18-21,új építésű
+Varsó,Lengyelország,2024,1402,6974,73,2512,180,63,26-29,panel
+Helsinki,Finnország,2024,1095,3839,43,1998,141,61.9,18-21,panel
+Ljubljana,Szlovénia,2022,787,5336,69,2044,224,49.5,22-25,tégla
+Budapest,Magyarország,2023,615,4268,44,1067,146,71.3,22-25,új építésű
+Bukarest,Románia,2021,870,6316,64,1488,243,74.8,18-21,tégla
+Oslo,Norvégia,2024,1205,5199,52,1520,131,87.9,22-25,új építésű
+Zágráb,Horvátország,2022,1172,6762,78,1756,94,72.1,22-25,tégla
+Madrid,Spanyolország,2023,935,2378,60,1926,127,55.1,22-25,panel
+Koppenhága,Dánia,2023,501,5116,47,1415,50,38.9,26-29,tégla
+Athén,Görögország,2022,893,6627,80,1771,120,57.2,26-29,tégla
+Budapest,Magyarország,2023,1017,3302,60,2383,211,51.5,22-25,panel
+Athén,Görögország,2020,875,4256,42,1587,139,63.9,26-29,új építésű
+Helsinki,Finnország,2022,992,5596,43,2746,136,41.1,18-21,új építésű
+Oslo,Norvégia,2021,895,3603,25,2442,187,44.3,26-29,panel
+Tallinn,Észtország,2022,830,4580,63,1219,124,78.3,26-29,új építésű
+Párizs,Franciaország,2020,1099,2995,59,1322,173,96.2,26-29,új építésű
+Bécs,Ausztria,2022,891,2562,72,1633,109,61.2,22-25,panel
+Athén,Görögország,2022,950,5878,40,2031,171,55.2,26-29,panel
+Berlin,Németország,2022,1073,4712,49,1586,154,77.4,22-25,új építésű
+Zágráb,Horvátország,2021,632,1500,62,2452,50,27.8,18-21,panel
+Bukarest,Románia,2022,648,5243,86,2010,114,37.9,26-29,új építésű
+Amszterdam,Hollandia,2021,854,6150,45,1600,126,61.3,22-25,tégla
+Brüsszel,Belgium,2022,662,4647,79,2162,137,37,18-21,tégla
+Berlin,Németország,2021,827,2624,68,1961,141,49.4,18-21,új építésű
+Varsó,Lengyelország,2024,1698,4859,44,1787,207,106.6,22-25,panel
+Varsó,Lengyelország,2020,928,2774,69,1666,244,70.3,22-25,új építésű
+Prága,Csehország,2023,1170,3963,74,2034,193,67,22-25,új építésű
+Amszterdam,Hollandia,2024,1021,3484,45,2515,133,45.9,22-25,új építésű
+Oslo,Norvégia,2020,799,3354,61,3031,97,29.6,26-29,panel
+Helsinki,Finnország,2020,906,6195,54,2226,97,45.1,26-29,új építésű
+Stockholm,Svédország,2024,1007,4275,70,2594,279,49.6,18-21,új építésű
+Berlin,Németország,2023,1045,4891,58,1823,167,66.5,26-29,tégla
+Zágráb,Horvátország,2020,826,4702,75,1497,207,69,18-21,panel
+Bécs,Ausztria,2022,1229,4358,25,1696,215,85.1,22-25,panel
+Prága,Csehország,2021,894,3301,47,2420,177,44.3,26-29,panel
+Varsó,Lengyelország,2023,840,4060,49,1539,231,69.6,22-25,új építésű
+Bukarest,Románia,2023,819,5961,78,2499,128,37.9,26-29,új építésű
+Párizs,Franciaország,2023,1001,4471,41,2162,91,50.5,26-29,panel
+Helsinki,Finnország,2024,1197,3942,58,2142,137,62.3,22-25,tégla
+Bécs,Ausztria,2022,1047,3930,68,1327,156,90.7,18-21,tégla
+Ljubljana,Szlovénia,2021,1385,3300,45,2257,159,68.4,22-25,panel
+Oslo,Norvégia,2024,988,5087,65,2555,170,45.3,26-29,tégla
+Bécs,Ausztria,2023,840,5307,83,1934,101,48.7,22-25,panel
+Prága,Csehország,2023,1177,4356,25,2424,123,53.6,18-21,új építésű
+Madrid,Spanyolország,2024,877,4898,58,2355,128,42.7,18-21,panel
+Stockholm,Svédország,2021,1028,4189,66,2308,103,49,18-21,új építésű
+Madrid,Spanyolország,2020,1171,3857,67,2184,242,64.7,26-29,panel
+Athén,Görögország,2021,844,4081,55,1848,190,56,18-21,tégla
+Párizs,Franciaország,2024,496,3236,39,2475,236,29.6,18-21,tégla
+Párizs,Franciaország,2021,874,4297,56,2581,104,37.9,26-29,tégla
+Róma,Olaszország,2020,960,5670,63,2095,200,55.4,26-29,panel
+Párizs,Franciaország,2020,300,5313,45,1085,176,43.9,22-25,panel
+Athén,Görögország,2022,1243,4335,69,2806,216,52,18-21,panel
+Amszterdam,Hollandia,2020,1310,5391,56,1199,138,120.8,18-21,új építésű
+Zágráb,Horvátország,2024,689,7105,52,2062,178,42,18-21,új építésű
+Berlin,Németország,2023,911,6534,46,2097,113,48.8,22-25,tégla
+Sofia,Bulgária,2024,570,3766,54,1785,115,38.4,18-21,tégla
+Sofia,Bulgária,2021,548,4400,32,2380,154,29.5,26-29,panel
+Sofia,Bulgária,2022,536,4129,44,2160,217,34.9,22-25,új építésű
+Budapest,Magyarország,2020,431,4638,53,2336,161,25.3,22-25,tégla
+Zágráb,Horvátország,2020,712,4117,43,2538,151,34,22-25,új építésű
+Ljubljana,Szlovénia,2020,1375,4427,44,1243,60,115.4,18-21,tégla
+Tallinn,Észtország,2021,504,4821,63,1209,195,57.8,18-21,panel
+Amszterdam,Hollandia,2024,779,4676,79,2448,137,37.4,26-29,új építésű
+Bukarest,Románia,2022,677,1918,44,1894,101,41.1,22-25,új építésű
+Sofia,Bulgária,2022,867,4592,52,1675,158,61.2,22-25,új építésű
+Tallinn,Észtország,2023,1010,3192,76,1951,151,59.5,18-21,új építésű
+Prága,Csehország,2024,1077,4780,69,2144,119,55.8,26-29,panel
+Zágráb,Horvátország,2023,990,3128,57,1983,140,57,18-21,tégla
+Stockholm,Svédország,2023,868,2242,47,2046,158,50.1,22-25,tégla
+Prága,Csehország,2022,643,6019,42,2485,171,32.8,22-25,tégla
+Amszterdam,Hollandia,2022,738,6630,37,2460,200,38.1,18-21,új építésű
+Helsinki,Finnország,2020,732,6171,51,2144,163,41.7,18-21,panel
+Berlin,Németország,2023,866,5473,67,1126,215,96,18-21,új építésű
+Oslo,Norvégia,2021,484,5739,72,1455,129,42.1,26-29,panel
+Athén,Görögország,2024,624,4242,50,2390,216,35.1,26-29,tégla
+Prága,Csehország,2023,1249,3825,52,1158,110,117.4,22-25,új építésű
+Zágráb,Horvátország,2020,1141,6439,36,1704,149,75.7,22-25,új építésű
+Brüsszel,Belgium,2022,970,3528,61,1763,149,63.5,18-21,új építésű
+Sofia,Bulgária,2021,1037,4508,48,1945,146,60.8,18-21,új építésű
+Helsinki,Finnország,2021,807,4189,79,2280,135,41.3,18-21,tégla
+Bukarest,Románia,2022,1074,4099,73,2185,145,55.8,18-21,tégla
+Athén,Görögország,2021,1012,2615,38,1403,157,83.3,22-25,új építésű
+Tallinn,Észtország,2024,1333,7178,65,2250,60,61.9,26-29,új építésű
+Bukarest,Románia,2020,764,3555,46,1916,126,46.5,26-29,új építésű
+Amszterdam,Hollandia,2020,405,5397,39,2120,254,31.1,18-21,tégla
+Brüsszel,Belgium,2022,670,1500,51,2550,248,36,22-25,panel
+Róma,Olaszország,2021,593,5096,48,1947,282,44.9,26-29,új építésű
+Varsó,Lengyelország,2020,524,4804,62,2543,155,26.7,18-21,új építésű
+Budapest,Magyarország,2020,977,4030,59,1828,181,63.3,26-29,új építésű
+Madrid,Spanyolország,2023,808,4953,55,2563,147,37.3,22-25,tégla
+Stockholm,Svédország,2021,457,6014,41,1673,120,34.5,22-25,tégla
+Stockholm,Svédország,2024,1244,1937,102,2528,161,55.6,26-29,panel
+Bécs,Ausztria,2021,886,4843,63,2323,178,45.8,18-21,új építésű
+Bécs,Ausztria,2020,922,4263,53,1903,207,59.3,22-25,tégla
+Zágráb,Horvátország,2023,1048,1500,65,2097,149,57.1,26-29,tégla
+Zágráb,Horvátország,2022,803,5849,69,1614,170,60.3,18-21,új építésű
+Prága,Csehország,2022,657,2844,46,2431,198,35.2,22-25,panel
+Brüsszel,Belgium,2024,1028,5370,63,1679,172,71.5,22-25,új építésű
+Brüsszel,Belgium,2020,1100,5405,73,2354,168,53.9,18-21,tégla
+Tallinn,Észtország,2020,1168,4468,42,1918,113,66.8,18-21,panel
+Brüsszel,Belgium,2021,731,4327,43,1846,55,42.6,18-21,tégla
+Brüsszel,Belgium,2022,953,4501,43,2330,197,49.4,18-21,panel
+Helsinki,Finnország,2023,498,3585,43,1530,191,45,18-21,panel
+Varsó,Lengyelország,2024,852,4183,25,2318,88,40.6,26-29,panel
+Sofia,Bulgária,2024,915,4833,75,1346,50,71.7,26-29,tégla
+Berlin,Németország,2023,946,6661,74,2105,125,50.9,26-29,panel
+Zágráb,Horvátország,2020,1102,3332,62,2253,203,57.9,22-25,panel
+Stockholm,Svédország,2024,1590,4971,47,1987,62,83.1,22-25,új építésű
+Varsó,Lengyelország,2023,726,4009,47,2076,109,40.2,22-25,panel
+Varsó,Lengyelország,2020,1180,4500,55,1836,158,72.9,22-25,panel
+Tallinn,Észtország,2023,1106,3459,45,1848,83,64.3,26-29,tégla
+Berlin,Németország,2023,695,3929,68,2131,160,40.1,18-21,panel
+Zágráb,Horvátország,2024,1113,4335,61,1948,163,65.5,22-25,új építésű
+Berlin,Németország,2023,754,1573,53,2711,196,35,22-25,új építésű
+Stockholm,Svédország,2021,1141,5983,56,2099,119,60,22-25,panel
+Berlin,Németország,2024,821,5239,73,1930,127,49.1,26-29,panel
+Sofia,Bulgária,2024,900,5221,33,852,122,120,18-21,tégla
+Oslo,Norvégia,2021,595,3890,53,1773,223,46.1,18-21,panel
+Párizs,Franciaország,2022,982,4861,64,1431,202,82.7,18-21,panel
+Tallinn,Észtország,2021,881,5305,39,1223,191,87.7,26-29,panel
+Róma,Olaszország,2023,994,3418,42,2563,91,42.3,22-25,új építésű
+Athén,Görögország,2023,1311,3419,65,1836,180,81.2,26-29,új építésű
+Tallinn,Észtország,2022,764,4305,56,1499,187,63.4,26-29,tégla
+Párizs,Franciaország,2023,772,4226,40,800,140,114,18-21,tégla
+Ljubljana,Szlovénia,2022,1503,5442,55,1869,151,88.5,22-25,új építésű
+Bécs,Ausztria,2022,1037,3083,72,2358,186,51.9,26-29,panel
+Brüsszel,Belgium,2023,1010,4524,65,2296,132,49.7,22-25,panel
+Bécs,Ausztria,2022,757,4622,78,1380,77,60.4,22-25,panel
+Berlin,Németország,2024,941,4561,58,2122,139,50.9,26-29,új építésű
+Varsó,Lengyelország,2023,1272,2579,43,1948,68,68.8,26-29,új építésű
+Bécs,Ausztria,2023,856,6494,55,2115,87,44.6,26-29,új építésű
+Madrid,Spanyolország,2022,746,4050,50,2641,178,35,26-29,tégla
+Sofia,Bulgária,2021,622,4796,62,2570,229,33.1,18-21,tégla
+Prága,Csehország,2022,646,3527,36,1883,173,43.5,26-29,panel
+Sofia,Bulgária,2021,1147,4409,50,2076,108,60.5,18-21,panel
+Ljubljana,Szlovénia,2023,1422,2571,58,3012,150,52.2,26-29,új építésű
+Tallinn,Észtország,2021,852,4071,52,2686,50,33.6,22-25,tégla
+Brüsszel,Belgium,2023,1283,2791,51,1785,179,81.9,22-25,tégla
+Tallinn,Észtország,2020,500,5055,85,1318,159,50,26-29,új építésű
+Stockholm,Svédország,2020,735,5011,55,1679,174,54.1,22-25,panel
+Bukarest,Románia,2023,1351,4271,66,1353,102,107.4,22-25,tégla
+Tallinn,Észtország,2021,1018,6281,60,1843,150,63.4,22-25,panel
+Athén,Görögország,2021,587,5225,68,1774,126,40.2,22-25,tégla
+Varsó,Lengyelország,2021,966,3976,54,3050,138,36.2,26-29,új építésű
+Berlin,Németország,2022,810,3723,66,1909,118,48.6,26-29,tégla
+Stockholm,Svédország,2021,1230,6204,46,1067,200,134,26-29,új építésű
+Sofia,Bulgária,2020,729,5449,25,2446,89,33.4,26-29,új építésű
+Zágráb,Horvátország,2024,1083,4517,41,1796,184,70.5,22-25,panel
+Oslo,Norvégia,2022,926,5201,85,1218,231,95,18-21,panel
+Stockholm,Svédország,2023,926,3421,35,1905,196,58.9,18-21,panel
+Párizs,Franciaország,2021,868,6313,33,1994,87,47.9,18-21,tégla
+Prága,Csehország,2024,991,5564,49,800,160,143.9,26-29,új építésű
+Sofia,Bulgária,2020,1009,4985,74,1464,184,81.5,26-29,tégla
+Tallinn,Észtország,2021,1198,2366,60,1748,146,76.9,26-29,tégla
+Párizs,Franciaország,2021,987,3915,45,2017,96,53.7,18-21,új építésű
+Tallinn,Észtország,2021,629,5315,38,2333,173,34.4,26-29,tégla
+Bécs,Ausztria,2023,469,3687,73,1509,127,39.5,22-25,új építésű
+Koppenhága,Dánia,2023,1016,5440,51,1701,221,72.7,26-29,tégla
+Ljubljana,Szlovénia,2021,1335,5675,56,1596,108,90.4,26-29,panel
+Brüsszel,Belgium,2023,1031,5002,76,2325,75,47.6,18-21,tégla
+Athén,Görögország,2023,1163,3302,49,2125,250,66.5,22-25,tégla
+Varsó,Lengyelország,2024,1677,5228,52,2267,194,82.5,26-29,tégla
+Róma,Olaszország,2021,820,6654,58,2249,183,44.6,26-29,panel
+Amszterdam,Hollandia,2020,1005,5507,46,1721,95,63.9,26-29,tégla
+Oslo,Norvégia,2024,1010,5435,62,2837,150,40.9,18-21,új építésű
+Sofia,Bulgária,2020,1067,3190,49,2348,192,53.6,22-25,panel
+Róma,Olaszország,2022,827,4414,32,1821,195,56.1,22-25,új építésű
+Párizs,Franciaország,2023,1044,5101,56,2004,117,57.9,18-21,panel
+Ljubljana,Szlovénia,2022,1075,5005,62,1737,50,64.8,18-21,tégla
+Bécs,Ausztria,2023,1174,3925,42,2347,130,55.6,26-29,tégla
+Koppenhága,Dánia,2023,1165,5240,65,1317,211,104.5,18-21,tégla
+Koppenhága,Dánia,2020,965,4057,57,1112,170,102.1,22-25,panel
+Stockholm,Svédország,2021,643,2877,32,2556,119,29.8,18-21,panel
+Brüsszel,Belgium,2023,1283,3857,29,1442,212,103.7,26-29,panel
+Helsinki,Finnország,2023,861,3842,57,2251,206,47.4,26-29,panel
+Berlin,Németország,2020,1262,4068,35,1793,163,79.5,22-25,panel
+Párizs,Franciaország,2024,659,3351,60,1976,152,41,26-29,új építésű
+Sofia,Bulgária,2023,710,4224,41,2445,202,37.3,18-21,tégla
+Koppenhága,Dánia,2022,438,3385,33,1675,146,34.9,18-21,panel
+Koppenhága,Dánia,2023,538,3394,40,2104,153,32.8,26-29,új építésű
+Ljubljana,Szlovénia,2020,720,4712,47,1864,234,51.2,18-21,tégla
+Tallinn,Észtország,2024,1235,2941,67,2406,93,55.2,18-21,új építésű
+Sofia,Bulgária,2024,1105,6346,38,1541,201,84.8,18-21,új építésű
+Párizs,Franciaország,2022,968,5162,60,2195,84,47.9,22-25,panel
+Tallinn,Észtország,2022,1162,5904,52,1978,73,62.4,18-21,új építésű
+Zágráb,Horvátország,2021,1029,5186,54,2562,133,45.4,26-29,új építésű
+Berlin,Németország,2024,1041,3276,55,1913,161,62.8,22-25,panel
+Sofia,Bulgária,2024,808,4342,67,1782,70,49.3,26-29,új építésű
+Bukarest,Románia,2020,1337,6158,36,2345,125,62.3,22-25,tégla
+Bécs,Ausztria,2023,966,4853,51,1608,115,67.2,22-25,tégla
+Budapest,Magyarország,2022,671,3502,54,1642,184,52.1,18-21,tégla
+Koppenhága,Dánia,2020,1272,3804,59,2250,174,64.3,26-29,új építésű
+Stockholm,Svédország,2021,919,5391,62,1381,193,80.5,18-21,tégla
+Bukarest,Románia,2022,1122,3584,56,2342,140,53.9,26-29,panel
+Ljubljana,Szlovénia,2023,1168,7337,43,1309,165,101.8,26-29,panel
+Párizs,Franciaország,2020,1080,4223,77,1331,185,95,26-29,tégla
+Bécs,Ausztria,2022,749,6563,85,1617,123,53.9,18-21,panel
+Madrid,Spanyolország,2020,1115,4035,54,2013,54,58.1,22-25,tégla
+Sofia,Bulgária,2023,897,3672,48,2722,87,36.1,26-29,tégla
+Amszterdam,Hollandia,2020,1103,4165,51,2395,167,53,26-29,panel
+Brüsszel,Belgium,2022,1043,5662,50,1694,96,67.2,18-21,új építésű
+Stockholm,Svédország,2022,694,8039,74,1324,84,58.8,18-21,tégla
+Zágráb,Horvátország,2023,1020,5157,63,1873,144,62.1,26-29,tégla
+Varsó,Lengyelország,2022,982,4603,25,1885,107,57.8,18-21,tégla
+Helsinki,Finnország,2022,944,8082,61,1843,196,61.9,26-29,tégla
+Berlin,Németország,2023,1021,5004,64,3028,93,36.8,18-21,tégla
+Tallinn,Észtország,2021,1018,3388,63,1541,129,74.4,26-29,tégla
+Stockholm,Svédország,2020,826,5671,69,1377,153,71.1,18-21,tégla
+Brüsszel,Belgium,2022,723,2990,52,1846,271,53.8,22-25,új építésű
+Zágráb,Horvátország,2021,1008,2847,47,2511,254,50.3,26-29,tégla
+Oslo,Norvégia,2023,504,2244,83,2195,107,27.8,18-21,új építésű
+Oslo,Norvégia,2024,1034,1500,55,2164,196,56.8,22-25,tégla
+Bécs,Ausztria,2020,647,4603,41,2128,105,35.3,26-29,új építésű
+Varsó,Lengyelország,2022,798,3305,65,2429,138,38.5,26-29,új építésű
+Róma,Olaszország,2020,910,2762,51,1975,281,60.3,18-21,új építésű
+Ljubljana,Szlovénia,2020,622,6257,70,2140,238,40.2,18-21,panel
+Koppenhága,Dánia,2022,993,4967,54,2612,205,45.9,22-25,tégla
+Athén,Görögország,2020,744,2917,52,1600,147,55.7,26-29,panel
+Ljubljana,Szlovénia,2022,1209,3951,54,2029,192,69,22-25,tégla
+Berlin,Németország,2024,338,3772,58,2600,125,17.8,18-21,új építésű
+Oslo,Norvégia,2023,431,5244,45,1405,119,39.1,22-25,új építésű
+Amszterdam,Hollandia,2021,854,3774,25,2449,214,43.6,18-21,panel
+Róma,Olaszország,2023,1063,3135,52,1997,180,62.2,26-29,tégla
+Bukarest,Románia,2020,1067,3619,56,2229,223,57.9,22-25,tégla
+Ljubljana,Szlovénia,2021,1076,5447,56,2705,170,46.1,26-29,tégla
+Helsinki,Finnország,2021,685,6184,65,1778,126,45.6,18-21,panel
+Berlin,Németország,2023,974,5056,58,2156,235,56.1,18-21,új építésű
+Ljubljana,Szlovénia,2020,1168,4729,69,1484,170,90.2,26-29,tégla
+Oslo,Norvégia,2020,1352,4238,42,1674,96,86.5,26-29,új építésű
+Brüsszel,Belgium,2022,704,4055,34,2008,195,44.8,18-21,új építésű
+Róma,Olaszország,2022,673,6323,63,2515,117,31.4,26-29,panel
+Prága,Csehország,2021,1114,3190,68,2086,178,61.9,18-21,panel
+Helsinki,Finnország,2020,606,3426,64,1526,173,51,22-25,új építésű
+Athén,Görögország,2022,558,5518,37,2276,181,32.5,22-25,új építésű
+Párizs,Franciaország,2024,726,5198,59,1731,100,47.7,18-21,panel
+Brüsszel,Belgium,2023,409,4920,32,2048,137,26.7,26-29,új építésű
+Helsinki,Finnország,2024,1070,4138,50,2366,167,52.3,22-25,tégla
+Athén,Görögország,2020,979,5063,32,2378,181,48.8,18-21,tégla
+Berlin,Németország,2023,646,4207,54,1933,167,42.1,22-25,új építésű
+Sofia,Bulgária,2022,1258,5798,35,2311,216,63.8,18-21,új építésű
+Athén,Görögország,2021,997,5809,85,2512,162,46.1,18-21,tégla
+Sofia,Bulgária,2020,1161,4674,55,1824,228,76.2,18-21,új építésű
+Párizs,Franciaország,2022,695,6339,62,1300,168,66.4,18-21,panel
+Stockholm,Svédország,2021,375,5251,68,1704,156,31.2,22-25,új építésű
+Brüsszel,Belgium,2020,1389,3893,39,2741,248,59.7,22-25,panel
+Bukarest,Románia,2022,901,5714,75,1629,126,63,18-21,új építésű
+Brüsszel,Belgium,2024,1208,6522,63,1560,249,93.4,26-29,panel
+Sofia,Bulgária,2021,767,4098,60,2777,193,34.6,26-29,új építésű
+Párizs,Franciaország,2021,1004,5056,56,2279,50,46.2,26-29,új építésű
+Tallinn,Észtország,2022,826,4790,38,2193,140,44,26-29,panel
+Budapest,Magyarország,2020,1339,6388,48,1925,146,77.1,18-21,új építésű
+Athén,Görögország,2022,787,4734,44,1435,181,67.5,26-29,panel
+Athén,Görögország,2023,1057,3535,68,1684,163,72.4,26-29,új építésű
+Budapest,Magyarország,2023,1105,4460,62,1742,140,71.5,26-29,új építésű
+Brüsszel,Belgium,2022,849,3604,52,1226,125,79.4,22-25,panel
+Varsó,Lengyelország,2022,829,4193,51,1969,174,50.9,22-25,panel
+Bécs,Ausztria,2021,1119,3720,37,1479,126,84.2,22-25,tégla
+Helsinki,Finnország,2023,812,3576,36,1772,159,54.8,18-21,tégla
+Tallinn,Észtország,2021,1049,3831,49,1537,148,77.9,22-25,új építésű
+Stockholm,Svédország,2022,688,5188,28,1820,165,46.9,22-25,panel
+Oslo,Norvégia,2024,946,7732,60,1498,145,72.8,26-29,panel
+Stockholm,Svédország,2021,456,4403,43,2458,123,23.6,22-25,panel
+Amszterdam,Hollandia,2023,871,3737,81,1839,242,60.5,18-21,panel
+Prága,Csehország,2020,1104,5078,61,2197,54,52.7,22-25,tégla
+Tallinn,Észtország,2023,830,5514,54,1297,147,75.3,18-21,panel
+Stockholm,Svédország,2024,1326,5996,54,2476,132,58.9,26-29,tégla
+Madrid,Spanyolország,2021,474,3391,78,1863,138,32.9,22-25,új építésű
+Ljubljana,Szlovénia,2023,825,6785,79,3109,142,31.1,22-25,tégla
+Budapest,Magyarország,2020,974,2680,77,1416,161,80.2,22-25,új építésű
+Ljubljana,Szlovénia,2021,626,3793,42,1696,123,44.2,18-21,új építésű
+Oslo,Norvégia,2020,763,5500,38,2110,211,46.2,18-21,tégla
+Helsinki,Finnország,2024,772,3638,52,2590,160,36,26-29,új építésű
+Helsinki,Finnország,2022,767,5081,38,2341,170,40,26-29,panel
+Prága,Csehország,2023,823,3494,42,2267,211,45.6,18-21,tégla
+Oslo,Norvégia,2023,741,5050,25,1708,148,52,22-25,panel
+Varsó,Lengyelország,2020,673,3376,45,2146,141,37.9,26-29,új építésű
+Madrid,Spanyolország,2022,340,1955,46,2229,50,17.5,26-29,tégla
+Berlin,Németország,2023,775,3869,76,1807,169,52.2,26-29,tégla
+Bukarest,Románia,2022,935,1943,67,2108,175,52.7,26-29,új építésű
+Tallinn,Észtország,2020,1882,1999,81,1856,164,110.2,18-21,panel
+Varsó,Lengyelország,2022,889,3991,46,2165,74,44.5,22-25,új építésű
+Oslo,Norvégia,2021,1088,4001,38,1775,213,73.3,18-21,új építésű
+Sofia,Bulgária,2023,766,4930,44,2379,184,39.9,26-29,panel
+Bécs,Ausztria,2020,1362,4289,65,2049,215,77,18-21,új építésű
+Stockholm,Svédország,2023,720,5394,52,1968,155,44.5,26-29,tégla
+Párizs,Franciaország,2024,963,4361,58,2789,199,41.7,26-29,panel
+Stockholm,Svédország,2024,1117,3953,42,2478,194,52.9,22-25,panel
+Varsó,Lengyelország,2024,1268,3775,52,1180,130,118.5,26-29,tégla
+Athén,Görögország,2022,1149,3940,65,1905,166,69,26-29,új építésű
+Bukarest,Románia,2023,613,4602,25,1907,68,35.7,26-29,új építésű
+Brüsszel,Belgium,2023,1201,5433,62,2761,103,47.2,18-21,tégla
+Stockholm,Svédország,2020,1337,5619,51,2568,95,55.8,22-25,új építésű
+Brüsszel,Belgium,2020,694,3770,47,1472,211,61.5,26-29,tégla
+Amszterdam,Hollandia,2024,835,4923,46,1090,164,91.7,26-29,panel
+Bécs,Ausztria,2024,422,4418,34,2994,196,20.6,22-25,panel
+Sofia,Bulgária,2024,926,6016,42,2272,160,47.8,22-25,panel
+Koppenhága,Dánia,2020,966,6027,66,2144,67,48.2,26-29,új építésű
+Prága,Csehország,2021,660,4353,56,1435,271,64.9,18-21,tégla
+Stockholm,Svédország,2023,1279,5223,56,1894,102,72.9,18-21,tégla
+Madrid,Spanyolország,2023,919,4809,36,2167,142,49,26-29,új építésű
+Helsinki,Finnország,2020,423,3468,49,2944,178,20.4,26-29,panel
+Sofia,Bulgária,2021,566,5083,32,2541,126,27.2,26-29,tégla
+Helsinki,Finnország,2024,877,6091,36,1301,121,76.7,22-25,tégla
+Róma,Olaszország,2023,1160,2677,25,1774,178,75.4,26-29,tégla
+Bukarest,Románia,2022,1200,3944,49,2577,57,48.8,26-29,új építésű
+Amszterdam,Hollandia,2024,803,4729,62,1745,152,54.7,22-25,panel
+Koppenhága,Dánia,2022,300,3710,62,1509,153,30,26-29,tégla
+Koppenhága,Dánia,2022,1012,4089,58,1519,140,75.8,22-25,új építésű
+Madrid,Spanyolország,2023,1053,4688,46,2112,186,58.7,22-25,tégla
+Oslo,Norvégia,2024,388,5891,50,2213,210,27,26-29,tégla
+Brüsszel,Belgium,2020,557,3649,51,1608,237,49.4,26-29,új építésű
+Bukarest,Románia,2023,686,3833,58,1399,130,58.3,22-25,tégla
+Párizs,Franciaország,2022,979,4101,54,1735,74,60.7,18-21,tégla
+Berlin,Németország,2022,980,6606,55,2113,185,55.1,22-25,új építésű
+Amszterdam,Hollandia,2023,583,6543,58,2816,113,24.7,18-21,panel
+Bukarest,Románia,2022,1355,5430,63,2117,138,70.5,26-29,új építésű
+Amszterdam,Hollandia,2021,1200,4668,25,1441,141,93.1,18-21,új építésű
+Athén,Görögország,2021,977,4432,73,1024,157,110.7,18-21,panel
+Sofia,Bulgária,2021,446,5412,54,2210,107,25,26-29,panel
+Bécs,Ausztria,2020,1220,5750,64,1935,179,72.3,22-25,tégla
+Helsinki,Finnország,2020,723,5527,80,2535,114,33,26-29,panel
+Budapest,Magyarország,2024,990,2948,64,2225,57,47.1,18-21,tégla
+Helsinki,Finnország,2023,610,4160,50,1395,169,55.8,26-29,panel
+Brüsszel,Belgium,2022,963,4267,44,2524,233,47.4,22-25,új építésű
+Bécs,Ausztria,2020,779,3765,62,1821,143,50.6,26-29,új építésű
+Koppenhága,Dánia,2024,1085,2209,75,2036,129,59.6,26-29,új építésű
+Bécs,Ausztria,2021,878,4455,29,2747,152,37.5,22-25,panel
+Bécs,Ausztria,2023,1011,5642,40,2237,137,51.3,22-25,panel
+Brüsszel,Belgium,2020,1112,1947,54,1699,172,75.6,18-21,tégla
+Athén,Görögország,2024,1018,3651,44,1945,105,57.7,18-21,tégla
+Brüsszel,Belgium,2023,1110,4057,25,1813,98,66.6,26-29,új építésű
+Sofia,Bulgária,2023,492,3015,57,2664,166,24.7,18-21,új építésű
+Ljubljana,Szlovénia,2022,748,5047,48,1653,92,50.8,18-21,panel
+Stockholm,Svédország,2021,462,4032,57,1952,129,30.3,26-29,tégla
+Amszterdam,Hollandia,2021,664,5230,35,2388,100,32,18-21,új építésű
+Stockholm,Svédország,2022,712,2740,47,2488,176,35.7,26-29,új építésű
+Madrid,Spanyolország,2021,1145,5127,38,1835,111,68.4,26-29,új építésű
+Varsó,Lengyelország,2023,1233,3064,68,2446,241,60.3,26-29,tégla
+Berlin,Németország,2023,798,5355,89,1691,73,51.5,26-29,panel
+Róma,Olaszország,2021,430,5355,27,1814,172,33.2,22-25,tégla
+Koppenhága,Dánia,2020,946,5011,58,2639,102,39.7,22-25,tégla
+Koppenhága,Dánia,2023,731,3573,67,2450,173,36.9,22-25,tégla
+Brüsszel,Belgium,2024,1196,3086,80,2762,187,50.1,26-29,új építésű
+Budapest,Magyarország,2022,1345,2512,47,1632,186,93.8,26-29,tégla
+Koppenhága,Dánia,2020,637,5409,76,2348,164,34.1,26-29,panel
+Ljubljana,Szlovénia,2022,653,3484,74,2390,148,33.5,18-21,tégla
+Sofia,Bulgária,2022,796,2069,39,2956,86,29.8,26-29,panel
+Brüsszel,Belgium,2022,947,5709,36,2092,197,54.7,26-29,panel
+Koppenhága,Dánia,2021,903,7942,30,2529,141,41.3,22-25,panel
+Ljubljana,Szlovénia,2024,1093,5030,44,2114,57,54.4,22-25,tégla
+Bukarest,Románia,2023,1051,4858,65,2529,168,48.2,26-29,új építésű
+Madrid,Spanyolország,2021,937,3443,44,2593,222,44.7,26-29,új építésű
+Berlin,Németország,2024,840,4555,41,2586,183,39.6,22-25,új építésű
+Oslo,Norvégia,2020,1385,3446,49,2116,182,74.1,26-29,panel
+Bécs,Ausztria,2024,846,3452,68,2361,104,40.2,26-29,panel
+Athén,Görögország,2024,1239,5904,57,2040,178,69.5,18-21,panel
+Stockholm,Svédország,2024,685,4536,25,2438,72,31.1,22-25,panel
+Madrid,Spanyolország,2024,1276,4104,52,1686,136,83.7,22-25,panel
+Sofia,Bulgária,2023,1255,1515,74,2169,90,62,18-21,tégla
+Párizs,Franciaország,2024,631,6512,41,1423,207,58.9,22-25,tégla
+Athén,Görögország,2020,985,3374,58,1487,205,80,26-29,tégla
+Brüsszel,Belgium,2020,1165,5138,60,2881,150,45.6,22-25,tégla
+Budapest,Magyarország,2021,605,5039,86,1493,132,49.4,26-29,panel
+Bécs,Ausztria,2023,1004,4435,40,2561,266,49.6,22-25,új építésű
+Berlin,Németország,2024,949,3415,32,2129,205,54.2,18-21,panel
+Helsinki,Finnország,2020,1019,4497,46,1454,192,83.3,22-25,tégla
+Róma,Olaszország,2021,1128,2645,79,2287,220,58.9,26-29,új építésű
+Zágráb,Horvátország,2022,564,2861,53,2251,240,35.7,22-25,tégla
+Varsó,Lengyelország,2023,1077,4209,40,2615,102,45.1,18-21,új építésű
+Bukarest,Románia,2021,1307,4159,79,2339,143,62,26-29,tégla
+Prága,Csehország,2021,770,4091,61,2039,120,43.6,26-29,tégla
+Sofia,Bulgária,2021,859,4594,25,2229,101,43.1,26-29,panel
+Budapest,Magyarország,2020,612,2475,28,1322,115,55,22-25,tégla
+Bukarest,Románia,2023,1388,3869,58,2200,157,70.2,26-29,tégla
+Koppenhága,Dánia,2021,881,3066,77,2904,66,32.6,22-25,tégla
+Párizs,Franciaország,2022,644,4164,41,2253,114,33.6,18-21,új építésű
+Prága,Csehország,2020,1441,5929,58,2513,205,65.5,26-29,tégla
+Tallinn,Észtország,2020,759,3521,56,2431,157,37.7,18-21,panel
+Berlin,Németország,2020,506,3537,54,1962,249,38.5,26-29,panel
+Ljubljana,Szlovénia,2024,554,5107,77,3136,130,21.8,26-29,új építésű
+Bécs,Ausztria,2021,1023,5184,58,1951,172,61.3,26-29,panel
+Varsó,Lengyelország,2023,300,5318,57,1889,252,29.2,18-21,új építésű
+Madrid,Spanyolország,2020,731,4016,85,1584,122,53.9,18-21,új építésű
+Brüsszel,Belgium,2021,863,5509,58,1354,123,72.8,26-29,új építésű
+Stockholm,Svédország,2024,748,4407,61,2209,61,36.6,26-29,új építésű
+Stockholm,Svédország,2021,1166,4803,76,2222,205,61.7,22-25,panel
+Sofia,Bulgária,2021,1017,6115,63,1951,264,65.7,22-25,tégla
+Amszterdam,Hollandia,2020,1122,5188,36,1356,165,94.9,26-29,új építésű
+Róma,Olaszország,2023,936,3763,57,2794,185,40.1,26-29,tégla
+Bécs,Ausztria,2022,615,4366,43,1806,129,41.2,26-29,új építésű
+Varsó,Lengyelország,2024,781,2994,53,1720,50,48.3,22-25,új építésű
+Zágráb,Horvátország,2023,1413,5807,49,2009,91,74.9,18-21,tégla
+Varsó,Lengyelország,2021,1324,6777,57,2512,159,59,26-29,tégla
+Koppenhága,Dánia,2021,566,4006,57,1773,139,39.8,22-25,új építésű
+Párizs,Franciaország,2023,877,4403,56,1470,114,67.4,18-21,új építésű
+Zágráb,Horvátország,2023,579,5673,25,2577,219,31,26-29,új építésű
+Párizs,Franciaország,2023,824,1500,50,1968,99,46.9,18-21,tégla
+Madrid,Spanyolország,2022,771,6336,65,1538,70,54.7,26-29,panel
+Ljubljana,Szlovénia,2022,818,4244,62,1732,176,57.4,18-21,új építésű
+Madrid,Spanyolország,2020,1384,5479,54,1908,132,79.5,22-25,tégla
+Tallinn,Észtország,2024,1195,3747,56,2026,125,65.2,18-21,panel
+Madrid,Spanyolország,2024,557,4888,54,2250,123,30.2,26-29,új építésű
+Bukarest,Románia,2021,1205,3448,81,1126,172,122.3,22-25,panel
+Stockholm,Svédország,2022,1019,3545,61,2640,50,40.5,18-21,panel
+Madrid,Spanyolország,2020,1026,1508,41,2815,121,40.7,26-29,tégla
+Koppenhága,Dánia,2024,607,4262,86,1084,97,64.9,26-29,panel
+Varsó,Lengyelország,2021,1274,6729,53,1380,255,110.8,26-29,tégla
+Brüsszel,Belgium,2023,1299,5315,43,1975,142,73,22-25,új építésű
+Oslo,Norvégia,2022,983,6241,68,1461,219,82.3,22-25,tégla
+Sofia,Bulgária,2023,978,5324,77,1444,148,78,22-25,panel
+Helsinki,Finnország,2022,767,2619,60,3256,58,25.3,18-21,tégla
+Stockholm,Svédország,2023,892,5269,57,1943,85,50.3,18-21,új építésű
+Koppenhága,Dánia,2021,958,3592,25,2597,198,44.5,18-21,tégla
+Bukarest,Románia,2024,913,4775,71,2112,195,52.5,26-29,új építésű
+Zágráb,Horvátország,2022,826,6074,60,2097,86,43.5,18-21,panel
+Stockholm,Svédország,2021,972,3502,45,1592,97,67.1,22-25,új építésű
+Koppenhága,Dánia,2023,1431,6098,84,1389,154,114.1,26-29,új építésű
+Stockholm,Svédország,2022,577,3665,41,2620,130,27,22-25,új építésű
+Helsinki,Finnország,2023,1167,5225,90,1260,213,109.5,18-21,új építésű
+Oslo,Norvégia,2021,1187,3332,70,2168,139,61.2,18-21,új építésű
+Bukarest,Románia,2023,694,3637,86,2000,189,44.1,18-21,új építésű
+Bécs,Ausztria,2024,702,3564,71,1325,129,62.7,18-21,panel
+Bécs,Ausztria,2020,909,4634,52,2198,185,49.8,22-25,panel
+Koppenhága,Dánia,2020,1084,3317,51,2597,195,49.2,26-29,panel
+Budapest,Magyarország,2021,557,4922,25,2023,245,39.6,26-29,tégla
+Oslo,Norvégia,2020,663,3499,66,1229,118,63.5,26-29,új építésű
+Tallinn,Észtország,2023,1049,3739,51,2372,171,51.4,26-29,tégla
+Budapest,Magyarország,2020,967,4093,61,1938,173,58.8,26-29,új építésű
+Zágráb,Horvátország,2020,776,4281,40,1982,109,44.7,18-21,új építésű
+Amszterdam,Hollandia,2024,621,4810,58,2391,128,31.3,22-25,panel
+Sofia,Bulgária,2023,1002,5161,62,1587,157,73,18-21,panel
+Prága,Csehország,2024,991,4509,25,2080,261,60.2,18-21,panel
+Madrid,Spanyolország,2024,810,3626,61,2156,210,47.3,26-29,tégla
+Oslo,Norvégia,2022,586,5378,64,1929,167,39,22-25,panel
+Oslo,Norvégia,2023,1157,5547,38,2410,147,54.1,22-25,új építésű
+Koppenhága,Dánia,2021,918,4588,53,2596,146,41,22-25,új építésű
+Berlin,Németország,2020,620,4028,58,2615,180,30.6,18-21,tégla
+Varsó,Lengyelország,2023,687,7482,59,2638,142,31.4,26-29,tégla
+Bécs,Ausztria,2020,1033,5507,73,2529,194,48.5,26-29,panel
+Berlin,Németország,2023,821,3814,60,2467,139,38.9,22-25,új építésű
+Stockholm,Svédország,2024,1166,6243,41,1582,143,82.7,18-21,új építésű
+Bécs,Ausztria,2021,977,3871,75,2212,152,51,18-21,új építésű
+Athén,Görögország,2023,541,2921,59,934,201,79.4,22-25,panel
+Berlin,Németország,2022,860,8392,90,1909,145,52.6,26-29,új építésű
+Bécs,Ausztria,2021,1149,6544,30,1107,119,114.5,22-25,panel
+Madrid,Spanyolország,2024,1046,5096,71,1400,50,78.3,18-21,új építésű
+Varsó,Lengyelország,2020,1115,3506,25,2073,190,63,22-25,panel
+Athén,Görögország,2021,869,3951,53,1815,83,52.5,26-29,tégla
+Bukarest,Románia,2022,721,5126,60,2084,100,39.4,22-25,új építésű
+Párizs,Franciaország,2020,855,1888,58,2714,76,34.3,26-29,új építésű
+Oslo,Norvégia,2020,754,4895,74,1776,115,48.9,18-21,tégla
+Koppenhága,Dánia,2020,408,4624,86,2139,149,26,22-25,új építésű
+Tallinn,Észtország,2024,981,4487,43,2412,161,47.3,22-25,tégla
+Budapest,Magyarország,2022,904,3330,75,2332,122,44,22-25,tégla
+Koppenhága,Dánia,2022,1150,3903,43,1620,61,74.8,26-29,tégla
+Zágráb,Horvátország,2021,1018,2303,37,962,146,121,26-29,új építésű
+Varsó,Lengyelország,2020,862,4108,39,1414,173,73.2,26-29,tégla
+Koppenhága,Dánia,2020,762,4880,42,2091,215,46.7,18-21,tégla
+Párizs,Franciaország,2023,1047,4005,59,1880,150,63.7,26-29,új építésű
+Párizs,Franciaország,2023,819,4303,58,1503,99,61.1,22-25,tégla
+Prága,Csehország,2020,553,2580,37,2080,105,31.6,18-21,tégla
+Ljubljana,Szlovénia,2022,1028,4542,25,2327,191,52.4,22-25,panel
+Párizs,Franciaország,2020,652,5004,42,2049,87,36.1,18-21,tégla
+Ljubljana,Szlovénia,2024,452,4041,53,1801,91,30.1,26-29,új építésű
+Zágráb,Horvátország,2020,800,4823,54,2091,116,43.8,18-21,panel
+Oslo,Norvégia,2024,1193,3089,62,2591,174,52.8,18-21,új építésű
+Tallinn,Észtország,2022,849,3866,71,1289,101,73.7,22-25,panel
+Brüsszel,Belgium,2023,801,5985,61,1516,134,61.7,22-25,panel
+Bukarest,Románia,2021,746,3648,70,1314,230,74.3,26-29,új építésű
+Róma,Olaszország,2023,1107,5809,48,1925,78,61.6,18-21,panel
+Amszterdam,Hollandia,2022,769,5092,74,1446,132,62.3,22-25,tégla
+Párizs,Franciaország,2020,862,2825,64,1638,140,61.2,18-21,tégla
+Amszterdam,Hollandia,2023,787,3553,55,1892,131,48.5,22-25,tégla
+Berlin,Németország,2022,718,4883,80,2070,200,44.3,22-25,panel
+Helsinki,Finnország,2024,552,4689,39,1262,113,52.7,26-29,panel
+Ljubljana,Szlovénia,2020,1198,5640,59,1234,140,108.4,18-21,tégla
+Budapest,Magyarország,2023,975,4711,27,1555,147,72.2,22-25,új építésű
+Varsó,Lengyelország,2022,1034,1865,53,2072,192,59.2,22-25,tégla
+Zágráb,Horvátország,2024,1073,5199,43,1046,130,115,18-21,tégla
+Stockholm,Svédország,2024,1150,6172,66,2215,169,59.5,26-29,panel
+Helsinki,Finnország,2022,761,4344,80,1529,231,64.9,18-21,tégla
+Stockholm,Svédország,2022,819,6091,34,2293,113,40.6,26-29,új építésű
+Helsinki,Finnország,2024,546,4762,70,1578,75,39.4,18-21,tégla
+Varsó,Lengyelország,2022,877,4395,63,2475,147,41.4,22-25,tégla
+Prága,Csehország,2024,1364,4769,50,1194,137,125.7,18-21,új építésű
+Bukarest,Románia,2021,816,5652,62,1410,159,69.1,26-29,új építésű
+Budapest,Magyarország,2023,1068,6334,68,2380,153,51.3,26-29,panel
+Ljubljana,Szlovénia,2022,997,5999,35,1825,111,60.7,26-29,panel
+Zágráb,Horvátország,2023,995,5976,46,805,129,139.6,18-21,új építésű
+Brüsszel,Belgium,2021,1128,5145,61,1860,86,65.3,22-25,új építésű
+Párizs,Franciaország,2023,1029,3499,88,2285,121,50.3,22-25,panel
+Ljubljana,Szlovénia,2024,747,4388,51,2558,159,35.4,22-25,új építésű
+Varsó,Lengyelország,2024,717,6769,56,2384,120,35.1,26-29,új építésű
+Zágráb,Horvátország,2024,991,4873,27,3008,215,40.1,18-21,tégla
+Bukarest,Románia,2024,801,3177,60,2043,168,47.4,26-29,panel
+Prága,Csehország,2021,948,5107,77,2284,98,45.8,26-29,új építésű
+Oslo,Norvégia,2021,1241,6469,102,1438,162,97.6,26-29,új építésű
+Bécs,Ausztria,2024,379,5164,47,2962,111,16.5,26-29,új építésű
+Varsó,Lengyelország,2022,478,3934,25,2376,50,22.2,22-25,panel
+Budapest,Magyarország,2020,907,2007,50,2822,168,38.1,22-25,panel
+Sofia,Bulgária,2024,684,4463,55,2236,82,34.3,26-29,új építésű
+Athén,Görögország,2021,1048,1500,46,1756,182,70,22-25,tégla
+Varsó,Lengyelország,2023,906,2813,40,2099,146,50.1,26-29,új építésű
+Sofia,Bulgária,2021,755,3923,65,1741,146,51.8,22-25,panel
+Helsinki,Finnország,2020,1442,2792,27,2392,116,65.1,22-25,tégla
+Berlin,Németország,2020,820,3563,51,2799,190,36.1,26-29,panel
+Oslo,Norvégia,2022,1116,2801,38,800,110,153.2,22-25,tégla
+Madrid,Spanyolország,2024,1139,5120,52,1989,116,63.1,22-25,tégla
+Helsinki,Finnország,2020,951,5419,31,2150,197,53.4,22-25,új építésű
+Ljubljana,Szlovénia,2022,796,5341,97,1948,170,49.6,18-21,tégla
+Bécs,Ausztria,2020,715,4718,62,2097,99,38.8,18-21,tégla
+Prága,Csehország,2021,952,6255,62,2481,138,43.9,26-29,panel
+Sofia,Bulgária,2021,1087,4835,41,2159,100,55,26-29,panel
+Stockholm,Svédország,2024,742,4727,59,1405,203,67.3,22-25,tégla
+Koppenhága,Dánia,2023,1043,3654,32,1928,128,60.7,26-29,panel
+Róma,Olaszország,2023,928,4064,25,1806,135,58.9,22-25,panel
+Tallinn,Észtország,2021,1058,3662,80,1044,216,122,22-25,új építésű
+Zágráb,Horvátország,2023,844,5532,56,2570,131,37.9,18-21,új építésű
+Madrid,Spanyolország,2021,625,6205,53,2111,212,39.6,22-25,új építésű
+Berlin,Németország,2024,642,5215,46,1934,154,41.2,18-21,új építésű
+Róma,Olaszország,2022,525,3565,75,2443,147,27.5,22-25,panel
+Ljubljana,Szlovénia,2020,961,4147,75,1900,162,59.1,22-25,új építésű
+Helsinki,Finnország,2024,1187,3567,78,1235,231,114.8,26-29,tégla
+Tallinn,Észtország,2023,807,4209,27,1773,98,51,26-29,tégla
+Athén,Görögország,2020,748,4335,69,2104,165,43.4,22-25,tégla
+Ljubljana,Szlovénia,2024,626,3443,82,1632,233,52.6,18-21,új építésű
+Brüsszel,Belgium,2024,839,4503,71,2636,144,37.3,26-29,panel
+Párizs,Franciaország,2022,803,4433,60,2446,150,39,18-21,panel
+Brüsszel,Belgium,2020,1055,6466,61,2156,74,52.4,18-21,tégla
+Párizs,Franciaország,2024,300,4966,54,1743,162,26.5,22-25,tégla
+Tallinn,Észtország,2021,885,5853,56,1627,200,66.7,26-29,tégla
+Zágráb,Horvátország,2021,846,5132,48,1675,154,59.7,22-25,új építésű
+Bukarest,Románia,2021,903,5076,51,1082,128,95.3,26-29,panel
+Helsinki,Finnország,2022,1098,4143,51,2493,114,48.6,18-21,panel
+Stockholm,Svédország,2023,514,4307,48,1517,141,43.2,26-29,panel
+Oslo,Norvégia,2020,1023,4489,60,2907,133,39.8,22-25,panel
+Madrid,Spanyolország,2023,970,3889,42,1708,126,64.2,26-29,új építésű
+Helsinki,Finnország,2023,990,7319,44,1792,147,63.4,26-29,tégla
+Zágráb,Horvátország,2023,999,4816,74,800,50,131.1,22-25,panel
+Berlin,Németország,2024,776,5817,32,800,179,119.4,18-21,panel
+Brüsszel,Belgium,2020,961,3192,40,1515,156,73.7,22-25,panel
+Bukarest,Románia,2022,743,5093,25,1572,94,53.2,18-21,tégla
+Athén,Görögország,2023,836,3854,67,1070,152,92.3,26-29,új építésű
+Prága,Csehország,2024,1040,6728,48,2162,60,50.9,18-21,tégla
+Bukarest,Románia,2022,302,5514,55,2589,81,14.8,26-29,panel
+Ljubljana,Szlovénia,2024,1030,6743,61,2138,150,55.2,18-21,tégla
+Prága,Csehország,2021,507,6127,46,2252,72,25.7,22-25,panel
+Ljubljana,Szlovénia,2022,605,6222,50,2727,146,27.5,22-25,panel
+Ljubljana,Szlovénia,2020,440,5570,46,2349,151,25.2,18-21,panel
+Athén,Görögország,2022,514,4697,88,2246,147,29.4,26-29,új építésű
+Zágráb,Horvátország,2021,1169,4753,58,1454,162,91.5,26-29,panel
+Madrid,Spanyolország,2021,1159,3497,76,1954,106,64.7,18-21,új építésű
+Oslo,Norvégia,2024,1149,4156,66,1854,147,69.9,22-25,új építésű
+Bukarest,Románia,2021,1023,4849,25,1439,196,84.7,22-25,új építésű
+Brüsszel,Belgium,2022,867,3872,35,1460,50,62.8,26-29,tégla
+Sofia,Bulgária,2020,875,3782,41,1966,168,53.1,18-21,tégla
+Bécs,Ausztria,2022,1423,2686,72,2487,111,61.7,26-29,panel
+Párizs,Franciaország,2021,951,3951,58,2755,180,41.1,18-21,új építésű
+Stockholm,Svédország,2021,1027,3984,33,1896,210,65.2,26-29,tégla
+Helsinki,Finnország,2021,518,3234,57,1508,110,41.6,26-29,új építésű
+Amszterdam,Hollandia,2023,794,2861,40,2352,85,37.4,22-25,tégla
+Berlin,Németország,2020,501,3744,66,1902,127,33,22-25,új építésű
+Amszterdam,Hollandia,2022,911,2405,62,2192,130,47.5,22-25,tégla
+Stockholm,Svédország,2024,1151,3147,72,2077,133,61.8,18-21,új építésű
+Berlin,Németország,2023,895,4371,73,1462,112,68.9,26-29,új építésű
+Oslo,Norvégia,2020,1159,3785,69,2850,130,45.2,26-29,tégla
+Madrid,Spanyolország,2023,1070,3116,66,2100,174,59.2,18-21,tégla
+Amszterdam,Hollandia,2022,739,2507,63,968,134,90.2,22-25,tégla
+Bukarest,Románia,2024,1135,4730,84,2513,117,49.8,18-21,új építésű
+Helsinki,Finnország,2022,907,4443,31,1530,122,67.3,26-29,panel
+Bécs,Ausztria,2020,391,4557,51,1164,170,48.2,26-29,tégla
+Budapest,Magyarország,2020,1079,4772,50,2296,184,55,18-21,tégla
+Ljubljana,Szlovénia,2020,977,3510,59,2598,120,42.2,22-25,panel
+Párizs,Franciaország,2022,1424,3869,55,1664,161,95.3,18-21,tégla
+Berlin,Németország,2022,464,3845,39,2068,200,32.1,22-25,panel
+Oslo,Norvégia,2021,1062,1654,86,2148,111,54.6,18-21,tégla
+Brüsszel,Belgium,2021,939,4711,45,2099,120,50.5,22-25,új építésű
+Berlin,Németország,2020,799,3676,34,2073,179,47.2,18-21,panel
+Helsinki,Finnország,2020,1029,5484,60,1734,192,70.4,18-21,új építésű
+Koppenhága,Dánia,2024,561,3419,41,2540,197,29.8,26-29,tégla
+Budapest,Magyarország,2020,1022,5786,42,2174,144,53.6,26-29,tégla
+Prága,Csehország,2023,1112,4362,49,2270,194,57.5,26-29,panel
+Helsinki,Finnország,2020,733,4427,39,800,160,111.6,18-21,tégla
+Berlin,Németország,2020,1052,4814,26,1825,50,60.4,18-21,tégla
+Oslo,Norvégia,2022,1242,3197,74,2473,105,54.5,18-21,tégla
+Párizs,Franciaország,2021,617,4920,42,2051,126,36.2,18-21,új építésű
+Athén,Görögország,2020,455,1823,58,1719,122,33.6,26-29,új építésű
+Róma,Olaszország,2023,1074,5908,51,1830,175,68.3,22-25,új építésű
+Madrid,Spanyolország,2021,561,4768,63,2340,53,26.2,22-25,új építésű
+Ljubljana,Szlovénia,2021,710,3446,56,2240,225,41.7,18-21,panel
+Párizs,Franciaország,2020,776,3903,72,2148,213,46,26-29,új építésű
+Varsó,Lengyelország,2022,972,3111,35,1224,183,94.4,22-25,tégla
+Párizs,Franciaország,2021,1197,6719,68,2581,121,51.1,22-25,új építésű
+Berlin,Németország,2021,611,5520,61,2054,169,38,26-29,új építésű
+Tallinn,Észtország,2024,981,6041,74,2272,192,51.6,22-25,új építésű
+Budapest,Magyarország,2022,1029,3947,66,1303,203,94.6,18-21,új építésű
+Tallinn,Észtország,2024,601,4843,42,2277,148,32.9,18-21,új építésű
+Varsó,Lengyelország,2022,501,5005,46,2441,150,26.7,26-29,panel
+Koppenhága,Dánia,2023,999,3351,46,1771,193,67.3,22-25,panel
+Koppenhága,Dánia,2023,1319,3534,71,915,90,154,26-29,új építésű
+Berlin,Németország,2024,660,2877,31,2206,139,36.2,18-21,tégla
+Stockholm,Svédország,2021,995,5329,59,2329,147,49,22-25,új építésű
+Zágráb,Horvátország,2022,603,5769,46,1532,141,48.6,26-29,új építésű
+Róma,Olaszország,2023,672,3999,60,2174,105,35.7,18-21,panel
+Athén,Görögország,2020,778,5789,62,3038,209,32.5,18-21,tégla
+Madrid,Spanyolország,2020,1186,2835,66,1973,122,66.3,18-21,tégla
+Sofia,Bulgária,2022,942,5634,63,1561,187,72.3,26-29,új építésű
+Sofia,Bulgária,2023,741,4760,50,1891,188,49.1,22-25,új építésű
+Varsó,Lengyelország,2020,640,6834,28,1701,169,47.6,26-29,új építésű
+Bukarest,Románia,2024,1046,4379,54,2205,138,53.7,18-21,tégla
+Berlin,Németország,2022,1248,5507,68,1517,146,91.9,18-21,új építésű
+Madrid,Spanyolország,2021,825,3293,60,1731,183,58.2,26-29,tégla
+Varsó,Lengyelország,2024,632,6563,42,2110,190,39,26-29,új építésű
+Berlin,Németország,2022,757,5523,37,2726,151,33.3,26-29,tégla
+Koppenhága,Dánia,2020,751,4141,67,1708,113,50.6,18-21,panel
+Zágráb,Horvátország,2020,845,3088,82,1717,192,60.4,22-25,új építésű
+Tallinn,Észtország,2020,952,3319,55,2392,141,45.7,22-25,új építésű
+Róma,Olaszország,2020,1198,5726,69,1770,96,73.1,18-21,új építésű
+Párizs,Franciaország,2020,747,4735,63,914,150,98.1,18-21,tégla
+Oslo,Norvégia,2024,940,4167,74,2211,216,52.3,26-29,új építésű
+Amszterdam,Hollandia,2021,846,5625,80,2656,95,35.4,22-25,panel
+Amszterdam,Hollandia,2020,837,4086,62,2343,108,40.3,18-21,tégla
+Zágráb,Horvátország,2022,917,2076,77,1744,153,61.4,26-29,panel
+Amszterdam,Hollandia,2024,823,5875,25,1992,145,48.6,26-29,panel
+Helsinki,Finnország,2023,787,6571,42,2386,168,40,26-29,tégla
+Bécs,Ausztria,2023,1215,3699,44,2548,171,54.4,26-29,panel
+Oslo,Norvégia,2021,514,3853,61,2419,116,26,22-25,panel
+Athén,Görögország,2020,300,5128,37,991,50,35.3,18-21,új építésű
+Sofia,Bulgária,2020,1103,4654,52,2695,182,47.7,18-21,panel
+Koppenhága,Dánia,2020,1304,2829,54,1192,139,121.1,22-25,tégla
+Varsó,Lengyelország,2021,838,5252,56,2312,185,44.2,18-21,panel
+Bukarest,Románia,2023,1439,4122,41,2123,110,73,18-21,tégla
+Koppenhága,Dánia,2023,1270,4160,47,1764,186,82.5,26-29,tégla
+Amszterdam,Hollandia,2020,861,3730,80,1572,152,64.4,26-29,tégla
+Prága,Csehország,2024,1063,2542,62,1472,191,85.2,26-29,panel
+Róma,Olaszország,2021,659,5331,72,2431,163,33.8,26-29,panel
+Varsó,Lengyelország,2020,842,3808,77,1650,98,57,22-25,tégla
+Brüsszel,Belgium,2022,1066,3545,41,1278,126,93.3,18-21,új építésű
+Ljubljana,Szlovénia,2020,879,4792,69,2263,140,45,22-25,panel
+Brüsszel,Belgium,2024,850,5112,74,2063,127,47.4,22-25,új építésű
+Tallinn,Észtország,2021,652,2766,65,2289,179,36.3,22-25,tégla
+Athén,Görögország,2023,868,6188,48,2478,148,41,18-21,új építésű
+Bukarest,Románia,2021,748,5211,61,2178,154,41.4,18-21,panel
+Zágráb,Horvátország,2020,891,7366,73,2361,156,44.3,18-21,új építésű
+Oslo,Norvégia,2020,1152,5122,55,1848,146,70.2,22-25,panel
+Varsó,Lengyelország,2022,300,4753,48,2796,151,16.1,18-21,panel
+Sofia,Bulgária,2021,603,4440,39,2237,165,34.3,22-25,tégla
+Bécs,Ausztria,2021,1139,3551,56,1317,185,100.5,26-29,tégla
+Berlin,Németország,2020,1030,5095,55,2207,230,57.1,18-21,új építésű
+Zágráb,Horvátország,2022,829,4666,39,1566,155,62.8,22-25,új építésű
+Berlin,Németország,2024,1176,4192,51,1797,123,72.3,18-21,új építésű
+Párizs,Franciaország,2023,974,2703,74,1667,186,69.6,18-21,új építésű
+Athén,Görögország,2020,583,5303,65,2192,100,31.2,22-25,új építésű
+Párizs,Franciaország,2021,962,3080,51,2515,190,45.8,22-25,tégla
+Stockholm,Svédország,2023,904,3330,65,2010,50,47.5,26-29,új építésű
+Stockholm,Svédország,2022,1096,4471,73,1452,50,78.9,22-25,tégla
+Koppenhága,Dánia,2020,970,4850,30,1511,288,83.3,18-21,panel
+Athén,Görögország,2020,824,5377,45,955,141,101,18-21,panel
+Róma,Olaszország,2023,834,4020,53,2132,142,45.8,22-25,tégla
+Zágráb,Horvátország,2020,584,5083,26,975,187,79.1,26-29,tégla
+Madrid,Spanyolország,2023,1027,4431,34,1646,137,70.7,22-25,tégla
+Amszterdam,Hollandia,2020,501,3613,65,2714,129,23.2,18-21,panel
+Brüsszel,Belgium,2024,1089,2203,65,1598,165,78.5,18-21,panel
+Stockholm,Svédország,2021,838,6084,42,2314,136,42.1,18-21,új építésű
+Koppenhága,Dánia,2022,860,4279,42,1993,147,50.5,22-25,új építésű
+Bécs,Ausztria,2022,960,4601,67,2462,97,42.9,22-25,panel
+Budapest,Magyarország,2023,1117,3076,64,2310,54,50.7,22-25,új építésű
+Bukarest,Románia,2021,923,3938,44,2675,117,38.9,18-21,tégla
+Prága,Csehország,2021,698,4591,65,1929,208,47,18-21,panel
+Bécs,Ausztria,2021,1033,1886,47,1719,174,70.2,18-21,panel
+Varsó,Lengyelország,2022,300,7559,63,2074,209,24.5,26-29,új építésű
+Berlin,Németország,2024,1486,5545,69,2065,143,78.9,26-29,tégla
+Berlin,Németország,2020,781,3509,45,1325,146,70,18-21,panel
+Ljubljana,Szlovénia,2021,479,4729,54,2073,124,29.1,18-21,tégla
+Prága,Csehország,2020,1669,6132,36,2116,120,84.5,22-25,panel
+Róma,Olaszország,2024,646,2892,61,1659,198,50.9,22-25,új építésű
+Varsó,Lengyelország,2023,1148,6149,42,2238,182,59.4,18-21,tégla
+Zágráb,Horvátország,2021,781,3574,79,2114,182,45.6,22-25,panel
+Róma,Olaszország,2022,694,3037,46,1938,97,40.8,22-25,tégla
+Párizs,Franciaország,2020,898,2474,38,2335,180,46.2,26-29,új építésű
+Tallinn,Észtország,2021,802,3279,40,1813,182,54.3,26-29,tégla
+Helsinki,Finnország,2023,1132,3904,38,2134,109,58.2,26-29,tégla
+Bécs,Ausztria,2020,770,6090,67,2079,86,41.2,22-25,tégla
+Párizs,Franciaország,2023,953,5775,49,2676,215,43.6,18-21,új építésű
+Sofia,Bulgária,2021,1316,4866,64,2707,172,55,26-29,új építésű
+Budapest,Magyarország,2023,775,3962,59,1355,143,67.7,26-29,tégla
+Helsinki,Finnország,2024,1174,1870,78,2561,127,50.8,22-25,tégla
+Athén,Görögország,2024,1036,4504,73,2491,80,44.8,22-25,tégla
+Amszterdam,Hollandia,2021,1047,4253,56,1636,237,78.5,18-21,tégla
+Tallinn,Észtország,2021,1160,3612,35,1807,172,73.7,18-21,tégla
+Bécs,Ausztria,2023,960,6004,67,2485,166,45.3,26-29,tégla
+Athén,Görögország,2021,553,4265,71,1974,175,36.9,18-21,panel
+Koppenhága,Dánia,2021,820,3264,53,2155,117,43.5,22-25,új építésű
+Bécs,Ausztria,2021,841,3373,72,1853,223,57.4,26-29,tégla
+Oslo,Norvégia,2021,1282,4403,40,957,76,141.9,18-21,panel
+Athén,Görögország,2022,557,6154,57,2195,50,27.7,26-29,új építésű
+Oslo,Norvégia,2024,601,5564,59,1926,178,40.4,18-21,új építésű
+Oslo,Norvégia,2024,1309,4235,56,2096,270,75.3,26-29,panel
+Athén,Görögország,2021,375,5320,53,2283,117,21.6,22-25,új építésű
+Brüsszel,Belgium,2021,888,5354,102,2404,108,41.4,22-25,panel

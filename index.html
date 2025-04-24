@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Adatvizualizacio - projekt</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(153, 112, 53);
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            perspective: 1000;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.736);
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            padding-left: 5cm;
+            padding-right: 5cm;
+            padding-top: 2cm;
+            padding-bottom: 2cm;
+            margin: 10cm;
+            width: 90%;
+            max-width: 800px;
+        }
+
+        .title-container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 0;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            padding-left: 2cm;
+            padding-right: 2cm;
+            padding-top: 2cm; 
+            padding-bottom: 2cm;
+            margin-top: 0cm;
+            margin-bottom: 3cm;
+            width: 100%;
+            max-width: none;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .title-container h1 {
+            color: #122620;
+            margin: 3 cm;
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        
+        
+
+        #vis {
+            width: 100%;
+            margin: 0 auto;
+            transition: transform 0.3s ease;
+        }
+
+        #vis:hover {
+            transform: scale(1.02);
+        }
+
+        .description {
+            text-align: center;
+            color: #666;
+            margin: 1rem 0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .subtitle {
+            color: #19332bd9;
+            font-size: 1.4rem;
+            margin-top: 0.5cm;
+            font-weight: 500;
+            font-style: roboto mono;
+        }
+
+        /* Style for the separator line */
+        .separator {
+            width: 50%;
+            height: 2px;
+            background-color: #D6AD60;
+            margin: 1cm auto;
+        }
+
+        /* Style for the subtitle */
+        .subtitle-authors {
+            color: #122620ad;
+            font-size: 1rem;
+            font-weight: 400;
+            margin-top: 1cm;
+            text-align: left;
+            font-style: italic;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .subtitle-authors::before,
+        .subtitle-authors::after {
+            content: "✿";
+            color: #D6AD60;
+            font-size: 1.5rem;
+            margin: 0 15px;
+            font-style: normal;
+        }
+
+        .tab-container {
+            width: 150%;
+            margin-top: 2cm;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .tab-button {
+            padding: 20px 40px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #122620;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .tab-button:hover {
+            background: #D6AD60;
+            color: white;
+        }
+
+        .tab-button.active {
+            background: #122620;
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Popup styles */
+        .popup {
+            display: none;
+            position: absolute;
+            top: calc(100% + 20px);
+            left: 2cm;
+            transform: none;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            z-index: 1000;
+            max-width: 900px;
+            width: 90%;
+            border-radius: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+
+        /* Modify thought bubbles to connect to the button */
+        .popup::before,
+        .popup::after,
+        .popup::before-small {
+            content: '';
+            position: absolute;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 50%;
+        }
+
+        /* Largest circle */
+        .popup::before {
+            width: 30px;
+            height: 30px;
+            top: -40px;
+            left: 30px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+
+        /* Middle circle */
+        .popup::after {
+            width: 20px;
+            height: 20px;
+            top: -60px;
+            left: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+
+        /* Add smallest circle */
+        .popup::before-small {
+            width: 10px;
+            height: 10px;
+            top: -70px;
+            left: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+
+
+        .button-container {
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            margin-top: -2cm;
+            margin-bottom: 2cm;
+            padding-left: 2cm;
+            z-index: 2;
+        }
+
+        .info-button {
+            background: #D6AD60;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .info-button:hover {
+            background: #122620;
+        }
+    </style>
+</head>
+<body>
+    <div class="title-container">
+        <h1>Lakhatási árak Európában</h1>
+        <p class="subtitle">(A Z generáció szempontjából)</p>
+        <div class="separator"></div>
+        <p class="subtitle-authors">Kerekes Vivien , Sófalvi Andrea-Hajnalka</p>
+    </div>
+
+    <div class="button-container">
+        <button class="info-button" onclick="togglePopup('popup1')">About the project</button>
+        <div class="popup" id="popup1">
+            <div class="popup-content">
+                <h3 style="color: #122620; margin-bottom: 20px;">About the Project</h3>
+                <p>A projekt célja, hogy bemutassa, hogyan alakultak a lakásárak és bérleti díjak Európa fővárosaiban az elmúlt öt évben, különös tekintettel a Z generáció (1997–2012 között születettek) lakhatási helyzetére. Az elemzés során vizsgáljuk, hogy a fiatalok jövedelméhez képest mekkora terhet jelentenek a lakhatási költségek, és hogy mely városokban a legnehezebb vagy legkönnyebb önállóan élni ebben a korosztályban.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="vis"></div>
+    </div>
+
+    <script>
+        const spec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": 800,
+            "height": 600,
+            "projection": {
+                "type": "mercator",
+                "center": [15, 55], // Centered on Europe
+                "scale": 500
+            },
+            "layer": [
+                {
+                    "data": {
+                        "url": "https://raw.githubusercontent.com/deldersveld/topojson/master/continents/europe.json",
+                        "format": {
+                            "type": "topojson",
+                            "feature": "europe"
+                        }
+                    },
+                    "transform": [
+                        {
+                            "lookup": "properties.name",
+                            "from": {
+                                "data": {
+                                    "url": "Projekt/europai_lakhatasi_arak.csv" // Replace with your CSV file path
+                                },
+                                "key": "orszag", // The column in your CSV that contains country names
+                                "fields": ["berleti_dij"] // The column with the values you want to show
+                            }
+                        }
+                    ],
+                    "mark": {
+                        "type": "geoshape",
+                        "stroke": "#ffffff",
+                        "strokeWidth": 1
+                    },
+                    "encoding": {
+                        "color": {
+                            "field": "value",
+                            "type": "quantitative",
+                            "title": "Housing Prices",
+                            "scale": {
+                                "scheme": "browns"
+                            }
+                        },
+                        "tooltip": [
+                            {"field": "properties.name", "title": "Country"},
+                            {"field": "value", "title": "Value"}
+                        ]
+                    }
+                }
+            ]
+        };
+
+        vegaEmbed('#vis', spec, {
+            theme: "light",
+            actions: false,
+            renderer: "svg"
+        }).then(console.log).catch(console.warn);
+
+        function openTab(evt, tabName) {
+            var tabcontent = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+
+            var tablinks = document.getElementsByClassName("tab-button");
+            for (var i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        function togglePopup(popupId) {
+            const popup = document.getElementById(popupId);
+            if (popup.style.display === "block") {
+                popup.style.display = "none";
+            } else {
+                popup.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html> 
