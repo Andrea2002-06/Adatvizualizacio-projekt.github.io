@@ -7,6 +7,9 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
     <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+    <script src="scatter_plot.js" defer></script>
+    <script src="bubble_chart.js" defer></script>
+    <script src="housing_heatmap.js" defer></script>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -241,6 +244,42 @@
         .info-button:hover {
             background: #122620;
         }
+
+        .visualization-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2cm;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .visualization-section {
+            background: rgba(255, 255, 255, 0.736);
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            padding: 2cm;
+            margin-bottom: 2cm;
+        }
+
+        .section-title {
+            color: #122620;
+            font-size: 1.8rem;
+            margin-bottom: 1cm;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .filter-container {
+            margin-bottom: 1cm;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+        }
     </style>
 </head>
 <body>
@@ -252,17 +291,40 @@
     </div>
 
     <div class="button-container">
-        <button class="info-button" onclick="togglePopup('popup1')">About the project</button>
+        <button class="info-button" onclick="togglePopup('popup1')">A projektről</button>
         <div class="popup" id="popup1">
             <div class="popup-content">
-                <h3 style="color: #122620; margin-bottom: 20px;">About the Project</h3>
+                <h3 style="color: #122620; margin-bottom: 20px;">Projektleírás</h3>
                 <p>A projekt célja, hogy bemutassa, hogyan alakultak a lakásárak és bérleti díjak Európa fővárosaiban az elmúlt öt évben, különös tekintettel a Z generáció (1997–2012 között születettek) lakhatási helyzetére. Az elemzés során vizsgáljuk, hogy a fiatalok jövedelméhez képest mekkora terhet jelentenek a lakhatási költségek, és hogy mely városokban a legnehezebb vagy legkönnyebb önállóan élni ebben a korosztályban.</p>
             </div>
         </div>
     </div>
 
-    <div class="container">
-        <div id="vis"></div>
+    
+
+        <div class="visualization-section">
+            <h2 class="section-title">Megfizethetőségi Elemzés</h2>
+            <p class="description">A jövedelem és a bérleti díj közötti kapcsolat különböző városok és korcsoportok szerint., colored by city.</p>
+            <div id="scatter-plot">
+                <div id="scatter-vis"></div>
+            </div>
+        </div>
+
+    
+
+        <div class="visualization-section">
+            <h2 class="section-title">Housing Cost Heatmap</h2>
+            <div class="filter-container">
+                <label for="ageGroup">Filter by Age Group:</label>
+                <select id="ageGroup">
+                    <option value="all">All Age Groups</option>
+                    <option value="18-21">18-21</option>
+                    <option value="22-25">22-25</option>
+                    <option value="26-29">26-29</option>
+                </select>
+            </div>
+            <div id="vis"></div>
+        </div>
     </div>
 
     <script>
