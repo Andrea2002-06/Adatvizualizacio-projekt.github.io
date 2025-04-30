@@ -10,6 +10,7 @@
     <script src="scatter_plot.js" defer></script>
     <script src="bubble_chart.js" defer></script>
     <script src="housing_heatmap.js" defer></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -344,6 +345,12 @@
             </div>
             <div id="map-vis"></div>
         </div>
+        <div class="visualization-section">
+            <h2>Bar Chart Race – Bérleti díjak változása</h2>
+            <p class="description">Az oszlopdiagram átlag bérleti díj változását mutatja be az elmúlt 5 évben.</p>
+            <div id="chart" style="width:100%; height:700px;"></div>
+        </div>
+            
     </div>
     
     <script>
@@ -824,5 +831,6 @@
         // Initial load
         updateMap('2024', 'rentRatio');
     </script>
+    <script src="chart.js"></script>
 </body>
 </html> 
