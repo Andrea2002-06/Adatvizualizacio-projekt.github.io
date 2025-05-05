@@ -1,14 +1,15 @@
-const scatterPlotSpec = {
+// Load the data and create the scatter plot
+vegaEmbed('#scatter-vis', {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "https://raw.githubusercontent.com/Andrea2002-06/Andrea2002-06.github.io/refs/heads/main/europai_lakhatasi_adatbazis.csv"
+    },
     "width": 700,
     "height": 500,
-    "data": {
-        "values": []
-    },
     "mark": {
         "type": "point",
         "filled": true,
-        "stroke": "#ffffff",
+        "stroke": "white",
         "strokeWidth": 0.8,
         "size": 80
     },
@@ -19,9 +20,9 @@ const scatterPlotSpec = {
             "title": "Income (€/month)",
             "axis": {
                 "titleFontSize": 14,
-                "titleColor": "#122620",
                 "labelFontSize": 10,
-                "format": ",.0f"
+                "format": ",.0f",
+                "titleColor": "#122620"
             }
         },
         "y": {
@@ -30,41 +31,46 @@ const scatterPlotSpec = {
             "title": "Rent (€/month)",
             "axis": {
                 "titleFontSize": 14,
-                "titleColor": "#122620",
                 "labelFontSize": 10,
-                "format": ",.0f"
+                "format": ",.0f",
+                "titleColor": "#122620"
             }
         },
         "color": {
             "field": "Város",
             "type": "nominal",
             "title": "City",
+            "scale": {
+                "range": ["#8b6b4b", "#a27b5c", "#c4a484", "#d4b996", "#e5d5b5"]
+            },
             "legend": {
                 "titleFontSize": 12,
                 "labelFontSize": 10
-            },
-            "scale": {
-                "range": ["#8b6b4b", "#a27b5c", "#c4a484", "#d4b996", "#e5d5b5"]
             }
         },
         "tooltip": [
-            {"field": "Város", "title": "City", "format": ""},
+            {"field": "Város", "title": "City"},
             {"field": "Jövedelem (€/hó)", "title": "Income", "format": ",.0f"},
             {"field": "Bérleti díj (€/hó)", "title": "Rent", "format": ",.0f"},
-            {"field": "Korosztály", "title": "Age Group", "format": ""}
+            {"field": "Korosztály", "title": "Age Group"}
         ]
     },
     "config": {
-        "view": {"stroke": null},
         "axis": {
             "domain": false,
             "grid": true,
             "gridColor": "#dee2e6",
             "ticks": false
         },
-        "background": "transparent"
+        "view": {
+            "stroke": null
+        }
     }
-};
+}, {
+    "theme": "light",
+    "actions": false,
+    "renderer": "svg"
+}).then(console.log).catch(console.warn);
 
 function initializeScatterPlot() {
     // Create filter controls

@@ -260,6 +260,9 @@
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
             padding: 2cm;
             margin-bottom: 2cm;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto 2cm auto;
         }
 
         .section-title {
@@ -279,6 +282,16 @@
             align-items: center;
             gap: 10px;
             justify-content: center;
+        }
+
+        #scatter-vis {
+            width: 100%;
+            margin: 0 auto;
+            transition: transform 0.3s ease;
+        }
+
+        #scatter-vis:hover {
+            transform: scale(1.02);
         }
     </style>
 </head>
@@ -304,10 +317,8 @@
 
         <div class="visualization-section">
             <h2 class="section-title">Megfizethetőségi Elemzés</h2>
-            <p class="description">A jövedelem és a bérleti díj közötti kapcsolat különböző városok és korcsoportok szerint., colored by city.</p>
-            <div id="scatter-plot">
-                <div id="scatter-vis"></div>
-            </div>
+            <p class="description">A jövedelem és a bérleti díj közötti kapcsolat különböző városok és korcsoportok szerint.</p>
+            <div id="scatter-vis"></div>
         </div>
 
     
