@@ -336,8 +336,32 @@
             </div>
             <div id="vis"></div>
         </div>
-    </div>
 
+        <div class="visualization-section">
+            <h2 class="section-title">Európai Lakhatási Költségek</h2>
+            <div class="filter-container">
+                <select id="yearSelect">
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                </select>
+                <select id="metricSelect">
+                    <option value="rentRatio">Bérleti díj (% jövedelem)</option>
+                    <option value="utilitiesRatio">Rezsiköltség (% jövedelem)</option>
+                    <option value="totalRatio">Összes lakhatási költség (% jövedelem)</option>
+                </select>
+            </div>
+            <div id="map-vis"></div>
+        </div>
+    <div class="visualization-section">
+        <h2>Bérleti díjak változása 2020-2024</h2>
+        <p class="description">Az oszlop diagram az átlagos bérleti díj változását mutatja az elmúlt 5 évben.</p>
+        <iframe src="bar_chart_race.html" width="1200" height="800" style="border:none;"></iframe>
+        <div id="chart" style="width:100%; height:700px;"></div>
+    </div>
+    
     <script>
         const spec = {
             "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
@@ -421,6 +445,400 @@
                 popup.style.display = "block";
             }
         }
+
+        const rawData = [
+            // Data from europai_lakhatasi_adatbazis.csv
+            {"City":"Prága","Country":"Czech Republic","Year":2020,"Rent":1024,"Utilities":138,"Income":2762},
+            {"City":"Koppenhága","Country":"Denmark","Year":2021,"Rent":841,"Utilities":177,"Income":1765},
+            {"City":"Prága","Country":"Czech Republic","Year":2024,"Rent":784,"Utilities":64,"Income":1043},
+            {"City":"Zágráb","Country":"Croatia","Year":2020,"Rent":759,"Utilities":79,"Income":1546},
+            {"City":"Madrid","Country":"Spain","Year":2021,"Rent":1266,"Utilities":123,"Income":1288},
+            {"City":"Budapest","Country":"Hungary","Year":2024,"Rent":928,"Utilities":135,"Income":1700},
+            {"City":"Bukarest","Country":"Romania","Year":2023,"Rent":750,"Utilities":191,"Income":1471},
+            {"City":"Athén","Country":"Greece","Year":2022,"Rent":595,"Utilities":160,"Income":1336},
+            {"City":"Zágráb","Country":"Croatia","Year":2022,"Rent":1085,"Utilities":76,"Income":1849},
+            {"City":"Madrid","Country":"Spain","Year":2022,"Rent":720,"Utilities":62,"Income":2172},
+            {"City":"Varsó","Country":"Poland","Year":2020,"Rent":981,"Utilities":202,"Income":2306},
+            {"City":"Tallinn","Country":"Estonia","Year":2022,"Rent":1133,"Utilities":199,"Income":2166},
+            {"City":"Ljubljana","Country":"Slovenia","Year":2024,"Rent":780,"Utilities":191,"Income":1402},
+            {"City":"Berlin","Country":"Germany","Year":2024,"Rent":1239,"Utilities":118,"Income":2181},
+            {"City":"Tallinn","Country":"Estonia","Year":2022,"Rent":990,"Utilities":50,"Income":2782},
+            {"City":"Berlin","Country":"Germany","Year":2020,"Rent":1105,"Utilities":51,"Income":2046},
+            {"City":"Brüsszel","Country":"Belgium","Year":2020,"Rent":845,"Utilities":110,"Income":1741},
+            {"City":"Varsó","Country":"Poland","Year":2022,"Rent":775,"Utilities":176,"Income":1735},
+            {"City":"Oslo","Country":"Norway","Year":2021,"Rent":924,"Utilities":130,"Income":1836},
+            {"City":"Madrid","Country":"Spain","Year":2022,"Rent":534,"Utilities":138,"Income":2003},
+            {"City":"Berlin","Country":"Germany","Year":2024,"Rent":546,"Utilities":142,"Income":1599},
+            {"City":"Bukarest","Country":"Romania","Year":2021,"Rent":1001,"Utilities":146,"Income":2129},
+            {"City":"Varsó","Country":"Poland","Year":2022,"Rent":420,"Utilities":140,"Income":3232},
+            {"City":"Bukarest","Country":"Romania","Year":2021,"Rent":975,"Utilities":188,"Income":2571},
+            {"City":"Bécs","Country":"Austria","Year":2021,"Rent":1098,"Utilities":179,"Income":1299},
+            {"City":"Varsó","Country":"Poland","Year":2022,"Rent":1448,"Utilities":125,"Income":2050},
+            {"City":"Athén","Country":"Greece","Year":2022,"Rent":512,"Utilities":104,"Income":2237},
+            {"City":"Helsinki","Country":"Finland","Year":2023,"Rent":1287,"Utilities":88,"Income":2407},
+            {"City":"Párizs","Country":"France","Year":2022,"Rent":957,"Utilities":163,"Income":2092},
+            {"City":"Bukarest","Country":"Romania","Year":2024,"Rent":1095,"Utilities":165,"Income":2261},
+            {"City":"Athén","Country":"Greece","Year":2023,"Rent":963,"Utilities":165,"Income":2116},
+            {"City":"Oslo","Country":"Norway","Year":2021,"Rent":721,"Utilities":183,"Income":1404},
+            {"City":"Helsinki","Country":"Finland","Year":2020,"Rent":656,"Utilities":198,"Income":1590},
+            {"City":"Párizs","Country":"France","Year":2021,"Rent":1003,"Utilities":112,"Income":1877},
+            {"City":"Tallinn","Country":"Estonia","Year":2020,"Rent":678,"Utilities":164,"Income":2171},
+            {"City":"Tallinn","Country":"Estonia","Year":2023,"Rent":1107,"Utilities":286,"Income":1868},
+            {"City":"Bukarest","Country":"Romania","Year":2020,"Rent":1056,"Utilities":139,"Income":2241},
+            {"City":"Prága","Country":"Czech Republic","Year":2024,"Rent":1079,"Utilities":74,"Income":1577},
+            {"City":"Stockholm","Country":"Sweden","Year":2020,"Rent":788,"Utilities":159,"Income":1377},
+            {"City":"Róma","Country":"Italy","Year":2023,"Rent":996,"Utilities":93,"Income":2029},
+            {"City":"Amszterdam","Country":"Netherlands","Year":2024,"Rent":989,"Utilities":81,"Income":2527},
+            {"City":"Prága","Country":"Czech Republic","Year":2022,"Rent":666,"Utilities":343,"Income":2258},
+            {"City":"Tallinn","Country":"Estonia","Year":2021,"Rent":1043,"Utilities":134,"Income":2326},
+            {"City":"Róma","Country":"Italy","Year":2024,"Rent":1090,"Utilities":154,"Income":1757},
+            {"City":"Tallinn","Country":"Estonia","Year":2022,"Rent":1479,"Utilities":126,"Income":1194},
+            {"City":"Prága","Country":"Czech Republic","Year":2022,"Rent":1172,"Utilities":184,"Income":1642},
+            {"City":"Bécs","Country":"Austria","Year":2021,"Rent":717,"Utilities":257,"Income":1674},
+            {"City":"Berlin","Country":"Germany","Year":2023,"Rent":1058,"Utilities":193,"Income":1669},
+            {"City":"Párizs","Country":"France","Year":2021,"Rent":702,"Utilities":90,"Income":2433},
+            {"City":"Bukarest","Country":"Romania","Year":2021,"Rent":816,"Utilities":170,"Income":2883},
+            {"City":"Tallinn","Country":"Estonia","Year":2023,"Rent":585,"Utilities":74,"Income":2516},
+            {"City":"Madrid","Country":"Spain","Year":2022,"Rent":779,"Utilities":189,"Income":2222},
+            {"City":"Oslo","Country":"Norway","Year":2023,"Rent":668,"Utilities":137,"Income":1488},
+            {"City":"Prága","Country":"Czech Republic","Year":2021,"Rent":588,"Utilities":157,"Income":1780},
+            {"City":"Stockholm","Country":"Sweden","Year":2020,"Rent":1260,"Utilities":101,"Income":2005},
+            {"City":"Koppenhága","Country":"Denmark","Year":2024,"Rent":1016,"Utilities":131,"Income":2035},
+            {"City":"Berlin","Country":"Germany","Year":2020,"Rent":928,"Utilities":257,"Income":1381},
+            {"City":"Bécs","Country":"Austria","Year":2022,"Rent":412,"Utilities":119,"Income":2140},
+            {"City":"Koppenhága","Country":"Denmark","Year":2022,"Rent":848,"Utilities":168,"Income":2425},
+            {"City":"Madrid","Country":"Spain","Year":2024,"Rent":727,"Utilities":181,"Income":2406},
+            {"City":"Athén","Country":"Greece","Year":2024,"Rent":693,"Utilities":149,"Income":2305},
+            {"City":"Helsinki","Country":"Finland","Year":2023,"Rent":929,"Utilities":140,"Income":2274},
+            {"City":"Prága","Country":"Czech Republic","Year":2023,"Rent":846,"Utilities":215,"Income":2407},
+            {"City":"Zágráb","Country":"Croatia","Year":2023,"Rent":905,"Utilities":143,"Income":2162},
+            {"City":"Prága","Country":"Czech Republic","Year":2020,"Rent":924,"Utilities":100,"Income":3046},
+            {"City":"Stockholm","Country":"Sweden","Year":2020,"Rent":596,"Utilities":181,"Income":2312},
+            {"City":"Madrid","Country":"Spain","Year":2024,"Rent":897,"Utilities":199,"Income":1661},
+            {"City":"Zágráb","Country":"Croatia","Year":2021,"Rent":863,"Utilities":122,"Income":2206},
+            {"City":"Koppenhága","Country":"Denmark","Year":2020,"Rent":694,"Utilities":126,"Income":1747},
+            {"City":"Prága","Country":"Czech Republic","Year":2020,"Rent":958,"Utilities":139,"Income":1641},
+            {"City":"Budapest","Country":"Hungary","Year":2020,"Rent":978,"Utilities":149,"Income":1920},
+            {"City":"Zágráb","Country":"Croatia","Year":2023,"Rent":649,"Utilities":109,"Income":2161},
+            {"City":"Varsó","Country":"Poland","Year":2020,"Rent":1030,"Utilities":185,"Income":2201},
+            {"City":"Budapest","Country":"Hungary","Year":2023,"Rent":800,"Utilities":111,"Income":2049},
+            {"City":"Brüsszel","Country":"Belgium","Year":2023,"Rent":906,"Utilities":258,"Income":2480},
+            {"City":"Bukarest","Country":"Romania","Year":2023,"Rent":708,"Utilities":110,"Income":3095},
+            {"City":"Brüsszel","Country":"Belgium","Year":2021,"Rent":690,"Utilities":112,"Income":1737},
+            {"City":"Bukarest","Country":"Romania","Year":2020,"Rent":938,"Utilities":121,"Income":2475},
+            {"City":"Bécs","Country":"Austria","Year":2020,"Rent":675,"Utilities":209,"Income":2916},
+            {"City":"Sofia","Country":"Bulgaria","Year":2024,"Rent":783,"Utilities":212,"Income":1943},
+            {"City":"Sofia","Country":"Bulgaria","Year":2020,"Rent":501,"Utilities":127,"Income":2023},
+            {"City":"Tallinn","Country":"Estonia","Year":2020,"Rent":1056,"Utilities":176,"Income":2060},
+            {"City":"Varsó","Country":"Poland","Year":2020,"Rent":1078,"Utilities":167,"Income":2639},
+            {"City":"Athén","Country":"Greece","Year":2024,"Rent":713,"Utilities":153,"Income":2590},
+            {"City":"Berlin","Country":"Germany","Year":2023,"Rent":1415,"Utilities":182,"Income":2486},
+            {"City":"Athén","Country":"Greece","Year":2024,"Rent":1242,"Utilities":62,"Income":2529},
+            {"City":"Madrid","Country":"Spain","Year":2022,"Rent":604,"Utilities":225,"Income":2359},
+            {"City":"Varsó","Country":"Poland","Year":2021,"Rent":919,"Utilities":147,"Income":1148},
+            {"City":"Brüsszel","Country":"Belgium","Year":2023,"Rent":996,"Utilities":85,"Income":1955},
+            {"City":"Budapest","Country":"Hungary","Year":2023,"Rent":1067,"Utilities":97,"Income":1743},
+            {"City":"Prága","Country":"Czech Republic","Year":2020,"Rent":884,"Utilities":123,"Income":2252},
+            {"City":"Sofia","Country":"Bulgaria","Year":2022,"Rent":702,"Utilities":90,"Income":1723},
+            {"City":"Berlin","Country":"Germany","Year":2021,"Rent":1391,"Utilities":144,"Income":2107},
+            {"City":"Róma","Country":"Italy","Year":2023,"Rent":845,"Utilities":121,"Income":1735},
+            {"City":"Brüsszel","Country":"Belgium","Year":2024,"Rent":831,"Utilities":232,"Income":2683},
+            {"City":"Budapest","Country":"Hungary","Year":2024,"Rent":838,"Utilities":206,"Income":3539},
+            {"City":"Prága","Country":"Czech Republic","Year":2021,"Rent":868,"Utilities":112,"Income":2102},
+            {"City":"Prága","Country":"Czech Republic","Year":2024,"Rent":544,"Utilities":194,"Income":2844},
+            {"City":"Brüsszel","Country":"Belgium","Year":2024,"Rent":898,"Utilities":226,"Income":1569},
+            {"City":"Stockholm","Country":"Sweden","Year":2021,"Rent":1035,"Utilities":81,"Income":1562},
+            {"City":"Amszterdam","Country":"Netherlands","Year":2024,"Rent":1132,"Utilities":117,"Income":2281},
+            {"City":"Bécs","Country":"Austria","Year":2020,"Rent":778,"Utilities":108,"Income":2024},
+            {"City":"Amszterdam","Country":"Netherlands","Year":2020,"Rent":968,"Utilities":121,"Income":1546},
+            {"City":"Párizs","Country":"France","Year":2022,"Rent":1089,"Utilities":188,"Income":2050},
+            {"City":"Ljubljana","Country":"Slovenia","Year":2024,"Rent":483,"Utilities":112,"Income":2285},
+            {"City":"Bukarest","Country":"Romania","Year":2020,"Rent":449,"Utilities":105,"Income":2130},
+            {"City":"Párizs","Country":"France","Year":2024,"Rent":1060,"Utilities":117,"Income":1394},
+            {"City":"Athén","Country":"Greece","Year":2024,"Rent":912,"Utilities":121,"Income":2503},
+            {"City":"Párizs","Country":"France","Year":2020,"Rent":1109,"Utilities":50,"Income":2721},
+            {"City":"Bécs","Country":"Austria","Year":2022,"Rent":701,"Utilities":120,"Income":2186},
+            {"City":"Koppenhága","Country":"Denmark","Year":2020,"Rent":922,"Utilities":167,"Income":2127},
+            {"City":"Zágráb","Country":"Croatia","Year":2024,"Rent":797,"Utilities":129,"Income":2197},
+            {"City":"Koppenhága","Country":"Denmark","Year":2021,"Rent":972,"Utilities":210,"Income":1837},
+            {"City":"Budapest","Country":"Hungary","Year":2021,"Rent":798,"Utilities":132,"Income":1065},
+            {"City":"Zágráb","Country":"Croatia","Year":2021,"Rent":905,"Utilities":191,"Income":1890},
+            {"City":"Prága","Country":"Czech Republic","Year":2023,"Rent":347,"Utilities":207,"Income":1261},
+            {"City":"Koppenhága","Country":"Denmark","Year":2021,"Rent":985,"Utilities":159,"Income":3135},
+            {"City":"Brüsszel","Country":"Belgium","Year":2021,"Rent":962,"Utilities":107,"Income":2415},
+            {"City":"Madrid","Country":"Spain","Year":2023,"Rent":918,"Utilities":202,"Income":2167},
+            {"City":"Berlin","Country":"Germany","Year":2022,"Rent":772,"Utilities":169,"Income":1778},
+            {"City":"Sofia","Country":"Bulgaria","Year":2023,"Rent":1089,"Utilities":171,"Income":2678},
+            {"City":"Stockholm","Country":"Sweden","Year":2020,"Rent":1369,"Utilities":225,"Income":1111},
+            {"City":"Róma","Country":"Italy","Year":2024,"Rent":1064,"Utilities":272,"Income":1437},
+            {"City":"Prága","Country":"Czech Republic","Year":2024,"Rent":932,"Utilities":161,"Income":2241},
+            {"City":"Stockholm","Country":"Sweden","Year":2023,"Rent":702,"Utilities":230,"Income":2673},
+            {"City":"Prága","Country":"Czech Republic","Year":2023,"Rent":772,"Utilities":205,"Income":2028},
+            {"City":"Amszterdam","Country":"Netherlands","Year":2020,"Rent":477,"Utilities":99,"Income":1787},
+            {"City":"Budapest","Country":"Hungary","Year":2024,"Rent":486,"Utilities":85,"Income":1355},
+            {"City":"Madrid","Country":"Spain","Year":2022,"Rent":816,"Utilities":138,"Income":1248},
+            {"City":"Stockholm","Country":"Sweden","Year":2024,"Rent":832,"Utilities":185,"Income":1885},
+            {"City":"Prága","Country":"Czech Republic","Year":2022,"Rent":1362,"Utilities":279,"Income":1447},
+            {"City":"Zágráb","Country":"Croatia","Year":2022,"Rent":915,"Utilities":143,"Income":2099},
+            {"City":"Brüsszel","Country":"Belgium","Year":2024,"Rent":757,"Utilities":114,"Income":1728},
+            {"City":"Zágráb","Country":"Croatia","Year":2023,"Rent":927,"Utilities":205,"Income":800},
+            {"City":"Róma","Country":"Italy","Year":2024,"Rent":1212,"Utilities":80,"Income":1814},
+            {"City":"Varsó","Country":"Poland","Year":2024,"Rent":706,"Utilities":214,"Income":2468},
+            {"City":"Brüsszel","Country":"Belgium","Year":2021,"Rent":1080,"Utilities":89,"Income":2245},
+            {"City":"Tallinn","Country":"Estonia","Year":2022,"Rent":1078,"Utilities":172,"Income":2355},
+            {"City":"Ljubljana","Country":"Slovenia","Year":2021,"Rent":810,"Utilities":180,"Income":2308},
+            {"City":"Róma","Country":"Italy","Year":2020,"Rent":823,"Utilities":141,"Income":2462},
+            {"City":"Tallinn","Country":"Estonia","Year":2022,"Rent":769,"Utilities":72,"Income":1296},
+            {"City":"Brüsszel","Country":"Belgium","Year":2021,"Rent":1052,"Utilities":235,"Income":959},
+            {"City":"Budapest","Country":"Hungary","Year":2020,"Rent":953,"Utilities":148,"Income":2200},
+            {"City":"Tallinn","Country":"Estonia","Year":2020,"Rent":1176,"Utilities":147,"Income":1818},
+            {"City":"Athén","Country":"Greece","Year":2021,"Rent":977,"Utilities":159,"Income":2372},
+            {"City":"Varsó","Country":"Poland","Year":2023,"Rent":854,"Utilities":111,"Income":1730},
+            {"City":"Párizs","Country":"France","Year":2020,"Rent":949,"Utilities":201,"Income":1149},
+            {"City":"Koppenhága","Country":"Denmark","Year":2021,"Rent":1018,"Utilities":201,"Income":2833},
+            {"City":"Ljubljana","Country":"Slovenia","Year":2020,"Rent":440,"Utilities":176,"Income":2013},
+            {"City":"Prága","Country":"Czech Republic","Year":2023,"Rent":719,"Utilities":80,"Income":1694},
+            {"City":"Sofia","Country":"Bulgaria","Year":2024,"Rent":669,"Utilities":103,"Income":2527},
+            {"City":"Ljubljana","Country":"Slovenia","Year":2024,"Rent":1558,"Utilities":185,"Income":1571},
+            {"City":"Zágráb","Country":"Croatia","Year":2024,"Rent":756,"Utilities":207,"Income":1952},
+            {"City":"Helsinki","Country":"Finland","Year":2023,"Rent":724,"Utilities":241,"Income":1687},
+            {"City":"Amszterdam","Country":"Netherlands","Year":2024,"Rent":1077,"Utilities":181,"Income":2486},
+            {"City":"Koppenhága","Country":"Denmark","Year":2022,"Rent":507,"Utilities":181,"Income":1963},
+            {"City":"Brüsszel","Country":"Belgium","Year":2021,"Rent":944,"Utilities":178,"Income":2305},
+            {"City":"Stockholm","Country":"Sweden","Year":2024,"Rent":1170,"Utilities":67,"Income":1965},
+            {"City":"Párizs","Country":"France","Year":2021,"Rent":1007,"Utilities":96,"Income":1362},
+            {"City":"Párizs","Country":"France","Year":2021,"Rent":1163,"Utilities":151,"Income":2014},
+            {"City":"Zágráb","Country":"Croatia","Year":2022,"Rent":1135,"Utilities":128,"Income":1769},
+            {"City":"Zágráb","Country":"Croatia","Year":2020,"Rent":823,"Utilities":105,"Income":2628},
+            {"City":"Varsó","Country":"Poland","Year":2024,"Rent":853,"Utilities":202,"Income":2098},
+            {"City":"Athén","Country":"Greece","Year":2023,"Rent":529,"Utilities":203,"Income":2041},
+            {"City":"Oslo","Country":"Norway","Year":2022,"Rent":771,"Utilities":128,"Income":1819},
+            {"City":"Bukarest","Country":"Romania","Year":2024,"Rent":1263,"Utilities":136,"Income":1790},
+            {"City":"Helsinki","Country":"Finland","Year":2021,"Rent":564,"Utilities":148,"Income":1616},
+            {"City":"Helsinki","Country":"Finland","Year":2020,"Rent":959,"Utilities":139,"Income":2492},
+            {"City":"Varsó","Country":"Poland","Year":2021,"Rent":888,"Utilities":158,"Income":2191},
+            {"City":"Tallinn","Country":"Estonia","Year":2024,"Rent":1023,"Utilities":123,"Income":1681},
+            {"City":"Athén","Country":"Greece","Year":2024,"Rent":744,"Utilities":221,"Income":2595},
+            {"City":"Berlin","Country":"Germany","Year":2023,"Rent":757,"Utilities":182,"Income":1724},
+            {"City":"Róma","Country":"Italy","Year":2020,"Rent":951,"Utilities":119,"Income":2898},
+            {"City":"Stockholm","Country":"Sweden","Year":2021,"Rent":803,"Utilities":251,"Income":2329},
+            {"City":"Stockholm","Country":"Sweden","Year":2023,"Rent":856,"Utilities":148,"Income":1635},
+            {"City":"Amszterdam","Country":"Netherlands","Year":2020,"Rent":1349,"Utilities":209,"Income":1992},
+            {"City":"Bukarest","Country":"Romania","Year":2020,"Rent":1532,"Utilities":184,"Income":2522},
+            {"City":"Berlin","Country":"Germany","Year":2020,"Rent":1362,"Utilities":205,"Income":2295},
+            {"City":"Madrid","Country":"Spain","Year":2020,"Rent":1105,"Utilities":219,"Income":2585},
+            {"City":"Koppenhága","Country":"Denmark","Year":2021,"Rent":1062,"Utilities":109,"Income":2603},
+            {"City":"Prága","Country":"Czech Republic","Year":2024,"Rent":992,"Utilities":160,"Income":2639},
+            {"City":"Amszterdam","Country":"Netherlands","Year":2022,"Rent":912,"Utilities":258,"Income":2323},
+            {"City":"Tallinn","Country":"Estonia","Year":2020,"Rent":823,"Utilities":145,"Income":2789},
+            {"City":"Prága","Country":"Czech Republic","Year":2024,"Rent":970,"Utilities":160,"Income":1777},
+            {"City":"Athén","Country":"Greece","Year":2023,"Rent":1168,"Utilities":210,"Income":1650},
+            {"City":"Madrid","Country":"Spain","Year":2020,"Rent":519,"Utilities":147,"Income":2783},
+            {"City":"Koppenhága","Country":"Denmark","Year":2020,"Rent":761,"Utilities":172,"Income":901},
+            {"City":"Tallinn","Country":"Estonia","Year":2020,"Rent":774,"Utilities":122,"Income":2122},
+            {"City":"Oslo","Country":"Norway","Year":2024,"Rent":580,"Utilities":242,"Income":1950},
+            {"City":"Oslo","Country":"Norway","Year":2020,"Rent":632,"Utilities":162,"Income":1977},
+            {"City":"Stockholm","Country":"Sweden","Year":2020,"Rent":840,"Utilities":146,"Income":2722},
+            {"City":"Prága","Country":"Czech Republic","Year":2023,"Rent":1179,"Utilities":172,"Income":2285},
+            {"City":"Ljubljana","Country":"Slovenia","Year":2021,"Rent":1061,"Utilities":146,"Income":2355},
+            {"City":"Sofia","Country":"Bulgaria","Year":2022,"Rent":1260,"Utilities":78,"Income":1980},
+            {"City":"Helsinki","Country":"Finland","Year":2023,"Rent":932,"Utilities":128,"Income":1674},
+            {"City":"Athén","Country":"Greece","Year":2022,"Rent":428,"Utilities":188,"Income":1208},
+            {"City":"Berlin","Country":"Germany","Year":2022,"Rent":1096,"Utilities":150,"Income":1976},
+            {"City":"Ljubljana","Country":"Slovenia","Year":2024,"Rent":610,"Utilities":151,"Income":1890},
+            {"City":"Varsó","Country":"Poland","Year":2022,"Rent":952,"Utilities":100,"Income":1659}
+        ];
+
+        function processData(year) {
+            const cityData = rawData.filter(d => d.Year == year);
+            const countryData = {};
+            
+            cityData.forEach(d => {
+                if (!countryData[d.Country]) {
+                    countryData[d.Country] = {
+                        rents: [],
+                        utilities: [],
+                        incomes: []
+                    };
+                }
+                countryData[d.Country].rents.push(d.Rent);
+                countryData[d.Country].utilities.push(d.Utilities);
+                countryData[d.Country].incomes.push(d.Income);
+            });
+
+            return Object.entries(countryData).map(([country, data]) => {
+                const avgIncome = data.incomes.reduce((a, b) => a + b, 0) / data.incomes.length;
+                const avgRent = data.rents.reduce((a, b) => a + b, 0) / data.rents.length;
+                const avgUtilities = data.utilities.reduce((a, b) => a + b, 0) / data.utilities.length;
+                
+                return {
+                    country: country,
+                    rent: avgRent,
+                    utilities: avgUtilities,
+                    income: avgIncome,
+                    rentRatio: (avgRent / avgIncome) * 100,
+                    utilitiesRatio: (avgUtilities / avgIncome) * 100,
+                    totalRatio: ((avgRent + avgUtilities) / avgIncome) * 100
+                };
+            });
+        }
+
+        function updateMap(year, metric) {
+            const data = processData(year);
+            
+            const spec = {
+                "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+                "width": 800,
+                "height": 600,
+                "title": `Lakhatási költségek a jövedelem százalékában Európában (${year})`,
+                "layer": [{
+                    "data": {
+                        "url": "https://raw.githubusercontent.com/leakyMirror/map-of-europe/master/GeoJSON/europe.geojson",
+                        "format": {
+                            "type": "json",
+                            "property": "features"
+                        }
+                    },
+                    "transform": [{
+                        "lookup": "properties.NAME",
+                        "from": {
+                            "data": {
+                                "values": data
+                            },
+                            "key": "country",
+                            "fields": ["rent", "utilities", "income", "rentRatio", "utilitiesRatio", "totalRatio"]
+                        }
+                    }],
+                    "projection": {
+                        "type": "mercator",
+                        "center": [15, 55],
+                        "scale": 700
+                    },
+                    "mark": {
+                        "type": "geoshape",
+                        "stroke": "white",
+                        "strokeWidth": 1
+                    },
+                    "encoding": {
+                        "color": {
+                            "field": metric,
+                            "type": "quantitative",
+                            "scale": {
+                                "scheme": ["#f5e6d3", "#b38b6d", "#996835"],
+                                "domain": metric === "utilitiesRatio" ? [5, 20] : 
+                                         metric === "rentRatio" ? [20, 60] : [30, 80]
+                            },
+                            "title": `${metric === "rentRatio" ? "Bérleti díj" : 
+                                      metric === "utilitiesRatio" ? "Rezsiköltség" : 
+                                      "Összes lakhatási költség"} (% jövedelem)`
+                        }
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "text",
+                        "align": "left",
+                        "dx": 5,
+                        "dy": -5
+                    },
+                    "encoding": {
+                        "text": {
+                            "field": "properties.NAME",
+                            "type": "nominal"
+                        },
+                        "color": {"value": "#996835"},
+                        "size": {"value": 12}
+                    }
+                }],
+                "selection": {
+                    "hover": {
+                        "type": "single",
+                        "on": "mouseover",
+                        "empty": "none"
+                    }
+                },
+                "config": {
+                    "customFormatTypes": true,
+                    "background": "rgba(255, 255, 255, 0.9)",
+                    "view": {
+                        "stroke": "#996835",
+                        "strokeWidth": 1
+                    }
+                }
+            };
+
+            vegaEmbed("#map-vis", spec, {
+                "actions": false,
+                "tooltip": {
+                    "theme": "light",
+                    "style": {
+                        "fontSize": "14px",
+                        "fontFamily": "Arial, sans-serif",
+                        "padding": "15px",
+                        "background": "white",
+                        "border": "1px solid #ccc",
+                        "borderRadius": "8px",
+                        "boxShadow": "0 2px 8px rgba(0,0,0,0.2)",
+                        "position": "absolute",
+                        "zIndex": 1000,
+                        "maxWidth": "300px",
+                        "pointerEvents": "none"
+                    },
+                    "format": {
+                        "income": ".0f",
+                        "rent": ".0f",
+                        "utilities": ".0f",
+                        "rentRatio": ".1f",
+                        "utilitiesRatio": ".1f",
+                        "totalRatio": ".1f"
+                    }
+                }
+            }).then(result => {
+                const view = result.view;
+                const tooltip = document.createElement('div');
+                tooltip.className = 'custom-tooltip';
+                document.body.appendChild(tooltip);
+
+                view.addEventListener('mouseover', (event, item) => {
+                    if (item && item.datum) {
+                        const country = item.datum.properties.NAME;
+                        const countryData = data.find(d => d.country === country);
+                        if (countryData) {
+                            tooltip.innerHTML = `
+                                <div style="padding: 8px;">
+                                    <h3 style="margin: 0 0 5px 0; color: #122620; font-size: 14px;">${country}</h3>
+                                    <p style="margin: 3px 0; font-size: 12px;">Jövedelem: €${countryData.income.toFixed(0)}/hó</p>
+                                    <p style="margin: 3px 0; font-size: 12px;">Bérleti díj: €${countryData.rent.toFixed(0)}/hó</p>
+                                    <p style="margin: 3px 0; font-size: 12px;">Rezsiköltség: €${countryData.utilities.toFixed(0)}/hó</p>
+                                    <p style="margin: 3px 0; font-size: 12px;">Bérleti díj %: ${countryData.rentRatio.toFixed(1)}%</p>
+                                    <p style="margin: 3px 0; font-size: 12px;">Rezsiköltség %: ${countryData.utilitiesRatio.toFixed(1)}%</p>
+                                    <p style="margin: 3px 0; font-size: 12px;">Összes %: ${countryData.totalRatio.toFixed(1)}%</p>
+                                </div>
+                            `;
+                            tooltip.style.display = 'block';
+                            tooltip.style.left = (event.pageX + 30) + 'px';
+                            tooltip.style.top = (event.pageY - tooltip.offsetHeight / 2) + 'px';
+                        }
+                    }
+                });
+
+                view.addEventListener('mouseout', () => {
+                    tooltip.style.display = 'none';
+                });
+            }).catch(console.error);
+        }
+
+        // Event listeners for map controls
+        document.getElementById('yearSelect').addEventListener('change', (e) => {
+            updateMap(e.target.value, document.getElementById('metricSelect').value);
+        });
+
+        document.getElementById('metricSelect').addEventListener('change', (e) => {
+            updateMap(document.getElementById('yearSelect').value, e.target.value);
+        });
+
+        // Initial load
+        updateMap('2024', 'rentRatio');
     </script>
 </body>
 </html> 
