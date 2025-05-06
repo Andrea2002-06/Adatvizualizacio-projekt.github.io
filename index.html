@@ -559,39 +559,7 @@
     </div>
 
 </div>
-    
-
-        <div class="visualization-section">
-            <h2 class="section-title">Megfizethetőségi Elemzés</h2>
-            <p class="description">A jövedelem és a bérleti díj közötti kapcsolat különböző városok és korcsoportok szerint.</p>
         
-            <div class="filter-container" style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-bottom: 20px;">
-                <div class="filter-group">
-                    <label for="yearFilter" style="font-weight: 600; color: #122620;">Év:</label>
-                    <select id="yearFilter" class="filter-select" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
-                        <option value="all">Minden év</option>
-                        <option value="2020">2020</option>
-                        <option value="2021">2021</option>
-                        <option value="2022">2022</option>
-                        <option value="2023">2023</option>
-                        <option value="2024" selected>2024</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label for="ageGroupFilter" style="font-weight: 600; color: #122620;">Korcsoport:</label>
-                    <select id="ageGroupFilter" class="filter-select" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
-                        <option value="all">Minden korcsoport</option>
-                        <option value="18-21">18-21</option>
-                        <option value="22-25">22-25</option>
-                        <option value="26-29">26-29</option>
-                    </select>
-                </div>
-            </div>
-        
-            <div id="scatter-vis"></div>
-        </div>
-        
-
         <div class="divider-dots">
             <span></span><span></span><span></span>
         </div>
@@ -609,20 +577,7 @@
         Az alábbi ábrák segítségével feltérképezhetjük, hol a legmagasabb a lakhatási költségek aránya, hogyan változtak a bérleti díjak az elmúlt években, és mely társadalmi csoportokat érinti leginkább a bérleti teher.</p>
     </div>
 </div>
-        <div class="visualization-section">
-            <h2 class="section-title">Lakhatási költségek - hőtérkép</h2>
-            <div class="filter-container">
-                <label for="ageGroup">Szűrés korcsoport szerint:</label>
-                <select id="ageGroup">
-                    <option value="all">All Age Groups</option>
-                    <option value="18-21">18-21</option>
-                    <option value="22-25">22-25</option>
-                    <option value="26-29">26-29</option>
-                </select>
-            </div>
-            <div id="vis"></div>
-        </div>
-
+        
 
       <!-- Interaktív térképes/választható vizualizáció -->
       <div class="visualization-section">
@@ -654,26 +609,50 @@
     <div class="visualization-section">
         <div class="bubble-box viz-bubble-box">
         <h2 class="section-title">Megfizethetőségi Elemzés</h2>
-        <p class="description">A jövedelem és a bérleti díj közötti kapcsolat különböző városok és korcsoportok szerint., colored by city.</p>
-        <div id="scatter-plot">
+          <p class="description">A jövedelem és a bérleti díj közötti kapcsolat különböző városok és korcsoportok szerint.</p>
+        
+            <div class="filter-container" style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-bottom: 20px;">
+                <div class="filter-group">
+                    <label for="yearFilter" style="font-weight: 600; color: #122620;">Év:</label>
+                    <select id="yearFilter" class="filter-select" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                        <option value="all">Minden év</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024" selected>2024</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="ageGroupFilter" style="font-weight: 600; color: #122620;">Korcsoport:</label>
+                    <select id="ageGroupFilter" class="filter-select" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                        <option value="all">Minden korcsoport</option>
+                        <option value="18-21">18-21</option>
+                        <option value="22-25">22-25</option>
+                        <option value="26-29">26-29</option>
+                    </select>
+                </div>
+            </div>
+        
             <div id="scatter-vis"></div>
-        </div>
     </div>
 
     <div class="visualization-section">
         <div class="bubble-box viz-bubble-box">
         <h2 class="section-title">Lakhatasi költségek (%) Hőtérkép </h2>
         <div class="filter-container">
-            <label for="ageGroup">Filter by Age Group:</label>
-            <select id="ageGroup">
-                <option value="all">All Age Groups</option>
-                <option value="18-21">18-21</option>
-                <option value="22-25">22-25</option>
-                <option value="26-29">26-29</option>
-            </select>
+            <label for="ageGroup">Szűrés korcsoport szerint:</label>
+           
+                <select id="ageGroup">
+                    <option value="all">All Age Groups</option>
+                    <option value="18-21">18-21</option>
+                    <option value="22-25">22-25</option>
+                    <option value="26-29">26-29</option>
+                </select>
+            </div>
+            <div id="vis"></div>
         </div>
-        <div id="vis" style="position: relative;"></div>
-        </div>
+
     </div>
 
     <div class="visualization-section">
