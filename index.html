@@ -10,12 +10,13 @@
     <script src="scatter_plot.js" defer></script>
     <script src="bubble_chart.js" defer></script>
     <script src="housing_heatmap.js" defer></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: rgb(153, 112, 53);
+            background-color: #997035;
             transform: translateZ(0);
             backface-visibility: hidden;
             perspective: 1000;
@@ -33,7 +34,7 @@
             padding-right: 5cm;
             padding-top: 2cm;
             padding-bottom: 2cm;
-            margin: 10cm;
+            margin: 3cm;
             width: 90%;
             max-width: 800px;
         }
@@ -47,7 +48,7 @@
             padding-top: 2cm; 
             padding-bottom: 2cm;
             margin-top: 0cm;
-            margin-bottom: 3cm;
+            margin-bottom: 0 cm;
             width: 100%;
             max-width: none;
             text-align: center;
@@ -118,168 +119,304 @@
             content: "✿";
             color: #D6AD60;
             font-size: 1.5rem;
-            margin: 0 15px;
+            margin: 0;
             font-style: normal;
         }
 
-        .tab-container {
-            width: 150%;
-            margin-top: 2cm;
+        .navbar {
+            position: sticky;
+            top: 0;
+            background-color: #fff;
+            padding: 10px 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
         }
 
-        .tabs {
+        .navbar ul {
             display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 30px;
+            justify-content: space-evenly;
+            list-style: none;
+            margin: 0;
+            padding: 0;
         }
 
-        .tab-button {
-            padding: 20px 40px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            color: #122620;
-            font-weight: 700;
-            font-size: 1.3rem;
+        .navbar li a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #333;
+            font-family: 'Segoe UI', sans-serif;
+            padding: 8px 12px;
         }
 
-        .tab-button:hover {
-            background: #D6AD60;
-            color: white;
+        .nav {
+            display: flex;
+            justify-content: space-evenly;
+            padding: 10px 0;
+            list-style: none;
+            background-color: #fff;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            z-index: 1000;
         }
 
-        .tab-button.active {
-            background: #122620;
-            color: white;
+        .tab-link {
+            text-decoration: none;
+            font-weight: bold;
+            color: #333;
+            font-family: sans-serif;
+            padding: 8px 12px;
         }
 
-        .tab-content {
+        .tab-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #6f7b3c;
+            border-radius: 50%;
+            display: inline-block;
+            margin-left: 6px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .tab-indicator.active {
+            opacity: 1;
+        }
+        /* Buborék-stílus */
+      
+
+        .card-title {
+            position: relative;
+            display: inline-block;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #222;
+            padding-bottom: 6px;
+            margin-bottom: 24px;
+            animation: underlineGrow 0.6s ease-out forwards;
+        }
+
+        .card-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0%;
+            height: 4px;
+            background-color: #6f7b3c;
+        }
+
+        @keyframes underlineGrow {
+            to {
+                /* A ::after elem szélessége 100% lesz */
+            }
+        }
+
+        .card-title::after {
+            animation: underlineGrowBar 0.6s ease-out forwards;
+        }
+
+        @keyframes underlineGrowBar {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+  
+
+        .hidden {
             display: none;
-            padding: 20px;
         }
 
-        .tab-content.active {
+        .text-image-wrapper {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+            flex-wrap: nowrap; /* mobilon egymás alá kerülnek */
+        }
+
+        .bubble-text {
+            flex: 1 1 60%;
+            min-width: 250px;
+            margin: 0;
+        }
+
+        .bubble-image {
+            flex: 1 1 50%;
+            min-width: 0;
+            margin: 0;
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 80px;
+        }
+
+        .bubble-image img {
+            width: 100%;
+            max-width: 100%;
+            height: 350px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             display: block;
         }
 
-        /* Popup styles */
-        .popup {
-            display: none;
-            position: absolute;
-            top: calc(100% + 20px);
-            left: 2cm;
-            transform: none;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 30px;
-            z-index: 1000;
-            max-width: 900px;
+        .bubble-box {
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 24px;
+            margin: 32px auto;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            max-width: 1300px;
             width: 90%;
-            border-radius: 40px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.2);
         }
 
-        /* Modify thought bubbles to connect to the button */
-        .popup::before,
-        .popup::after,
-        .popup::before-small {
-            content: '';
-            position: absolute;
-            background: rgba(255, 255, 255, 0.95);
+        .divider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin: 20px auto;
+        }
+
+        .divider-dots span {
+            width: 8px;
+            height: 8px;
+            background-color: #ffffff;
             border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
         }
 
-        /* Largest circle */
-        .popup::before {
-            width: 30px;
-            height: 30px;
-            top: -40px;
-            left: 30px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.2);
-        }
-
-        /* Middle circle */
-        .popup::after {
-            width: 20px;
-            height: 20px;
-            top: -60px;
-            left: 20px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.2);
-        }
-
-        /* Add smallest circle */
-        .popup::before-small {
-            width: 10px;
-            height: 10px;
-            top: -70px;
-            left: 15px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.2);
-        }
-
-
-        .button-container {
-            position: relative;
-            width: 100%;
-            display: flex;
-            justify-content: flex-start;
-            margin-top: -2cm;
-            margin-bottom: 2cm;
-            padding-left: 2cm;
-            z-index: 2;
-        }
-
-        .info-button {
-            background: #D6AD60;
-            color: white;
+        .next-button {
+            display: block;
+            margin: 40px auto 0;
+            padding: 12px 24px;
+            font-size: 1rem;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
             border: none;
-            padding: 15px 30px;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 1.2rem;
-            font-weight: 500;
+            transition: background-color 0.3s ease;
         }
 
-        .info-button:hover {
-            background: #122620;
+        .next-button:hover {
+            background-color: #7c8558;
+            color: white;
         }
 
-        .visualization-container {
-            display: flex;
-            flex-direction: column;
-            gap: 2cm;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
+        #nextButton, #dotsDivider {
+            display: none;
         }
 
         .visualization-section {
-            background: rgba(255, 255, 255, 0.736);
-            border-radius: 15px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-            padding: 2cm;
-            margin-bottom: 2cm;
-        }
-
-        .section-title {
-            color: #122620;
-            font-size: 1.8rem;
-            margin-bottom: 1cm;
-            text-align: center;
-            font-weight: 600;
+            padding: 16px;
         }
 
         .filter-container {
-            margin-bottom: 1cm;
-            padding: 15px;
-            background-color: #f5f5f5;
-            border-radius: 5px;
             display: flex;
-            align-items: center;
-            gap: 10px;
-            justify-content: center;
+            gap: 16px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            background-color: #ffffff;
         }
+
+        .filter-container select {
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid #080808;
+            font-size: 1rem;
+            background-color: #ffffff;
+        }
+
+        .map-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 16px;
+        }  
+
+        #map-vis {
+            width: 90%;
+            max-width: 800px;
+            height: 500px;
+            border-radius: 12px;
+        }
+
+        .viz-bubble-box {
+            max-width: 1200px;
+            width: 98%;
+            height: 750px;
+            padding: 36px;
+            background-color: #ffffff;
+        }
+
+        #scatter-vis {
+      margin-top: 24px;
+    }
+
+        .data-popup {
+            max-width: 300px;
+            overflow-wrap: break-word;
+        }
+
+        .oszlop-bubble-box {
+            max-width: 1200px;
+            width: 98%;
+            height: 850px;
+            padding: 34px;
+            background-color: #ffffff;
+            align-items: center;
+        }
+
+        .fullwidth-banner {
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            width: 100vw;
+
+            background: #ede3d5e0;
+            padding: 40px 0;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            color: #000000;
+            animation: slideInBanner 1s ease forwards;
+            opacity: 0;
+            transform: translateY(20px);
+            z-index: 1;
+            height: 50%;
+        }
+
+        .banner-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: left;
+        }
+
+        .highlight-title {
+            margin: 0 0 10px 0;
+            font-size: 2.2rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .highlight-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Animáció */
+        @keyframes slideInBanner {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -290,67 +427,201 @@
         <p class="subtitle-authors">Kerekes Vivien , Sófalvi Andrea-Hajnalka</p>
     </div>
 
-    <div class="button-container">
-        <button class="info-button" onclick="togglePopup('popup1')">A projektről</button>
-        <div class="popup" id="popup1">
-            <div class="popup-content">
-                <h3 style="color: #122620; margin-bottom: 20px;">Projektleírás</h3>
-                <p>A projekt célja, hogy bemutassa, hogyan alakultak a lakásárak és bérleti díjak Európa fővárosaiban az elmúlt öt évben, különös tekintettel a Z generáció (1997–2012 között születettek) lakhatási helyzetére. Az elemzés során vizsgáljuk, hogy a fiatalok jövedelméhez képest mekkora terhet jelentenek a lakhatási költségek, és hogy mely városokban a legnehezebb vagy legkönnyebb önállóan élni ebben a korosztályban.</p>
+    <nav class="navbar">
+        <ul>
+            <li>
+            <a href="#" class="tab-link active" data-target="section-project">
+                <span class="tab-indicator active"></span>
+                A projekt
+            </a>
+            </li>
+
+            <li>
+            <a href="#" class="tab-link" data-target="section-vizualizaciok">
+                <span class="tab-indicator"></span>
+                Adatvizualizációk 
+            </a>
+            </li>
+
+            <li>
+            <a href="#" class="tab-link" data-target="section-kovetkeztetesek">
+                <span class="tab-indicator"></span>
+                 Következtetések 
+            </a>
+            </li>
+
+            <li>
+            <a href="#" class="tab-link" data-target="section-forrasok">
+                <span class="tab-indicator"></span>
+                  Források 
+            </a>
+            </li>
+        </ul>
+  
+    </nav>    
+
+      
+<div id="section-project" class="bubble-section">
+
+    <div class="bubble-box">
+          <h2 class="card-title">Miről szól a projekt?</h2>
+          <p>
+            Az elmúlt években Európa számos fővárosában jelentős emelkedést tapasztalhattunk a lakásárakban, miközben a fiatal generációk jövedelme sok esetben nem tartott lépést ezzel a növekedéssel. Projektünk célja, hogy bemutassa:
+          </p>
+          <ul>
+            <li>hogyan alakultak az ingatlanárak 2010 és 2024 között,</li>
+            <li>milyen mértékben nőtt a lakhatás terhe a különböző városokban,</li>
+            <li>és milyen esélyei vannak a fiataloknak (különösen a 18–29 éves korosztálynak) az önálló lakhatás megteremtésére.</li>
+          </ul>
+          <p>
+            Interaktív adatvizualizációkon keresztül elemezzük, hogy egy átlagos fiatal éves jövedelméhez képest mekkora hányadot tesz ki egy 50 négyzetméteres lakás ára egy-egy fővárosban. A cél, hogy feltérképezzük, mely városokban vált a lakhatás valóban megfizethetetlenné, és hol maradt relatíve elérhető.
+        </p>
+    </div>
+
+
+        <div id="dotsDivider" class="divider-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+
+<div class="bubble-box">
+    <div class="text-image-wrapper">
+
+        <div class="bubble-text">
+            <h2 class="card-title">Célközönség</h2>
+            <p>
+                Egyre több fiatal felnőtt – különösen a 18–29 éves korosztályban – szembesül azzal, hogy a fizetése nem elegendő az önálló lakhatás megteremtéséhez. Európa számos fővárosában a lakásárak növekedése messze meghaladja a fiatalok jövedelmének emelkedését – de vajon mennyire súlyos ez a helyzet valójában? 
+            </p>
+
+            <p>
+                Fő kérdések, amiket a projekt megválaszol:
+            </p>
+
+            <ul>
+              <li>Mekkora részét teszi ki egy lakás ára egy fiatal éves jövedelmének?</li>
+              <li>Mely fővárosokban vált szinte elérhetetlenné a lakhatás, és hol maradt még megfizethető?</li>
+              <li>Hogyan alakultak a lakásárak és a fiatalok jövedelmei az elmúlt 5 évben, és mit árul ez el a jövőbeli lehetőségeikről?</li>
+            </ul>
+            <p>
+                Projektünk azokhoz szól, akik már próbáltak elindulni az önálló élet felé, de falakba ütköztek – és szeretnék érteni, mi áll a háttérben, és hol tart ma Európa ezen a téren.
+             </p>
             </div>
+
+          <div class="bubble-image">
+            <img src="kepek/kep1.jpg" width="300" alt="Teszt kép" />
         </div>
     </div>
 
+</div>
+
+        <div class="divider-dots">
+            <span></span><span></span><span></span>
+        </div>
+
+        <button id="nextButton" class="next-button">Tovább az adatvizualizációkra →</button>
+</div>
+
+<!-- VIZUALIZÁCIÓK -->
+<div id="section-vizualizaciok" class="bubble-section hidden">
     
+<div class="fullwidth-banner">
+    <div class="banner-content">
+    <h2 class="card-title highlighted-title">Adatvizualizációk</h2>
+    <p class="highlight-description">Vizualizációs összeállításunk célja, hogy több szinten – országos, városi és demográfiai bontásban – bemutassuk, hogyan viszonyulnak a jövedelmek a bérleti díjakhoz Európa különböző pontjain.
+        Az alábbi ábrák segítségével feltérképezhetjük, hol a legmagasabb a lakhatási költségek aránya, hogyan változtak a bérleti díjak az elmúlt években, és mely társadalmi csoportokat érinti leginkább a bérleti teher.</p>
+    </div>
+</div>
 
-        <div class="visualization-section">
-            <h2 class="section-title">Megfizethetőségi Elemzés</h2>
-            <p class="description">A jövedelem és a bérleti díj közötti kapcsolat különböző városok és korcsoportok szerint., colored by city.</p>
-            <div id="scatter-plot">
-                <div id="scatter-vis"></div>
-            </div>
+
+      <!-- Interaktív térképes/választható vizualizáció -->
+      <div class="visualization-section">
+        <div class="bubble-box viz-bubble-box">
+        <h2 class="section-title">Európai Lakhatási Költségek</h2>
+        <div class="filter-container">
+          <select id="yearSelect">
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
+            <option value="2022">2022</option>
+            <option value="2021">2021</option>
+            <option value="2020">2020</option>
+          </select>
+          <select id="metricSelect">
+            <option value="rentRatio">Bérleti díj (% jövedelem)</option>
+            <option value="utilitiesRatio">Rezsiköltség (% jövedelem)</option>
+            <option value="totalRatio">Összes lakhatási költség (% jövedelem)</option>
+          </select>
         </div>
 
-    
-
-        <div class="visualization-section">
-            <h2 class="section-title">Housing Cost Heatmap</h2>
-            <div class="filter-container">
-                <label for="ageGroup">Filter by Age Group:</label>
-                <select id="ageGroup">
-                    <option value="all">All Age Groups</option>
-                    <option value="18-21">18-21</option>
-                    <option value="22-25">22-25</option>
-                    <option value="26-29">26-29</option>
-                </select>
-            </div>
-            <div id="vis"></div>
+        <div class="map-wrapper">
+          <div id="map-vis">      
+            <!-- Ide jön majd a diagram vagy térkép -->
+          </div>
         </div>
+      </div>
+    </div>
 
-        <div class="visualization-section">
-            <h2 class="section-title">Európai Lakhatási Költségek</h2>
-            <div class="filter-container">
-                <select id="yearSelect">
-                    <option value="2024">2024</option>
-                    <option value="2023">2023</option>
-                    <option value="2022">2022</option>
-                    <option value="2021">2021</option>
-                    <option value="2020">2020</option>
-                </select>
-                <select id="metricSelect">
-                    <option value="rentRatio">Bérleti díj (% jövedelem)</option>
-                    <option value="utilitiesRatio">Rezsiköltség (% jövedelem)</option>
-                    <option value="totalRatio">Összes lakhatási költség (% jövedelem)</option>
-                </select>
-            </div>
-            <div id="map-vis"></div>
-        </div>
     <div class="visualization-section">
-        <h2>Bérleti díjak változása 2020-2024</h2>
-        <p class="description">Az oszlop diagram az átlagos bérleti díj változását mutatja az elmúlt 5 évben.</p>
-        <iframe src="bar_chart_race.html" width="1200" height="800" style="border:none;"></iframe>
-        <div id="chart" style="width:100%; height:700px;"></div>
+        <div class="bubble-box viz-bubble-box">
+        <h2 class="section-title">Megfizethetőségi Elemzés</h2>
+        <p class="description">A jövedelem és a bérleti díj közötti kapcsolat különböző városok és korcsoportok szerint., colored by city.</p>
+            <div id="scatter-vis"></div>
+        </div>
     </div>
+
+    <div class="visualization-section">
+        <div class="bubble-box viz-bubble-box">
+        <h2 class="section-title">Lakhatasi költségek (%) Hőtérkép </h2>
+        <div class="filter-container">
+            <label for="ageGroup">Filter by Age Group:</label>
+            <select id="ageGroup">
+                <option value="all">All Age Groups</option>
+                <option value="18-21">18-21</option>
+                <option value="22-25">22-25</option>
+                <option value="26-29">26-29</option>
+            </select>
+        </div>
+        <div id="vis" style="position: relative;"></div>
+        </div>
+    </div>
+
+    <div class="visualization-section">
+        <div class="bubble-box oszlop-bubble-box">
+            <h2 class="section-title">Bérleti díjak változása 2020-2024</h2>
+            <p class="description" style="text-align: left; margin-top: 0;">Az oszlop diagram az átlagos bérleti díj változását mutatja az elmúlt 5 évben.</p>
+            <iframe src="bar_chart_race.html" width="1200" height="800" style="border:none;"></iframe>
+            <div id="chart" style="width: 100%; height: 700px;"></div>
+        </div>
+    </div>
+
+  </div>
+</div> 
+  <!-- KÖVETKEZTETÉSEK -->
+<div id="section-kovetkeztetesek" class="bubble-section hidden">
+
+<div class="fullwidth-banner">
+    <div class="banner-content">
+        <h2 class="card-title">Következtetések</h2>
+        <p class="highlight-description">A projekt alapján levonható legfontosabb tanulságok...</p>
+    </div>
+</div>
     
+</div>
+  
+  <!-- FORRÁSOK -->
+<div id="section-forrasok" class="bubble-section hidden">
+
+    <div class="fullwidth-banner">
+        <div class="banner-content">
+            <h2 class="card-title">Források</h2>
+            <p class="highlight-description">KSH, Eurostat, Numbeo és más nyilvános adatbázisok.</p>
+        </div>
+    </div>
+
+</div>
+
+
     <script>
         const spec = {
             "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
@@ -396,10 +667,6 @@
                                 "scheme": "browns"
                             }
                         },
-                        "tooltip": [
-                            {"field": "properties.name", "title": "Country"},
-                            {"field": "value", "title": "Value"}
-                        ]
                     }
                 }
             ]
@@ -758,58 +1025,14 @@
 
             vegaEmbed("#map-vis", spec, {
                 "actions": false,
-                "tooltip": {
-                    "theme": "light",
-                    "style": {
-                        "fontSize": "14px",
-                        "fontFamily": "Arial, sans-serif",
-                        "padding": "15px",
-                        "background": "white",
-                        "border": "1px solid #ccc",
-                        "borderRadius": "8px",
-                        "boxShadow": "0 2px 8px rgba(0,0,0,0.2)",
-                        "position": "absolute",
-                        "zIndex": 1000,
-                        "maxWidth": "300px",
-                        "pointerEvents": "none"
-                    },
-                    "format": {
-                        "income": ".0f",
-                        "rent": ".0f",
-                        "utilities": ".0f",
-                        "rentRatio": ".1f",
-                        "utilitiesRatio": ".1f",
-                        "totalRatio": ".1f"
-                    }
-                }
+               
             }).then(result => {
                 const view = result.view;
                 const tooltip = document.createElement('div');
                 tooltip.className = 'custom-tooltip';
                 document.body.appendChild(tooltip);
 
-                view.addEventListener('mouseover', (event, item) => {
-                    if (item && item.datum) {
-                        const country = item.datum.properties.NAME;
-                        const countryData = data.find(d => d.country === country);
-                        if (countryData) {
-                            tooltip.innerHTML = `
-                                <div style="padding: 8px;">
-                                    <h3 style="margin: 0 0 5px 0; color: #122620; font-size: 14px;">${country}</h3>
-                                    <p style="margin: 3px 0; font-size: 12px;">Jövedelem: €${countryData.income.toFixed(0)}/hó</p>
-                                    <p style="margin: 3px 0; font-size: 12px;">Bérleti díj: €${countryData.rent.toFixed(0)}/hó</p>
-                                    <p style="margin: 3px 0; font-size: 12px;">Rezsiköltség: €${countryData.utilities.toFixed(0)}/hó</p>
-                                    <p style="margin: 3px 0; font-size: 12px;">Bérleti díj %: ${countryData.rentRatio.toFixed(1)}%</p>
-                                    <p style="margin: 3px 0; font-size: 12px;">Rezsiköltség %: ${countryData.utilitiesRatio.toFixed(1)}%</p>
-                                    <p style="margin: 3px 0; font-size: 12px;">Összes %: ${countryData.totalRatio.toFixed(1)}%</p>
-                                </div>
-                            `;
-                            tooltip.style.display = 'block';
-                            tooltip.style.left = (event.pageX + 30) + 'px';
-                            tooltip.style.top = (event.pageY - tooltip.offsetHeight / 2) + 'px';
-                        }
-                    }
-                });
+                
 
                 view.addEventListener('mouseout', () => {
                     tooltip.style.display = 'none';
@@ -829,5 +1052,96 @@
         // Initial load
         updateMap('2024', 'rentRatio');
     </script>
+
+    <script src="chart.js"></script>
+
+    <script>
+        const tabLinks = document.querySelectorAll('.tab-link');
+        const sections = document.querySelectorAll('.bubble-section');
+        const dots = document.getElementById("dotsDivider");
+        const nextBtn = document.getElementById("nextButton");
+      
+        // ⏱️ 1. Frissíti a gombok és pöttyök láthatóságát
+        function updateExtrasVisibility(targetId) {
+          if (targetId === "section-project") {
+            dots.style.display = "flex";
+            nextBtn.style.display = "block";
+          } else {
+            dots.style.display = "none";
+            nextBtn.style.display = "none";
+          }
+        }
+      
+        // 🖱️ 2. Tab-kattintás kezelése
+        tabLinks.forEach(link => {
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+      
+            // Inaktiválás
+            tabLinks.forEach(tab => {
+              tab.classList.remove('active');
+              tab.querySelector('.tab-indicator').classList.remove('active');
+            });
+      
+            // Aktiválás
+            link.classList.add('active');
+            link.querySelector('.tab-indicator').classList.add('active');
+      
+            // Szekcióváltás
+            sections.forEach(section => section.classList.add('hidden'));
+      
+            const targetId = link.getAttribute('data-target');
+            const target = document.getElementById(targetId);
+            if (target) {
+              target.classList.remove('hidden');
+              updateExtrasVisibility(targetId); // 🎯 itt frissítjük a gombokat is
+            }
+          });
+        });
+      
+        // 🟢 3. Betöltéskor mutassa az aktív szekciót
+        window.addEventListener('DOMContentLoaded', () => {
+          const activeLink = document.querySelector('.tab-link.active');
+          if (activeLink) {
+            const targetId = activeLink.getAttribute('data-target');
+            const target = document.getElementById(targetId);
+            if (target) {
+              target.classList.remove('hidden');
+              updateExtrasVisibility(targetId); // 🎯 betöltéskor is
+            }
+            activeLink.querySelector('.tab-indicator').classList.add('active');
+          }
+        });
+      
+        // ⏭️ 4. "Tovább" gomb működése
+        nextBtn.addEventListener("click", function () {
+          const allTabs = document.querySelectorAll(".tab-link");
+          const allSections = document.querySelectorAll(".bubble-section");
+      
+          // Következő tab: adatvizualizációk
+          const nextTab = document.querySelector('.tab-link[data-target="section-vizualizaciok"]');
+      
+          // Inaktiválás
+          allTabs.forEach(tab => {
+            tab.classList.remove("active");
+            tab.querySelector(".tab-indicator").classList.remove("active");
+          });
+          allSections.forEach(sec => sec.classList.add("hidden"));
+      
+          // Aktiválás
+          nextTab.classList.add("active");
+          nextTab.querySelector(".tab-indicator").classList.add("active");
+      
+          const targetId = nextTab.getAttribute("data-target");
+          document.getElementById(targetId).classList.remove("hidden");
+          updateExtrasVisibility(targetId); // 🎯 gomb és pötty elrejtése
+      
+          // Görgetés oda
+          document.getElementById(targetId).scrollIntoView({ behavior: "smooth" });
+        });
+      </script>
+      
+  
+
 </body>
 </html> 
