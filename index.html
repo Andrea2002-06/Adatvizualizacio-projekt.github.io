@@ -248,10 +248,28 @@
         .visualization-container {
             display: flex;
             flex-direction: column;
-            gap: 2cm;
+            align-items: center;
             width: 100%;
-            max-width: 1200px;
+            margin-top: 2cm;
+        }
+
+        #scatter-plot {
+            width: 100%;
             margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #scatter-vis {
+            width: 100%;
+            height: 500px;
+        }
+
+        .filter-container {
+            width: 100%;
+            margin-bottom: 20px;
         }
 
         .visualization-section {
@@ -263,6 +281,7 @@
             width: 100%;
             max-width: 1200px;
             margin: 0 auto 2cm auto;
+            backdrop-filter: blur(10px);
         }
 
         .section-title {
@@ -271,27 +290,6 @@
             margin-bottom: 1cm;
             text-align: center;
             font-weight: 600;
-        }
-
-        .filter-container {
-            margin-bottom: 1cm;
-            padding: 15px;
-            background-color: #f5f5f5;
-            border-radius: 5px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        #scatter-vis {
-            width: 100%;
-            margin: 0 auto;
-            transition: transform 0.3s ease;
-        }
-
-        #scatter-vis:hover {
-            transform: scale(1.02);
         }
     </style>
 </head>
@@ -315,18 +313,44 @@
 
     
 
-        <div class="visualization-section">
-            <h2 class="section-title">Megfizethetőségi Elemzés</h2>
-            <p class="description">A jövedelem és a bérleti díj közötti kapcsolat különböző városok és korcsoportok szerint.</p>
-            <div id="scatter-vis"></div>
-        </div>
 
     
 
         <div class="visualization-section">
-            <h2 class="section-title">Housing Cost Heatmap</h2>
+            <h2 class="section-title">Megfizethetőségi Elemzés</h2>
+            <p class="description">A jövedelem és a bérleti díj közötti kapcsolat különböző városok és korcsoportok szerint.</p>
+        
+            <div class="filter-container" style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-bottom: 20px;">
+                <div class="filter-group">
+                    <label for="yearFilter" style="font-weight: 600; color: #122620;">Év:</label>
+                    <select id="yearFilter" class="filter-select" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                        <option value="all">Minden év</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024" selected>2024</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="ageGroupFilter" style="font-weight: 600; color: #122620;">Korcsoport:</label>
+                    <select id="ageGroupFilter" class="filter-select" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                        <option value="all">Minden korcsoport</option>
+                        <option value="18-21">18-21</option>
+                        <option value="22-25">22-25</option>
+                        <option value="26-29">26-29</option>
+                    </select>
+                </div>
+            </div>
+        
+            <div id="scatter-vis"></div>
+        </div>
+        
+
+        <div class="visualization-section">
+            <h2 class="section-title">Lakhatási költségek - hőtérkép</h2>
             <div class="filter-container">
-                <label for="ageGroup">Filter by Age Group:</label>
+                <label for="ageGroup">Szűrés korcsoport szerint:</label>
                 <select id="ageGroup">
                     <option value="all">All Age Groups</option>
                     <option value="18-21">18-21</option>
@@ -369,7 +393,7 @@
             "height": 600,
             "projection": {
                 "type": "mercator",
-                "center": [15, 55], // Centered on Europe
+                "center": [15, 55],
                 "scale": 500
             },
             "layer": [
@@ -386,10 +410,10 @@
                             "lookup": "properties.name",
                             "from": {
                                 "data": {
-                                    "url": "Projekt/europai_lakhatasi_arak.csv" // Replace with your CSV file path
+                                    "url": "Projekt/europai_lakhatasi_arak.csv"
                                 },
-                                "key": "orszag", // The column in your CSV that contains country names
-                                "fields": ["berleti_dij"] // The column with the values you want to show
+                                "key": "orszag",
+                                "fields": ["berleti_dij"]
                             }
                         }
                     ],
@@ -402,14 +426,14 @@
                         "color": {
                             "field": "value",
                             "type": "quantitative",
-                            "title": "Housing Prices",
+                            "title": "Lakhatási árak",
                             "scale": {
                                 "scheme": "browns"
                             }
                         },
                         "tooltip": [
-                            {"field": "properties.name", "title": "Country"},
-                            {"field": "value", "title": "Value"}
+                            {"field": "properties.name", "title": "Ország"},
+                            {"field": "value", "title": "Érték"}
                         ]
                     }
                 }
