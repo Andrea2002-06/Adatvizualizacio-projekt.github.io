@@ -657,7 +657,7 @@
             <label for="ageGroup">Szűrés korcsoport szerint:</label>
            
                 <select id="ageGroup">
-                    <option value="all">All Age Groups</option>
+                    <option value="all">Minden korcsoport</option>
                     <option value="18-21">18-21</option>
                     <option value="22-25">22-25</option>
                     <option value="26-29">26-29</option>
@@ -826,6 +826,8 @@
                     tooltip.style.fontSize = '14px';
                     tooltip.style.color = '#333';
                     tooltip.style.border = '1px solid #ddd';
+                    tooltip.style.display = 'none';
+                    document.body.appendChild(tooltip);
                     
                     const country = item.datum.properties.name;
                     const value = item.datum.value;
@@ -835,9 +837,7 @@
                         <span style="margin-top: 4px; display: inline-block;">Lakhatási költség: ${value.toLocaleString()} EUR</span>
                     `;
                     
-                    document.body.appendChild(tooltip);
-                    
-                    // Position tooltip near cursor
+                    tooltip.style.display = 'block';
                     tooltip.style.left = (event.pageX + 15) + 'px';
                     tooltip.style.top = (event.pageY + 15) + 'px';
                 }
@@ -1202,12 +1202,84 @@
                 const view = result.view;
                 const tooltip = document.createElement('div');
                 tooltip.className = 'custom-tooltip';
+                tooltip.style.position = 'absolute';
+                tooltip.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                tooltip.style.padding = '12px';
+                tooltip.style.borderRadius = '8px';
+                tooltip.style.boxShadow = '0 4px 8px rgba(0,0,0,0.15)';
+                tooltip.style.pointerEvents = 'none';
+                tooltip.style.zIndex = '1000';
+                tooltip.style.fontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+                tooltip.style.fontSize = '14px';
+                tooltip.style.color = '#333';
+                tooltip.style.border = '1px solid #ddd';
+                tooltip.style.display = 'none';
                 document.body.appendChild(tooltip);
 
-                
+                // Country name translations
+                const countryTranslations = {
+                    'Albania': 'Albánia',
+                    'Austria': 'Ausztria',
+                    'Belgium': 'Belgium',
+                    'Bosnia and Herzegovina': 'Bosznia-Hercegovina',
+                    'Bulgaria': 'Bulgária',
+                    'Croatia': 'Horvátország',
+                    'Czech Republic': 'Csehország',
+                    'Denmark': 'Dánia',
+                    'Estonia': 'Észtország',
+                    'Finland': 'Finnország',
+                    'France': 'Franciaország',
+                    'Germany': 'Németország',
+                    'Greece': 'Görögország',
+                    'Hungary': 'Magyarország',
+                    'Ireland': 'Írország',
+                    'Italy': 'Olaszország',
+                    'Latvia': 'Lettország',
+                    'Lithuania': 'Litvánia',
+                    'Luxembourg': 'Luxemburg',
+                    'Netherlands': 'Hollandia',
+                    'Norway': 'Norvégia',
+                    'Poland': 'Lengyelország',
+                    'Portugal': 'Portugália',
+                    'Romania': 'Románia',
+                    'Slovakia': 'Szlovákia',
+                    'Slovenia': 'Szlovénia',
+                    'Spain': 'Spanyolország',
+                    'Sweden': 'Svédország',
+                    'Switzerland': 'Svájc',
+                    'United Kingdom': 'Egyesült Királyság'
+                };
+
+                view.addEventListener('mouseover', (event, item) => {
+                    if (item && item.datum) {
+                        const englishCountry = item.datum.properties.NAME;
+                        const country = countryTranslations[englishCountry] || englishCountry;
+                        const rentRatio = item.datum.rentRatio ? item.datum.rentRatio.toFixed(1) : 'N/A';
+                        const utilitiesRatio = item.datum.utilitiesRatio ? item.datum.utilitiesRatio.toFixed(1) : 'N/A';
+                        const totalRatio = item.datum.totalRatio ? item.datum.totalRatio.toFixed(1) : 'N/A';
+                        
+                        tooltip.innerHTML = `
+                            <strong style="color: #996835; font-size: 16px;">${country}</strong><br>
+                            <span style="margin-top: 4px; display: inline-block;">Bérleti díj: ${rentRatio}%</span><br>
+                            <span style="margin-top: 4px; display: inline-block;">Rezsiköltség: ${utilitiesRatio}%</span><br>
+                            <span style="margin-top: 4px; display: inline-block;">Összes lakhatási költség: ${totalRatio}%</span>
+                        `;
+                        
+                        tooltip.style.display = 'block';
+                        tooltip.style.left = (event.pageX + 15) + 'px';
+                        tooltip.style.top = (event.pageY + 15) + 'px';
+                    }
+                });
 
                 view.addEventListener('mouseout', () => {
                     tooltip.style.display = 'none';
+                });
+
+                view.addEventListener('mousemove', (event) => {
+                    if (tooltip.style.display === 'block') {
+                        tooltip.style.left = (event.pageX + 15) + 'px';
+                        tooltip.style.top = (event.pageY + 15) + 'px';
+                    }
                 });
             }).catch(console.error);
         }

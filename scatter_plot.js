@@ -119,28 +119,53 @@ function updateVisualization() {
     fetch('https://raw.githubusercontent.com/Andrea2002-06/Andrea2002-06.github.io/refs/heads/main/europai_lakhatasi_adatbazis.csv')
         .then(response => response.text())
         .then(csvText => {
-            const rows = csvText.split('\n');
+            // Improved CSV parsing
+            const rows = csvText.split('\n').filter(row => row.trim() !== '');
             const headers = rows[0].split(',').map(h => h.trim());
-            const data = rows.slice(1)
-                .filter(row => row.trim() !== '')
-                .map(row => {
-                    const values = row.split(',').map(v => v.trim());
-                    const entry = {};
-                    headers.forEach((header, i) => {
-                        if (header === 'Jövedelem (€/hó)' || header === 'Bérleti díj (€/hó)') {
-                            entry[header] = parseFloat(values[i]) || 0;
-                        } else {
-                            entry[header] = values[i] || '';
-                        }
-                    });
-                    return entry;
+            
+            const data = rows.slice(1).map(row => {
+                // Handle potential quoted fields
+                const values = [];
+                let currentValue = '';
+                let inQuotes = false;
+                
+                for (let i = 0; i < row.length; i++) {
+                    const char = row[i];
+                    if (char === '"') {
+                        inQuotes = !inQuotes;
+                    } else if (char === ',' && !inQuotes) {
+                        values.push(currentValue.trim());
+                        currentValue = '';
+                    } else {
+                        currentValue += char;
+                    }
+                }
+                values.push(currentValue.trim());
+
+                const entry = {};
+                headers.forEach((header, i) => {
+                    const value = values[i] || '';
+                    if (header === 'Jövedelem (€/hó)' || header === 'Bérleti díj (€/hó)' || 
+                        header === 'Eladási ár (€/m²)' || header === 'Lakásméret (m²)' || 
+                        header === 'Rezsi (€/hó)' || header === 'Lakhatási arány (%)') {
+                        // Remove any non-numeric characters except decimal point
+                        const cleanValue = value.replace(/[^0-9.]/g, '');
+                        entry[header] = parseFloat(cleanValue) || 0;
+                    } else {
+                        entry[header] = value;
+                    }
                 });
+                return entry;
+            });
 
             let filteredData = data.filter(d => {
                 const yearMatch = year === 'all' || d.Év === year;
                 const ageMatch = ageGroup === 'all' || d.Korosztály === ageGroup;
                 return yearMatch && ageMatch;
             });
+
+            // Log data for debugging
+            console.log('Filtered data:', filteredData);
 
             const updatedSpec = {
                 ...scatterPlotSpec,
