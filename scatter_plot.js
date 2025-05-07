@@ -1,17 +1,17 @@
 // Define the base specification for the scatter plot
 const scatterPlotSpec = {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 700,
-    "height": 350,
+    "width": 900,
+    "height": 500,
     "background": "white",
-    "padding": 15,
+    "padding": 20,
     "mark": {
         "type": "point",
         "filled": true,
         "stroke": "#ffffff",
         "strokeWidth": 1,
         "cursor": "pointer",
-        "size": 40
+        "size": 80
     },
     "encoding": {
         "x": {
@@ -62,7 +62,21 @@ const scatterPlotSpec = {
             {"field": "Jövedelem (€/hó)", "title": "Jövedelem", "format": ",.0f"},
             {"field": "Bérleti díj (€/hó)", "title": "Bérleti díj", "format": ",.0f"},
             {"field": "Korosztály", "title": "Korosztály"}
-        ]
+        ],
+        "opacity": {
+            "condition": {
+                "test": "datum === hover",
+                "value": 1
+            },
+            "value": 0.7
+        }
+    },
+    "selection": {
+        "hover": {
+            "type": "single",
+            "on": "mouseover",
+            "empty": "none"
+        }
     },
     "config": {
         "axis": {
@@ -80,6 +94,19 @@ const scatterPlotSpec = {
             "color": "#122620",
             "fontSize": 14,
             "fontWeight": 500
+        },
+        "tooltip": {
+            "theme": "light",
+            "content": "data",
+            "style": {
+                "fontFamily": "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+                "fontSize": "14px",
+                "padding": "12px",
+                "backgroundColor": "rgba(255, 255, 255, 0.95)",
+                "borderRadius": "8px",
+                "boxShadow": "0 4px 8px rgba(0,0,0,0.15)",
+                "border": "1px solid #ddd"
+            }
         }
     }
 };
@@ -126,6 +153,52 @@ function updateVisualization() {
                 theme: "light",
                 actions: false,
                 renderer: "svg"
+            }).then(function(result) {
+                const view = result.view;
+                
+                // Add custom hover effect
+                view.addEventListener('mouseover', function(event, item) {
+                    if (item && item.datum) {
+                        const tooltip = document.createElement('div');
+                        tooltip.className = 'custom-tooltip';
+                        tooltip.style.position = 'absolute';
+                        tooltip.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                        tooltip.style.padding = '12px';
+                        tooltip.style.borderRadius = '8px';
+                        tooltip.style.boxShadow = '0 4px 8px rgba(0,0,0,0.15)';
+                        tooltip.style.pointerEvents = 'none';
+                        tooltip.style.zIndex = '1000';
+                        tooltip.style.fontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+                        tooltip.style.fontSize = '14px';
+                        tooltip.style.color = '#333';
+                        tooltip.style.border = '1px solid #ddd';
+                        
+                        const city = item.datum.Város;
+                        const income = item.datum["Jövedelem (€/hó)"];
+                        const rent = item.datum["Bérleti díj (€/hó)"];
+                        const ageGroup = item.datum.Korosztály;
+                        
+                        tooltip.innerHTML = `
+                            <strong style="color: #996835; font-size: 16px;">${city}</strong><br>
+                            <span style="margin-top: 4px; display: inline-block;">Jövedelem: ${income.toLocaleString()} €/hó</span><br>
+                            <span style="margin-top: 4px; display: inline-block;">Bérleti díj: ${rent.toLocaleString()} €/hó</span><br>
+                            <span style="margin-top: 4px; display: inline-block;">Korosztály: ${ageGroup}</span>
+                        `;
+                        
+                        document.body.appendChild(tooltip);
+                        
+                        // Position tooltip near cursor
+                        tooltip.style.left = (event.pageX + 15) + 'px';
+                        tooltip.style.top = (event.pageY + 15) + 'px';
+                    }
+                });
+                
+                view.addEventListener('mouseout', function() {
+                    const tooltips = document.getElementsByClassName('custom-tooltip');
+                    while(tooltips.length > 0) {
+                        tooltips[0].parentNode.removeChild(tooltips[0]);
+                    }
+                });
             }).catch(error => {
                 console.error('Error updating visualization:', error);
             });
