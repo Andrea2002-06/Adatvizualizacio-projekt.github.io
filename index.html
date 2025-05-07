@@ -405,10 +405,7 @@
         }
 
         #scatter-vis {
-           width: 90%;
-            max-width: 800px;
-            height: 500px;
-            border-radius: 12px;
+      margin-top: 24px;
     }
 
         .data-popup {
@@ -471,6 +468,84 @@
             }
         }
 
+        .fullwidth-banner-kov {
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            width: 100vw;
+
+            background: #ede3d5e0;
+            padding: 80px 0;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            color: #000000;
+            animation: slideInBanner 1s ease forwards;
+            opacity: 0;
+            transform: translateY(20px);
+            z-index: 1;
+            height: 50%;
+        }
+
+        .banner-content-kov {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: left;
+        }
+
+        .kov-bubble-box {
+            max-width: 1200px;
+            width: 98%;
+            height: 750px;
+            padding: 34px;
+            background-color: #ffffff;
+        }
+
+        .kov-content-wrapper {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            align-items: flex-start;
+         }
+
+        .kov-text {
+            flex: 1 1 60%;
+            min-width: 250px;
+        }
+
+        .kov-image {
+            flex: 1 1 35%;
+            min-width: 200px;
+            max-width: 650px;
+            padding-top: 32px;
+            height: 600px;
+        }
+
+        .kov-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+
+        .dots-divider-kov {
+            text-align: center;
+            font-size: 24px;
+            color: #8a6430;
+            letter-spacing: 8px;
+            margin: 12px 0;
+        }
+
+        h3 {
+            display: inline;
+            background: linear-gradient(to top, #ccbca7 50%, transparent 40%);
+            font-weight: bold;
+            padding: 0 4px;
+            }
+
+
     </style>
 </head>
 <body>
@@ -505,7 +580,7 @@
             </li>
 
             <li>
-            <a href="#" class="tab-link" data-target="section-forrasok">
+            <a href="#" class="tab-link" data-target="section-Források">
                 <span class="tab-indicator"></span>
                   Források 
             </a>
@@ -516,6 +591,9 @@
 
       
 <div id="section-project" class="bubble-section">
+
+    <br>
+    <br>
 
     <div class="bubble-box">
           <h2 class="card-title">Miről szól a projekt?</h2>
@@ -689,22 +767,66 @@
   <!-- KÖVETKEZTETÉSEK -->
 <div id="section-kovetkeztetesek" class="bubble-section hidden">
 
-<div class="fullwidth-banner">
-    <div class="banner-content">
+<div class="fullwidth-banner-kov">
+    <div class="banner-content-kov">
         <h2 class="card-title">Következtetések</h2>
         <p class="highlight-description">A projekt alapján levonható legfontosabb tanulságok...</p>
     </div>
 </div>
+
+    <div class="bubble-box kov-bubble-box">
+        <div class="kov-content-wrapper">
+            <div class="kov-text">
+
+                <br>
+
+            <ul style="font-weight: bold; size: 14;">
+                <li>Az elemzések egyértelműen rámutatnak, hogy a probléma súlyossága eltér Európa különböző országaiban. Ugyanakkor Európa-szerte terhet jelent az önálló lakhatás a fiatalabb korosztály számára, különösen a nagyvárosi környezetben.</li>
+                <li>A bemutatott vizualizációk jól támogatják a fenti következtetések, és tisztán látható, hogy egyes országokban a lakhatási költségek hány százalékát teszik ki a fiatalok havi jövedelmének. De hogyan lehetne ezt az elemzést tovább fejleszteni? </li>
+            </ul>
+
+            <div class="dots-divider-kov">● ● ●</div>
     
+            <h3> Skálázható? </h3>
+            <p>Az elemzésünk nyílt adatokra épül, ezért jól skálázható más országokra vagy akár kontinensekre. Ugyanez a struktúra alkalmazható Ázsia, Amerika vagy más országok régióira is. Az elemzés alkalmazható regionális, városi vagy akar kerületi szinten is, amennyibe rendelkezésre állnak a megfelelő adatok. Nemzetközi összehasonlításokra is alkalmas.</p>
+
+            <h3> Automatizálható? </h3>
+            <p>Az adatok nagyrésze rendszeresen frissülő nyilvános forrásból származik (pl. Numbeo, KSH, Eurostat), így a teljes adatbetöltés és ábragenerálás automatizálható (pl. Python és R használatával). Egy automatizälható pipeline lehhetővé tenné a rendszeres frissitést, figyelmeztetéseket a változásokra, és akar előrejelzéseket is készíthet a jövőbeli trendekre.</p>
+            <ul></ul>
+
+            <h3> Hogyan lehetne tovább fejleszteni? </h3>
+            <p>A jelenlegi elemzés jól lefedi az alapvető lakhatási terheket, viszont további mélységet adhatnak a következő bővítések:</p>
+
+            <ul>
+                <li>Elérhetőségi mutatók bevonása - Hány négyzetmétert lehet bérelni egy átlagos jövedelemből?</li>
+                <li>Lakáspiaci kínálat vizsgálata - üres lakások aránya, új épületek száma.</li>
+                <li>Részletesebb elemzés - az országok lebontása városokra, egy részletesebb vizsgálatért.</li>
+            </ul>
+            
+        </div>
+
+        <div class="kov-image">
+            <img src="kep3.jpg" alt="elemzés"/>
+        </div>
+        </div>
+    </div>
 </div>
+    
+
   
   <!-- FORRÁSOK -->
-<div id="section-forrasok" class="bubble-section hidden">
+<div id="section-Források" class="bubble-section hidden" >
 
     <div class="fullwidth-banner">
         <div class="banner-content">
             <h2 class="card-title">Források</h2>
-            <p class="highlight-description">KSH, Eurostat, Numbeo és más nyilvános adatbázisok.</p>
+            <ul class="highlight-description" style="font-weight: 600; size: 15;  ">
+                <li>Eurostat : <a href="https://ec.europa.eu/eurostat/web/housing-price-statistics/database" target="_blank">https://ec.europa.eu/eurostat/web/housing-price-statistics/database</a></p></li>
+                <li>OECD : <a href="https://www.oecd.org/en/data/indicators/housing-prices.html?oecdcontrol-82d381eddd-var3=1947" target="_blank">https://www.oecd.org/en/data/indicators/housing-prices.html?oecdcontrol-82d381eddd-var3=1947</a></p></li>
+                <li>Numbeo :<a href="https://www.numbeo.com/cost-of-living/" target="_blank">https://www.numbeo.com/cost-of-living/</a></p></li>
+            </ul>
+            <br>            
+            <p style="size: 14;"> Jöhetnek a kérdések...</p>
         </div>
     </div>
 
