@@ -45,7 +45,18 @@ const scatterPlotSpec = {
             "type": "nominal",
             "title": "Város",
             "scale": {
-                "range": ["#8b6b4b", "#a27b5c", "#c4a484", "#d4b996", "#e5d5b5"]
+                "range": [
+                    "#8b6b4b", // warm brown
+                    "#7c8558", // sage green
+                    "#a27b5c", // medium brown
+                    "#6f7b3c", // forest green
+                    "#c4a484", // light brown
+                    "#8a9a5b", // olive green
+                    "#d4b996", // pale brown
+                    "#9baa6c", // light sage
+                    "#e5d5b5", // cream
+                    "#7d8b4f"  // muted green
+                ]
             },
             "legend": {
                 "titleFontSize": 14,
