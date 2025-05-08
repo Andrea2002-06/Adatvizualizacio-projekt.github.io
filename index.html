@@ -13,6 +13,7 @@
     <script src="bubble_chart.js" defer></script>
     <script src="housing_heatmap.js" defer></script>
     <script src="housing_trends.js" defer></script>
+    <script src="housing_types.js" defer></script>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -753,18 +754,25 @@
     </div>
 
     <div class="visualization-section">
-        <div class="bubble-box viz-bubble-box" style="max-width:1400px;width:98%;height:850px;padding:36px;background-color:#fff;margin:20px auto;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,0.1);">
+        <div class="bubble-box viz-bubble-box" style="height: auto; min-height: 800px; padding: 36px;">
             <h2 class="section-title">Bérleti díjak változása 2020-2024</h2>
             <p class="description" style="text-align: left; margin-top: 0;">Az oszlop diagram az átlagos bérleti díj változását mutatja az elmúlt 5 évben.</p>
             <iframe src="bar_chart_race.html" width="100%" height="800" style="border:none;max-width:100%;border-radius:12px;"></iframe>
-            <div id="chart" style="width: 100%; height: 700px;"></div>
         </div>
     </div>
 
     <div class="visualization-section">
-        <div class="bubble-box viz-bubble-box" style="height: 600px; max-width: 1600px; min-height: 600px; max-height: 600px;">
+        <div class="bubble-box viz-bubble-box" style="height: auto; min-height: 600px; padding: 36px;">
             <h2 class="section-title">Lakhatási arány (%) városonként (2020–2024)</h2>
-            <div id="trends-vis" style="width: 100%; height: 500px; min-height: 500px; max-height: 500px; position: relative;"></div>
+            <div id="trends-vis" style="width: 100%; height: 500px; position: relative;"></div>
+        </div>
+    </div>
+
+    <div class="visualization-section">
+        <div class="bubble-box viz-bubble-box" style="height: auto; min-height: 700px; padding: 36px;">
+            <h2 class="section-title">Ingatlantípusok szerinti átlagos lakásméret korcsoportonként</h2>
+            <p class="description" style="text-align: left; margin-top: 0;">A diagram mutatja, hogy mely korosztály milyen típusú ingatlanban lakik, és mekkora az átlagos lakásméretük.</p>
+            <div id="housing-types-chart" style="width: 100%; height: 600px;"></div>
         </div>
     </div>
 
