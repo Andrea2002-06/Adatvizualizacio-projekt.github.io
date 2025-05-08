@@ -9,7 +9,11 @@ document.addEventListener("DOMContentLoaded", function () {
     flexContainer.style.justifyContent = "center";
     flexContainer.style.gap = "32px";
     flexContainer.style.width = "100%";
-    flexContainer.style.height = "100%";
+    flexContainer.style.height = "500px";
+    flexContainer.style.overflow = "hidden";
+    flexContainer.style.position = "relative";
+    flexContainer.style.minHeight = "500px";
+    flexContainer.style.maxHeight = "500px";
   
     // Move the trendsDiv into the flex container
     trendsDiv.parentNode.insertBefore(flexContainer, trendsDiv);
@@ -18,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Create dropdown
     const dropdown = document.createElement("select");
     dropdown.multiple = true;
-    dropdown.size = 8;
+    dropdown.size = 6;
     dropdown.style.marginBottom = "0";
     dropdown.style.marginTop = "8px";
     dropdown.style.padding = "10px 16px";
@@ -31,16 +35,32 @@ document.addEventListener("DOMContentLoaded", function () {
     dropdown.style.minWidth = "180px";
     dropdown.style.boxShadow = "0 2px 5px rgba(0,0,0,0.1)";
     dropdown.style.height = "auto";
+    dropdown.style.overflowY = "auto";
+    dropdown.style.position = "sticky";
+    dropdown.style.top = "8px";
     flexContainer.insertBefore(dropdown, trendsDiv);
   
-    // Make the div responsive
-    trendsDiv.style.width = "100%";
-    trendsDiv.style.height = "600px";
-    trendsDiv.style.minHeight = "400px";
-    trendsDiv.style.maxWidth = "100%";
+    // Make the div responsive with fixed dimensions
+    trendsDiv.style.width = "calc(100% - 332px)"; // Account for dropdown width and gap
+    trendsDiv.style.height = "500px";
+    trendsDiv.style.minHeight = "500px";
+    trendsDiv.style.maxHeight = "500px";
+    trendsDiv.style.overflow = "hidden";
+    trendsDiv.style.position = "relative";
   
-    // Color palette (same as other visuals)
-    const palette = ["#996835", "#b38b6d", "#d6ad60", "#ede3d5", "#122620"];
+    // Color palette for the chart
+    const colorPalette = [
+        '#8b6b4b', // deep warm brown
+        '#5c7c3c', // deep forest green
+        '#c4a484', // light warm brown
+        '#8a9a5b', // medium olive green
+        '#6b4b3c', // dark brown
+        '#7c8558', // medium sage green
+        '#d4b996', // pale brown
+        '#4a5c2c', // dark forest green
+        '#e5d5b5', // cream
+        '#9baa6c'  // light sage
+    ];
   
     // Load and parse CSV
     Papa.parse("https://raw.githubusercontent.com/Andrea2002-06/Andrea2002-06.github.io/refs/heads/main/europai_lakhatasi_adatbazis.csv", {
@@ -98,14 +118,14 @@ document.addEventListener("DOMContentLoaded", function () {
               line: {
                 shape: "spline",
                 width: 2,
-                color: palette[idx % palette.length]
+                color: colorPalette[idx % colorPalette.length]
               },
               marker: {
-                color: palette[idx % palette.length],
+                color: colorPalette[idx % colorPalette.length],
                 line: { color: "#fff", width: 1 }
               },
               fill: "tozeroy",
-              fillcolor: palette[idx % palette.length] + "29", // ~16% opacity
+              fillcolor: colorPalette[idx % colorPalette.length] + "29", // ~16% opacity
               opacity: 0.18
             };
           });
@@ -130,14 +150,29 @@ document.addEventListener("DOMContentLoaded", function () {
             legend: {
               bgcolor: "#fff",
               bordercolor: "#eee",
-              borderwidth: 1
+              borderwidth: 1,
+              y: 1.1,
+              orientation: "h",
+              x: 0.5,
+              xanchor: "center"
             },
             autosize: true,
             width: trendsDiv.offsetWidth,
-            height: trendsDiv.offsetHeight
+            height: 500,
+            margin: {
+              l: 50,
+              r: 50,
+              t: 80,
+              b: 50,
+              pad: 4
+            }
           };
   
-          Plotly.newPlot("trends-vis", traces, layout, { responsive: true });
+          Plotly.newPlot("trends-vis", traces, layout, { 
+            responsive: true,
+            displayModeBar: false,
+            staticPlot: false
+          });
         }
   
         dropdown.addEventListener("change", updateChart);
@@ -147,6 +182,11 @@ document.addEventListener("DOMContentLoaded", function () {
           dropdown.options[i].selected = true;
         }
         updateChart();
+
+        // Add window resize handler
+        window.addEventListener('resize', function() {
+          updateChart();
+        });
       }
     });
   });
