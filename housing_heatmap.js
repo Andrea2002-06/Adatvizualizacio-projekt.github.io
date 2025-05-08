@@ -21,7 +21,7 @@ const housingHeatmapSpec = {
         "x": {
             "field": "Év",
             "type": "nominal",
-            "title": "Year",
+            "title": "Év",
             "axis": {
                 "labelAngle": 0,
                 "titleFontSize": 14,
@@ -31,7 +31,7 @@ const housingHeatmapSpec = {
         "y": {
             "field": "Város",
             "type": "nominal",
-            "title": "City",
+            "title": "Város",
             "axis": {
                 "titleFontSize": 14,
                 "titleColor": "#122620"
@@ -40,7 +40,7 @@ const housingHeatmapSpec = {
         "color": {
             "field": "Housing Cost Ratio",
             "type": "quantitative",
-            "title": "Housing Cost Ratio (%)",
+            "title": "Lakhatási költség arány (%)",
             "scale": {
                 "scheme": ["#f8f9fa", "#f5f5f5", "#e9ecef", "#d4b996", "#c4a484", "#b38b6d", "#a27b5c", "#8b6b4b", "#6c4a3c"],
                 "reverse": true
@@ -52,14 +52,21 @@ const housingHeatmapSpec = {
             }
         },
         "tooltip": [
-            {"field": "Város", "type": "nominal", "title": "City"},
-            {"field": "Év", "type": "nominal", "title": "Year"},
-            {"field": "Housing Cost Ratio", "type": "quantitative", "title": "Housing Cost Ratio (%)", "format": ".1f"},
-            {"field": "Bérleti díj (€/hó)", "type": "quantitative", "title": "Rent (€/month)"},
-            {"field": "Jövedelem (€/hó)", "type": "quantitative", "title": "Income (€/month)"},
-            {"field": "Korosztály", "type": "nominal", "title": "Age Group"},
-            {"field": "Ingatlantípus", "type": "nominal", "title": "Property Type"}
-        ]
+            {"field": "Város", "type": "nominal", "title": "Város"},
+            {"field": "Év", "type": "nominal", "title": "Év"},
+            {"field": "Housing Cost Ratio", "type": "quantitative", "title": "Lakhatási költség arány", "format": ".1f"},
+            {"field": "Bérleti díj (€/hó)", "type": "quantitative", "title": "Bérleti díj", "format": ",.0f"},
+            {"field": "Jövedelem (€/hó)", "type": "quantitative", "title": "Jövedelem", "format": ",.0f"},
+            {"field": "Korosztály", "type": "nominal", "title": "Korosztály"},
+            {"field": "Ingatlantípus", "type": "nominal", "title": "Ingatlantípus"}
+        ],
+        "opacity": {
+            "condition": {
+                "test": "datum === hover",
+                "value": 1
+            },
+            "value": 0.7
+        }
     },
     "selection": {
         "brush": {
@@ -79,7 +86,20 @@ const housingHeatmapSpec = {
             "grid": false,
             "ticks": false
         },
-        "background": "transparent"
+        "background": "transparent",
+        "tooltip": {
+            "theme": "light",
+            "content": "data",
+            "style": {
+                "fontFamily": "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+                "fontSize": "14px",
+                "padding": "12px",
+                "backgroundColor": "rgba(255, 255, 255, 0.95)",
+                "borderRadius": "8px",
+                "boxShadow": "0 4px 8px rgba(0,0,0,0.15)",
+                "border": "1px solid #ddd"
+            }
+        }
     }
 };
 
@@ -94,6 +114,57 @@ function initializeHousingHeatmap() {
         },
         renderer: "svg"
     }).then(function(result) {
+        const view = result.view;
+
+        // Add hover effect
+        view.addEventListener('mouseover', function(event, item) {
+            if (item && item.datum) {
+                const tooltip = document.createElement('div');
+                tooltip.className = 'custom-tooltip';
+                tooltip.style.position = 'absolute';
+                tooltip.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                tooltip.style.padding = '12px';
+                tooltip.style.borderRadius = '8px';
+                tooltip.style.boxShadow = '0 4px 8px rgba(0,0,0,0.15)';
+                tooltip.style.pointerEvents = 'none';
+                tooltip.style.zIndex = '1000';
+                tooltip.style.fontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+                tooltip.style.fontSize = '14px';
+                tooltip.style.color = '#333';
+                tooltip.style.border = '1px solid #ddd';
+                
+                const city = item.datum.Város;
+                const year = item.datum.Év;
+                const ratio = (item.datum['Bérleti díj (€/hó)'] / item.datum['Jövedelem (€/hó)'] * 100).toFixed(1);
+                const rent = item.datum['Bérleti díj (€/hó)'].toLocaleString();
+                const income = item.datum['Jövedelem (€/hó)'].toLocaleString();
+                const ageGroup = item.datum.Korosztály;
+                const propertyType = item.datum.Ingatlantípus;
+                
+                tooltip.innerHTML = `
+                    <strong style="color: #996835; font-size: 16px;">${city} (${year})</strong><br>
+                    <span style="margin-top: 4px; display: inline-block;">Lakhatási költség arány: ${ratio}%</span><br>
+                    <span style="margin-top: 4px; display: inline-block;">Bérleti díj: ${rent} €/hó</span><br>
+                    <span style="margin-top: 4px; display: inline-block;">Jövedelem: ${income} €/hó</span><br>
+                    <span style="margin-top: 4px; display: inline-block;">Korosztály: ${ageGroup}</span><br>
+                    <span style="margin-top: 4px; display: inline-block;">Ingatlantípus: ${propertyType}</span>
+                `;
+                
+                document.body.appendChild(tooltip);
+                
+                // Position tooltip near cursor
+                tooltip.style.left = (event.pageX + 15) + 'px';
+                tooltip.style.top = (event.pageY + 15) + 'px';
+            }
+        });
+        
+        view.addEventListener('mouseout', function() {
+            const tooltips = document.getElementsByClassName('custom-tooltip');
+            while(tooltips.length > 0) {
+                tooltips[0].parentNode.removeChild(tooltips[0]);
+            }
+        });
+
         // Add event listener for age group filter
         document.getElementById('ageGroup').addEventListener('change', function(e) {
             const ageGroup = e.target.value;
@@ -104,10 +175,18 @@ function initializeHousingHeatmap() {
                     {
                         "filter": `datum['Korosztály'] === '${ageGroup}'`
                     },
-                    ...housingHeatmapSpec.transform
+                    {
+                        "calculate": "datum['Bérleti díj (€/hó)'] / datum['Jövedelem (€/hó)'] * 100",
+                        "as": "Housing Cost Ratio"
+                    }
                 ];
             } else {
-                newSpec.transform = housingHeatmapSpec.transform;
+                newSpec.transform = [
+                    {
+                        "calculate": "datum['Bérleti díj (€/hó)'] / datum['Jövedelem (€/hó)'] * 100",
+                        "as": "Housing Cost Ratio"
+                    }
+                ];
             }
             
             vegaEmbed('#vis', newSpec, {
@@ -119,55 +198,58 @@ function initializeHousingHeatmap() {
                     editor: false
                 },
                 renderer: "svg"
-            });
-        });
+            }).then(function(result) {
+                const view = result.view;
 
-        // Add click event to cells
-        result.view.addEventListener('click', function(event, item) {
-            if (item && item.datum) {
-                const city = item.datum.Város;
-                const year = item.datum.Év;
-                const ratio = (item.datum['Bérleti díj (€/hó)'] / item.datum['Jövedelem (€/hó)'] * 100).toFixed(1);
-                
-                // Create a popup with detailed information
-                const popup = document.createElement('div');
-                popup.className = 'data-popup';
-                popup.innerHTML = `
-                    <h3>${city} (${year})</h3>
-                    <p>Housing Cost Ratio: ${ratio}%</p>
-                    <p>Rent: €${item.datum['Bérleti díj (€/hó)']}/month</p>
-                    <p>Income: €${item.datum['Jövedelem (€/hó)']}/month</p>
-                    <p>Age Group: ${item.datum.Korosztály}</p>
-                    <p>Property Type: ${item.datum.Ingatlantípus}</p>
-                `;
-                
-                // Style the popup
-                popup.style.cssText = `
-                    position: absolute;
-                    background: rgba(255, 255, 255, 0.95);
-                    padding: 15px;
-                    border-radius: 8px;
-                    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-                    z-index: 1000;
-                    max-width: 300px;
-                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                `;
-                
-                // Position the popup near the clicked cell
-                popup.style.left = event.clientX + 'px';
-                popup.style.top = event.clientY + 'px';
-                
-                // Add to document
-                document.body.appendChild(popup);
-                
-                // Remove popup when clicking elsewhere
-                document.addEventListener('click', function removePopup(e) {
-                    if (!popup.contains(e.target)) {
-                        popup.remove();
-                        document.removeEventListener('click', removePopup);
+                // Add hover effect
+                view.addEventListener('mouseover', function(event, item) {
+                    if (item && item.datum) {
+                        const tooltip = document.createElement('div');
+                        tooltip.className = 'custom-tooltip';
+                        tooltip.style.position = 'absolute';
+                        tooltip.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                        tooltip.style.padding = '12px';
+                        tooltip.style.borderRadius = '8px';
+                        tooltip.style.boxShadow = '0 4px 8px rgba(0,0,0,0.15)';
+                        tooltip.style.pointerEvents = 'none';
+                        tooltip.style.zIndex = '1000';
+                        tooltip.style.fontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+                        tooltip.style.fontSize = '14px';
+                        tooltip.style.color = '#333';
+                        tooltip.style.border = '1px solid #ddd';
+                        
+                        const city = item.datum.Város;
+                        const year = item.datum.Év;
+                        const ratio = (item.datum['Bérleti díj (€/hó)'] / item.datum['Jövedelem (€/hó)'] * 100).toFixed(1);
+                        const rent = item.datum['Bérleti díj (€/hó)'].toLocaleString();
+                        const income = item.datum['Jövedelem (€/hó)'].toLocaleString();
+                        const ageGroup = item.datum.Korosztály;
+                        const propertyType = item.datum.Ingatlantípus;
+                        
+                        tooltip.innerHTML = `
+                            <strong style="color: #996835; font-size: 16px;">${city} (${year})</strong><br>
+                            <span style="margin-top: 4px; display: inline-block;">Lakhatási költség arány: ${ratio}%</span><br>
+                            <span style="margin-top: 4px; display: inline-block;">Bérleti díj: ${rent} €/hó</span><br>
+                            <span style="margin-top: 4px; display: inline-block;">Jövedelem: ${income} €/hó</span><br>
+                            <span style="margin-top: 4px; display: inline-block;">Korosztály: ${ageGroup}</span><br>
+                            <span style="margin-top: 4px; display: inline-block;">Ingatlantípus: ${propertyType}</span>
+                        `;
+                        
+                        document.body.appendChild(tooltip);
+                        
+                        // Position tooltip near cursor
+                        tooltip.style.left = (event.pageX + 15) + 'px';
+                        tooltip.style.top = (event.pageY + 15) + 'px';
                     }
                 });
-            }
+                
+                view.addEventListener('mouseout', function() {
+                    const tooltips = document.getElementsByClassName('custom-tooltip');
+                    while(tooltips.length > 0) {
+                        tooltips[0].parentNode.removeChild(tooltips[0]);
+                    }
+                });
+            });
         });
     });
 }

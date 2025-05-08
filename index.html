@@ -7,10 +7,12 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
     <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
     <script src="scatter_plot.js" defer></script>
     <script src="bubble_chart.js" defer></script>
     <script src="housing_heatmap.js" defer></script>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="housing_trends.js" defer></script>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -311,6 +313,39 @@
             display: none;
         }
 
+        .info-button:hover {
+            background: #122620;
+        }
+
+        .visualization-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin-top: 2cm;
+        }
+
+        #scatter-plot {
+            width: 100%;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #scatter-vis {
+            width: 95%;
+            max-width: 1200px;
+            height: 700px;
+            border-radius: 12px;
+        }
+
+        .filter-container {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
         .visualization-section {
             padding: 16px;
         }
@@ -346,11 +381,27 @@
         }
 
         .viz-bubble-box {
-            max-width: 1200px;
+            max-width: 1400px;
             width: 98%;
-            height: 750px;
+            height: 850px;
             padding: 36px;
             background-color: #ffffff;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #trends-vis {
+            width: 100%;
+            height: 700px;
+            margin: 0 auto;
+        }
+
+        .scatter-plot {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 16px;
         }
 
         #scatter-vis {
@@ -566,6 +617,9 @@
             <span></span>
         </div>
 
+    
+
+
 
 <div class="bubble-box">
     <div class="text-image-wrapper">
@@ -596,7 +650,7 @@
     </div>
 
 </div>
-
+        
         <div class="divider-dots">
             <span></span><span></span><span></span>
         </div>
@@ -614,7 +668,7 @@
         Az alábbi ábrák segítségével feltérképezhetjük, hol a legmagasabb a lakhatási költségek aránya, hogyan változtak a bérleti díjak az elmúlt években, és mely társadalmi csoportokat érinti leginkább a bérleti teher.</p>
     </div>
 </div>
-
+        
 
       <!-- Interaktív térképes/választható vizualizáció -->
       <div class="visualization-section">
@@ -646,35 +700,65 @@
     <div class="visualization-section">
         <div class="bubble-box viz-bubble-box">
         <h2 class="section-title">Megfizethetőségi Elemzés</h2>
-        <p class="description">A jövedelem és a bérleti díj közötti kapcsolat különböző városok és korcsoportok szerint., colored by city.</p>
-            <div id="scatter-plot">
+          <p class="description">A jövedelem és a bérleti díj közötti kapcsolat különböző városok és korcsoportok szerint.</p>
+        
+            <div class="filter-container" style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-bottom: 20px;">
+                <div class="filter-group">
+                    <label for="yearFilter" style="font-weight: 600; color: #122620;">Év:</label>
+                    <select id="yearFilter" class="filter-select" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                        <option value="all">Minden év</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024" selected>2024</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="ageGroupFilter" style="font-weight: 600; color: #122620;">Korcsoport:</label>
+                    <select id="ageGroupFilter" class="filter-select" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                        <option value="all">Minden korcsoport</option>
+                        <option value="18-21">18-21</option>
+                        <option value="22-25">22-25</option>
+                        <option value="26-29">26-29</option>
+                    </select>
+                </div>
+            </div>
+        
             <div id="scatter-vis"></div>
-            
+    </div>
+
+    <div class="visualization-section">
+        <div class="bubble-box viz-bubble-box">
+        <h2 class="section-title">Lakhatási költségek (%) Hőtérkép </h2>
+        <div class="filter-container">
+            <label for="ageGroup">Szűrés korcsoport szerint:</label>
+           
+                <select id="ageGroup">
+                    <option value="all">Minden korcsoport</option>
+                    <option value="18-21">18-21</option>
+                    <option value="22-25">22-25</option>
+                    <option value="26-29">26-29</option>
+                </select>
+            </div>
+            <div id="vis"></div>
+        </div>
+
+    </div>
+
+    <div class="visualization-section">
+        <div class="bubble-box viz-bubble-box" style="max-width:1400px;width:98%;height:850px;padding:36px;background-color:#fff;margin:20px auto;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,0.1);">
+            <h2 class="section-title">Bérleti díjak változása 2020-2024</h2>
+            <p class="description" style="text-align: left; margin-top: 0;">Az oszlop diagram az átlagos bérleti díj változását mutatja az elmúlt 5 évben.</p>
+            <iframe src="bar_chart_race.html" width="100%" height="800" style="border:none;max-width:100%;border-radius:12px;"></iframe>
+            <div id="chart" style="width: 100%; height: 700px;"></div>
         </div>
     </div>
 
     <div class="visualization-section">
         <div class="bubble-box viz-bubble-box">
-        <h2 class="section-title">Lakhatasi költségek (%) Hőtérkép </h2>
-        <div class="filter-container">
-            <label for="ageGroup">Filter by Age Group:</label>
-            <select id="ageGroup">
-                <option value="all">All Age Groups</option>
-                <option value="18-21">18-21</option>
-                <option value="22-25">22-25</option>
-                <option value="26-29">26-29</option>
-            </select>
-        </div>
-        <div id="vis" style="position: relative;"></div>
-        </div>
-    </div>
-
-    <div class="visualization-section">
-        <div class="bubble-box oszlop-bubble-box">
-            <h2 class="section-title">Bérleti díjak változása 2020-2024</h2>
-            <p class="description" style="text-align: left; margin-top: 0;">Az oszlop diagram az átlagos bérleti díj változását mutatja az elmúlt 5 évben.</p>
-            <iframe src="bar_chart_race.html" width="1200" height="800" style="border:none;"></iframe>
-            <div id="chart" style="width: 100%; height: 700px;"></div>
+            <h2 class="section-title">Lakhatási arány (%) városonként (2020–2024)</h2>
+            <div id="trends-vis"></div>
         </div>
     </div>
 
@@ -754,9 +838,10 @@
             "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
             "width": 800,
             "height": 600,
+            "title": "Európai Lakhatási Költségek",
             "projection": {
                 "type": "mercator",
-                "center": [15, 55], // Centered on Europe
+                "center": [15, 55],
                 "scale": 500
             },
             "layer": [
@@ -773,10 +858,10 @@
                             "lookup": "properties.name",
                             "from": {
                                 "data": {
-                                    "url": "Projekt/europai_lakhatasi_arak.csv" // Replace with your CSV file path
+                                    "url": "Projekt/europai_lakhatasi_arak.csv"
                                 },
-                                "key": "orszag", // The column in your CSV that contains country names
-                                "fields": ["berleti_dij"] // The column with the values you want to show
+                                "key": "orszag",
+                                "fields": ["berleti_dij"]
                             }
                         }
                     ],
@@ -789,21 +874,104 @@
                         "color": {
                             "field": "value",
                             "type": "quantitative",
-                            "title": "Housing Prices",
+                            "title": "Lakhatási költségek (EUR)",
                             "scale": {
                                 "scheme": "browns"
                             }
                         },
+                        "tooltip": [
+                            {"field": "properties.name", "title": "Ország"},
+                            {"field": "value", "title": "Lakhatási költség", "format": ".2f"}
+                        ],
+                        "opacity": {
+                            "condition": {
+                                "test": "datum === hover",
+                                "value": 1
+                            },
+                            "value": 0.7
+                        }
                     }
                 }
-            ]
+            ],
+            "selection": {
+                "hover": {
+                    "type": "single",
+                    "on": "mouseover",
+                    "empty": "none"
+                }
+            },
+            "config": {
+                "view": {
+                    "stroke": null
+                },
+                "tooltip": {
+                    "theme": "light",
+                    "content": "data",
+                    "style": {
+                        "fontFamily": "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+                        "fontSize": "14px",
+                        "padding": "12px",
+                        "backgroundColor": "rgba(255, 255, 255, 0.95)",
+                        "borderRadius": "8px",
+                        "boxShadow": "0 4px 8px rgba(0,0,0,0.15)",
+                        "border": "1px solid #ddd"
+                    }
+                },
+                "title": {
+                    "fontSize": 20,
+                    "fontWeight": "bold",
+                    "color": "#996835"
+                }
+            }
         };
 
         vegaEmbed('#vis', spec, {
             theme: "light",
             actions: false,
             renderer: "svg"
-        }).then(console.log).catch(console.warn);
+        }).then(function(result) {
+            const view = result.view;
+            
+            // Add hover effect
+            view.addEventListener('mouseover', function(event, item) {
+                if (item && item.datum) {
+                    const tooltip = document.createElement('div');
+                    tooltip.className = 'custom-tooltip';
+                    tooltip.style.position = 'absolute';
+                    tooltip.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                    tooltip.style.padding = '12px';
+                    tooltip.style.borderRadius = '8px';
+                    tooltip.style.boxShadow = '0 4px 8px rgba(0,0,0,0.15)';
+                    tooltip.style.pointerEvents = 'none';
+                    tooltip.style.zIndex = '1000';
+                    tooltip.style.fontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+                    tooltip.style.fontSize = '14px';
+                    tooltip.style.color = '#333';
+                    tooltip.style.border = '1px solid #ddd';
+                    tooltip.style.display = 'none';
+                    document.body.appendChild(tooltip);
+                    
+                    const country = item.datum.properties.name;
+                    const value = item.datum.value;
+                    
+                    tooltip.innerHTML = `
+                        <strong style="color: #996835; font-size: 16px;">${country}</strong><br>
+                        <span style="margin-top: 4px; display: inline-block;">Lakhatási költség: ${value.toLocaleString()} EUR</span>
+                    `;
+                    
+                    tooltip.style.display = 'block';
+                    tooltip.style.left = (event.pageX + 15) + 'px';
+                    tooltip.style.top = (event.pageY + 15) + 'px';
+                }
+            });
+            
+            view.addEventListener('mouseout', function() {
+                const tooltips = document.getElementsByClassName('custom-tooltip');
+                while(tooltips.length > 0) {
+                    tooltips[0].parentNode.removeChild(tooltips[0]);
+                }
+            });
+        }).catch(console.warn);
 
         function openTab(evt, tabName) {
             var tabcontent = document.getElementsByClassName("tab-content");
@@ -924,7 +1092,6 @@
             {"City":"Prága","Country":"Czech Republic","Year":2020,"Rent":884,"Utilities":123,"Income":2252},
             {"City":"Sofia","Country":"Bulgaria","Year":2022,"Rent":702,"Utilities":90,"Income":1723},
             {"City":"Berlin","Country":"Germany","Year":2021,"Rent":1391,"Utilities":144,"Income":2107},
-            {"City":"Róma","Country":"Italy","Year":2023,"Rent":845,"Utilities":121,"Income":1735},
             {"City":"Brüsszel","Country":"Belgium","Year":2024,"Rent":831,"Utilities":232,"Income":2683},
             {"City":"Budapest","Country":"Hungary","Year":2024,"Rent":838,"Utilities":206,"Income":3539},
             {"City":"Prága","Country":"Czech Republic","Year":2021,"Rent":868,"Utilities":112,"Income":2102},
@@ -1157,12 +1324,84 @@
                 const view = result.view;
                 const tooltip = document.createElement('div');
                 tooltip.className = 'custom-tooltip';
+                tooltip.style.position = 'absolute';
+                tooltip.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                tooltip.style.padding = '12px';
+                tooltip.style.borderRadius = '8px';
+                tooltip.style.boxShadow = '0 4px 8px rgba(0,0,0,0.15)';
+                tooltip.style.pointerEvents = 'none';
+                tooltip.style.zIndex = '1000';
+                tooltip.style.fontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+                tooltip.style.fontSize = '14px';
+                tooltip.style.color = '#333';
+                tooltip.style.border = '1px solid #ddd';
+                tooltip.style.display = 'none';
                 document.body.appendChild(tooltip);
 
-                
+                // Country name translations
+                const countryTranslations = {
+                    'Albania': 'Albánia',
+                    'Austria': 'Ausztria',
+                    'Belgium': 'Belgium',
+                    'Bosnia and Herzegovina': 'Bosznia-Hercegovina',
+                    'Bulgaria': 'Bulgária',
+                    'Croatia': 'Horvátország',
+                    'Czech Republic': 'Csehország',
+                    'Denmark': 'Dánia',
+                    'Estonia': 'Észtország',
+                    'Finland': 'Finnország',
+                    'France': 'Franciaország',
+                    'Germany': 'Németország',
+                    'Greece': 'Görögország',
+                    'Hungary': 'Magyarország',
+                    'Ireland': 'Írország',
+                    'Italy': 'Olaszország',
+                    'Latvia': 'Lettország',
+                    'Lithuania': 'Litvánia',
+                    'Luxembourg': 'Luxemburg',
+                    'Netherlands': 'Hollandia',
+                    'Norway': 'Norvégia',
+                    'Poland': 'Lengyelország',
+                    'Portugal': 'Portugália',
+                    'Romania': 'Románia',
+                    'Slovakia': 'Szlovákia',
+                    'Slovenia': 'Szlovénia',
+                    'Spain': 'Spanyolország',
+                    'Sweden': 'Svédország',
+                    'Switzerland': 'Svájc',
+                    'United Kingdom': 'Egyesült Királyság'
+                };
+
+                view.addEventListener('mouseover', (event, item) => {
+                    if (item && item.datum) {
+                        const englishCountry = item.datum.properties.NAME;
+                        const country = countryTranslations[englishCountry] || englishCountry;
+                        const rentRatio = item.datum.rentRatio ? item.datum.rentRatio.toFixed(1) : 'N/A';
+                        const utilitiesRatio = item.datum.utilitiesRatio ? item.datum.utilitiesRatio.toFixed(1) : 'N/A';
+                        const totalRatio = item.datum.totalRatio ? item.datum.totalRatio.toFixed(1) : 'N/A';
+                        
+                        tooltip.innerHTML = `
+                            <strong style="color: #996835; font-size: 16px;">${country}</strong><br>
+                            <span style="margin-top: 4px; display: inline-block;">Bérleti díj: ${rentRatio}%</span><br>
+                            <span style="margin-top: 4px; display: inline-block;">Rezsiköltség: ${utilitiesRatio}%</span><br>
+                            <span style="margin-top: 4px; display: inline-block;">Összes lakhatási költség: ${totalRatio}%</span>
+                        `;
+                        
+                        tooltip.style.display = 'block';
+                        tooltip.style.left = (event.pageX + 15) + 'px';
+                        tooltip.style.top = (event.pageY + 15) + 'px';
+                    }
+                });
 
                 view.addEventListener('mouseout', () => {
                     tooltip.style.display = 'none';
+                });
+
+                view.addEventListener('mousemove', (event) => {
+                    if (tooltip.style.display === 'block') {
+                        tooltip.style.left = (event.pageX + 15) + 'px';
+                        tooltip.style.top = (event.pageY + 15) + 'px';
+                    }
                 });
             }).catch(console.error);
         }
